@@ -73,3 +73,14 @@ void JsonHelper::getCPE(set<string> & CPEList, Value& CPE)
     }
 }
 
+Document JsonHelper::parseComplete(FILE* file)
+{
+    char readBuffer[65536];
+    FileReadStream is(file, readBuffer, sizeof(readBuffer));
+    
+    Document d;
+    d.ParseStream(is);
+    fclose(file);
+    return d;
+}
+

@@ -1,6 +1,27 @@
 # CVE_DataMining_Research
 Programs and Data used in CVE Data Mining Research (University of Virginia)
 
+# Version
+
+`completeTable.cpp` now outputs a CSV file that contain every entry with the following attributes:
+
+- CVE_ID
+- Published_Time
+- Lastest_Modification_Time
+- CAPEC_IDs
+- CWE_IDs
+- CPE_IDs
+- Risk_Severity
+
+# TODO
+
+To answer the following research questions:
+
+1. Overall what type of bugs are predominant?
+2. If you divide the time period of reporting bugs in 4 bins, whether the bug trends change over time?
+3. What are some bugs that are consistently present over time, but might not be dominant?
+
+
 # Build
 
 Run `cmake .` and `make` in the current directory. The executable file will be named "Stats".

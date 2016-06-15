@@ -4,10 +4,11 @@ cmake_minimum_required(VERSION 2.6)
 include_directories(include)
 
 # add source files 
-file(GLOB SOURCES "src/JsonHelper.cpp")
-file(GLOB SOURCES "src/completeTable.cpp")
+set (COMPLETETABLESOURCES src/JsonHelper.cpp src/completeTable.cpp)
+set (TIMEWEAKNESSSOURCES src/timeWeakness.cpp)
 
 add_definitions("-std=c++11")
 add_definitions("-g")
 
-add_executable(Stats ${SOURCES})
+add_executable(Stats ${COMPLETETABLESOURCES})
+add_executable(Time ${TIMEWEAKNESSSOURCES})

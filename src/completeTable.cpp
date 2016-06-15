@@ -28,66 +28,72 @@ vector<string> readfilenames()
 int main()
 {
     auto filenames = readfilenames();
-    JsonHelper jsonHelper();
-    std::ofstream ofs (filename, std::ofstream::out);
+    JsonHelper jsonHelper;
+    std::ofstream ofs ("statistics/completeTable.csv", std::ofstream::out);
 
     ofs << "CVE_ID, Published_Time, Lastest_Modification_Time, " 
         << "CAPEC_IDs, CWE_IDs, CPE_IDs, Risk_Severity\n";
 
-    for (auto &f : filenames)
+    for (auto &filename : filenames)
     {
-        auto d = jsonHelper.parse(fopen(filename.c_str(), "r"));
+        cout << filename << endl;
+        auto d = jsonHelper.parseComplete(fopen(filename.c_str(), "r"));
 
-        if (d["Information"]["CVE"] != null)
+        Value & Information = d["Information"];
+
+        if (!(Information["CVE"].IsNull()))
         {
-            auto CVEId = d["Information"]["CVE"][0]["id"];
-            ofs << CVEId.GetInt();
+            Value & CVEId = Information["CVE"][0]["id"];
+            ofs << CVEId.GetString();
+            ofs << ",";
+            if (!(Information["CVE"][0]["published"].IsNull()))
+            {
+                Value & PublishedTime = Information["CVE"][0]["published"];
+                ofs << PublishedTime.GetString();
+            }
+            else ofs << "null";
+
+            ofs << ",";
+            if (!(Information["CVE"][0]["modified"].IsNull()))
+            {
+                Value & LatestModTime= Information["CVE"][0]["modified"];
+                ofs << LatestModTime.GetString();
+            }
+            else ofs << "null";
+        }
+        else
+        {
+            ofs << "null, null, null" ;
         }
 
         ofs << ",";
-        if (d["Information"]["CVE"]["published"] != null)
+        if (!(Information["CAPEC"].IsNull()))
         {
-            auto PublishedTime= d["Information"]["CVE"]["published"];
-            ofs << PublishedTime.GetString();
-        }
-
-        ofs << ",";
-        if (d["Information"]["CVE"]["modified"] != null)
-        {
-            auto LatestModTime= d["Information"]["CVE"]["modified"];
-            ofs << LatestModTime.GetString();
-        }
-
-        ofs << ",";
-        if (d["Information"]["CAPEC"] != null)
-        {
-            auto CAPEC = d["Information"]["CAPEC"];
+            Value & CAPEC = Information["CAPEC"];
             for (SizeType i = 0; i < CAPEC.Size(); ++i) ofs << CAPEC[i]["id"].GetInt() << "|";
         }
 
         ofs << ",";
-        if (d["Information"]["CWE"] != null)
+        if (!(Information["CWE"].IsNull()))
         {
-            auto CWE = d["Information"]["CWE"];
-            ofs << CWE[0]["id"] << " : " << CWE["title"];
+            Value & CWE = Information["CWE"];
+            ofs << CWE[0]["id"].GetString() << " : " << CWE[0]["title"].GetString();
         }
 
         ofs << ",";
-        if (d["Information"]["CPE"] != null)
+        if (!(Information["CPE"].IsNull()))
         {
-            auto CPE = d["Information"]["CPE"];
+            Value & CPE = Information["CPE"];
             for (SizeType i = 0; i < CPE.Size(); ++i) ofs << jsonHelper.CPEStringSimplify(CPE[i]["id"].GetString()) << "|";
         }
-
+        
         ofs << ",";
-        if (d["Risk"]["severity"] != null)
+        if (!(d["Risk"][0]["severity"].IsNull()))
         {
-            auto RiskSeverity= d["Risk"]["severity"];
+            Value & RiskSeverity= d["Risk"][0]["severity"];
             ofs << RiskSeverity.GetString();
         }
-
-
-
+        ofs << "\n";
     }
 
     ofs.close();
