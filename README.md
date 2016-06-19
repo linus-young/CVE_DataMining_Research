@@ -17,9 +17,9 @@ Programs and Data used in CVE Data Mining Research (University of Virginia)
 
 To answer the following research questions:
 
-1. Overall what type of bugs are predominant?
-2. If you divide the time period of reporting bugs in 4 bins, whether the bug trends change over time?
-3. What are some bugs that are consistently present over time, but might not be dominant?
+1. Overall what type of weaknesses are predominant?
+2. If you divide the time period of reporting weaknesses in 4 bins, whether the weaknesses trends change over time?
+3. What are some weaknesses that are consistently present over time, but might not be dominant?
 
 
 # Build

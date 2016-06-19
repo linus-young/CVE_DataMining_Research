@@ -17,10 +17,26 @@ struct WeaknessWithTime
         year = _year;
         cweID = _cweID;
     }
+
+    bool operator < (WeaknessWithTime second) { return year < second.year; }
+    bool operator == (WeaknessWithTime second ) { return cweID == second.cweID; }
 };
 
-bool comByTime (WeaknessWithTime that) { year  < that.year;  }
-bool comByID   (WeaknessWithTime that) { cweID < that.cweID; }
+struct WeaknessWithFrequency
+{
+    int cweID = 0;
+    int frequency = 0;
+
+    bool operator < (WeaknessWithFrequency second) { return frequency < second.frequency; }
+    bool operator > (WeaknessWithFrequency second) { return frequency > second.frequency; }
+    bool operator == (WeaknessWithFrequency second ) { return cweID == second.cweID; }
+    bool operator != (WeaknessWithFrequency second ) { return cweID != second.cweID; }
+    
+};
+
+bool comByTime (WeaknessWithTime first, WeaknessWithTime second) { return first.year  < second.year;  }
+bool comByID   (WeaknessWithTime first, WeaknessWithTime second) { return first.cweID < second.cweID; }
+bool comByFreq (WeaknessWithFrequency first, WeaknessWithFrequency second) { return first.frequency > second.frequency; }
 
 int parseYear(string str)
 {
@@ -36,10 +52,47 @@ int parseID(string str)
     return stoi(s);
 }
 
+vector< WeaknessWithFrequency > countFrequencies(vector< WeaknessWithTime >::iterator begin, vector< WeaknessWithTime >::iterator end)
+{
+    vector <WeaknessWithFrequency > frequencies;
+    for (auto it = begin; it != end; )
+    {
+        int id = (*it).cweID;
+        auto start = it;
+        while (it != end && (*it).cweID == id) ++it;
+        WeaknessWithFrequency w; 
+        w.cweID = id;
+        w.frequency = (it - start);
+        frequencies.push_back(w);
+    }
+    return frequencies;
+}
+
+vector< int > divideBins(int lo, int hi, int nbins)
+{
+    vector< int > bins;
+    for (int i = 1; i < nbins; ++i)
+    {
+        bins.push_back(lo + i * (hi - lo) / nbins);
+    }
+    bins.push_back(hi);
+    return bins;
+}
+
+int frequencyOf(int id, vector< WeaknessWithFrequency > & vec)
+{
+    for (auto v : vec)
+    {
+        if (v.cweID == id) return v.frequency;
+    }
+    return 0;
+}
+
 
 int main()
 {
     ifstream ifs("./statistics/completeTable.csv");
+    ofstream ofs;
     if (!ifs.is_open()) return -1;
 
     vector< WeaknessWithTime > weaknesses;
@@ -48,27 +101,95 @@ int main()
     getline(ifs, str); // remove the first line (header)
     while (getline(ifs, str))
     {
-        int commas[] = new int[6];
-        int id = 0;
-        for (int i = 0; i < 6; ++i)
+        int commas[6];
+        commas[0] = str.find(",");
+        for (int i = 1; i < 6; ++i) commas[i] = str.find(",", commas[i - 1] + 1);
+        if (commas[1] - commas[0] < 3 || commas[4] - commas[3] < 3) continue; // no year or no CWE
+
+        int year  = parseYear(str.substr(commas[0] + 1, 4));
+        int cweID = parseID  (str.substr(commas[3] + 1, commas[4] - commas[3] - 1));
+        if (year > 1900 && year <= 2016) 
         {
-            commas[i] = str.find(",", id + 1);
-            id = commas[i];
+            WeaknessWithTime element (year, cweID);
+            weaknesses.push_back(element);
         }
-        
-        int year  = parseYear(str.substr(commas[0], 4));
-        int cweID = parseID(str.substr(commas[3], commas[4]));
-        WeaknessWithTime element (year, cweID);
-        weaknesses.push_back(element);
     }
+    ifs.close();
+
+    std::sort(weaknesses.begin(), weaknesses.end(), comByID);
+
+    auto alltime = countFrequencies(weaknesses.begin(), weaknesses.end());
+    std::sort(alltime.begin(), alltime.end(), comByFreq);
+
+    ofs.open("statistics/allTimeWeaknesses.csv");
+    ofs << "ID, frequency\n";
+    for (int i = 0; i < 10; ++i)
+    {
+        ofs << alltime[i].cweID << "," << alltime[i].frequency << '\n';
+    }
+    ofs.close();
 
     std::sort(weaknesses.begin(), weaknesses.end(), comByTime);
 
-    `
+    int minYear = weaknesses[0].year;
+    int maxYear = weaknesses[weaknesses.size() - 1].year;
+    
+    vector < vector < WeaknessWithFrequency > > groupedFrequencies;
+    auto bins = divideBins(minYear, maxYear, 4);
+    ofs.open("statistics/4_Bin_Weaknesses.csv");
+    ofs << "ID, frequency\n";
+    std::sort(weaknesses.begin(), weaknesses.end(), comByTime);
+    auto it = weaknesses.begin();
+    for (auto hi : bins)
+    {
+        auto lo = it;
+        ofs << "From " << lo->year << " to "  << hi << '\n';
+        while (it != weaknesses.end() && it->year <= hi) ++it;
+        std::sort(lo, it, comByID);
+        auto thisBin = countFrequencies(lo, it);
+        std::sort(thisBin.begin(), thisBin.end(), comByFreq);
+        groupedFrequencies.push_back(thisBin);
+        for (int i = 0; i < 10; ++i)
+        {
+            ofs << thisBin[i].cweID << "," << thisBin[i].frequency << '\n';
+        }
+    }
+    ofs.close();
 
+    // find consistently present IDs
+    ofs.open("statistics/overtimeconsistent.csv");
+    ofs << "Until Year,";
+    for (auto h : bins) ofs << h << ",";
+    ofs << '\n'  ;
 
+    vector <int> overLappingIds;
+    for (auto g : groupedFrequencies[0])
+        overLappingIds.push_back(g.cweID);
 
-    ifs.close();
+    for (auto group : groupedFrequencies)
+    {
+        vector <int> vec;
+        for (auto g : group)
+            vec.push_back(g.cweID);
+        vector <int> o(vec);
+        auto qit = std::set_intersection(vec.begin(), vec.end(), 
+                                overLappingIds.begin(), overLappingIds.end(), o.begin());
+        o.resize(qit - o.begin());
+        overLappingIds = o;
+    }
+
+    
+
+    for (auto id : overLappingIds)
+    {
+        ofs << id;
+        for (auto v : groupedFrequencies)
+        {
+            ofs << ',' << frequencyOf(id, v);
+        }
+        ofs << '\n';
+    }
+    ofs.close();
 
     return 0;
 }
