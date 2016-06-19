@@ -1,7 +1,24 @@
 # CVE_DataMining_Research
 Programs and Data used in CVE Data Mining Research (University of Virginia)
 
-# Version
+# Versions
+
+## Lastest Progress [2016-06-19]:
+
+ - Dominant CWE over all time (1996 - 2016)
+ - Dominant CWE over each period of a 4 bins division
+ - CWE that has persistently appear over the 4 bins
+ - results see:
+    - `allTimeWeaknesses.csv`
+    - `4_bin_Weaknesses.csv`
+    - `overtimeconsistent.csv`
+ - The codes responsible for this production include :
+    - `timeWeakness.cpp`
+    - `JsonHelper.cpp`
+    - `RapidJson library`
+    - The above files produce the executable: `Time`
+
+## Old Versions:
 
 `completeTable.cpp` now outputs a CSV file that contain every entry with the following attributes:
 
@@ -15,11 +32,6 @@ Programs and Data used in CVE Data Mining Research (University of Virginia)
 
 # TODO
 
-To answer the following research questions:
-
-1. Overall what type of weaknesses are predominant?
-2. If you divide the time period of reporting weaknesses in 4 bins, whether the weaknesses trends change over time?
-3. What are some weaknesses that are consistently present over time, but might not be dominant?
 
 
 # Build
