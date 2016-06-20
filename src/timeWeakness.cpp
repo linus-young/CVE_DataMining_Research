@@ -5,7 +5,12 @@
 #include <string>
 
 
+
 using namespace std;
+
+string nullString = "";
+
+vector<string> dict (2000, nullString);
 
 struct WeaknessWithTime
 {
@@ -46,10 +51,12 @@ int parseYear(string str)
 
 int parseID(string str)
 {
-    int start = 4;
-    int q = str.find(" :");
-    string s = str.substr(start, (q - 4));
-    return stoi(s);
+    int start = str.find(" : ");
+    string number = str.substr(4, start - 4);
+    string s = (str.substr(start + 3    , str.length() - start));
+    int id = stoi(number);
+    if (dict[id] == nullString) dict[id] = s;
+    return id;
 }
 
 vector< WeaknessWithFrequency > countFrequencies(vector< WeaknessWithTime >::iterator begin, vector< WeaknessWithTime >::iterator end)
@@ -125,7 +132,7 @@ int main()
     ofs << "ID, frequency\n";
     for (int i = 0; i < 10; ++i)
     {
-        ofs << alltime[i].cweID << "," << alltime[i].frequency << '\n';
+        ofs << alltime[i].cweID << '-' << dict[alltime[i].cweID] << "," << alltime[i].frequency << '\n';
     }
     ofs.close();
 
@@ -151,7 +158,7 @@ int main()
         groupedFrequencies.push_back(thisBin);
         for (int i = 0; i < 10; ++i)
         {
-            ofs << thisBin[i].cweID << "," << thisBin[i].frequency << '\n';
+            ofs << thisBin[i].cweID << '-' << dict[thisBin[i].cweID] << "," << thisBin[i].frequency << '\n';
         }
     }
     ofs.close();
@@ -178,11 +185,9 @@ int main()
         overLappingIds = o;
     }
 
-    
-
     for (auto id : overLappingIds)
     {
-        ofs << id;
+        ofs << id << '-' << dict[id];
         for (auto v : groupedFrequencies)
         {
             ofs << ',' << frequencyOf(id, v);

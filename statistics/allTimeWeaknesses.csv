@@ -1,11 +1,11 @@
 ID, frequency
-119,6593
-79,6377
-264,4477
-89,4132
-20,3665
-399,2648
-200,2481
-310,2233
-94,2063
-22,1848
+119-Improper Restriction of Operations within the Bounds of a Memory Buffer,6593
+79-Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting'),6377
+264-Permissions,4477
+89-Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection'),4132
+20-Improper Input Validation,3665
+399-Resource Management Errors,2648
+200-Information Exposure,2481
+310-Cryptographic Issues,2233
+94-Improper Control of Generation of Code ('Code Injection'),2063
+22-Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal'),1848

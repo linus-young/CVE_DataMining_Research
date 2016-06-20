@@ -6,7 +6,17 @@
 
 The following CWE IDs top the list of all weaknesses overall:
 
-> 119, 79, 264, 89, 20, 399, 200, 310, 94, 22
+ - 119-Improper Restriction of Operations within the Bounds of a Memory Buffer
+ - 79-Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')
+ - 264-Permissions
+ - 89-Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection')
+ - 20-Improper Input Validation
+ - 399-Resource Management Errors
+ - 200-Information Exposure
+ - 310-Cryptographic Issues
+ - 94-Improper Control of Generation of Code ('Code Injection')
+ - 22-Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal')
+
 
 See `allTimeWeaknesses.csv`
 
@@ -23,18 +33,20 @@ There are four bins: 1996 - 2001, 2002 - 2006, 2007 - 2011, 2012 - 2016
 
 The most frequent ids for each bin is listed in the following table:
 
-1996 - 2001 | 2002 -2006 | 2007 -2011 | 2012 -2016
---- | --- | -- | --
-119 |119  |119 |119
-20  |94   |79  |79
-264 |79   |264 |264
-16  |89   |20  |20
-94  |264  |310 |310
-200 |20   |200 |200
-310 |399  |399 |399
-59  |200  |89  |89
-255 |22   |352 |352
-287 |189  |22  |22
+
+1996 to 2001 | 2002 to 2006 | 2007 to 2011 | 2012 to 2016
+---          | ---          | ----         | ------
+119-Improper Restriction of Operations within the Bounds of a Memory Buffer | 119-Improper Restriction of Operations within the Bounds of a Memory Buffer | 89-Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection') | 119-Improper Restriction of Operations within the Bounds of a Memory Buffer
+20-Improper Input Validation | 94-Improper Control of Generation of Code ('Code Injection') | 79-Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting') | 79-Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')
+264-Permissions | 79-Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting') | 119-Improper Restriction of Operations within the Bounds of a Memory Buffer | 264-Permissions
+16-Configuration | 89-Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection') | 264-Permissions | 20-Improper Input Validation
+94-Improper Control of Generation of Code ('Code Injection') | 264-Permissions | 20-Improper Input Validation | 310-Cryptographic Issues
+200-Information Exposure | 20-Improper Input Validation | 94-Improper Control of Generation of Code ('Code Injection') | 200-Information Exposure
+310-Cryptographic Issues | 399-Resource Management Errors | 399-Resource Management Errors | 399-Resource Management Errors
+59-Improper Link Resolution Before File Access ('Link Following') | 200-Information Exposure | 22-Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal') | 89-Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection')
+255-Credentials Management | 22-Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal') | 200-Information Exposure | 352-Cross-Site Request Forgery (CSRF)
+287-Improper Authentication | 189-Numeric Errors | 189-Numeric Errors | 22-Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal')
+
 
 See `4_Bin_Weaknesses.csv`
 
@@ -52,9 +64,9 @@ Surprisingly there are only three IDs that appear in all time periods:
 
 Frequencies in | 1996 - 2001 | 2002 -2006 | 2007 -2011 | 2012 -2016
 --- | --- | --- | --- | ---
-119 | 15 | 334 | 2757 | 3487
-264 | 10 | 151 | 1735 | 2581
-399 | 1 | 121 | 1266 | 1260
+119-Improper Restriction of Operations within the Bounds of a Memory Buffer | 15 | 334 | 2757 | 3487
+264-Permissions | 10 | 151 | 1735 | 2581
+399-Resource Management Errors | 1 | 121 | 1266 | 1260
 
 See `overtimeconsistent.csv`
 
