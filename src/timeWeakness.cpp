@@ -172,13 +172,14 @@ int main()
     vector <int> overLappingIds;
     for (auto g : groupedFrequencies[0])
         overLappingIds.push_back(g.cweID);
+    groupedFrequencies.erase(groupedFrequencies.begin());
 
     for (auto group : groupedFrequencies)
     {
         vector <int> vec;
         for (auto g : group)
             vec.push_back(g.cweID);
-        vector <int> o(vec);
+        vector <int> o(1000);
         auto qit = std::set_intersection(vec.begin(), vec.end(), 
                                 overLappingIds.begin(), overLappingIds.end(), o.begin());
         o.resize(qit - o.begin());

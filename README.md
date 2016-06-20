@@ -3,7 +3,11 @@ Programs and Data used in CVE Data Mining Research (University of Virginia)
 
 # Versions
 
-## Lastest Progress [2016-06-19]:
+## Lastest Progress [2016-06-20]
+
+ - Add names to all CWE over time statistics
+
+## [2016-06-19]:
 
  - Dominant CWE over all time (1996 - 2016)
  - Dominant CWE over each period of a 4 bins division
