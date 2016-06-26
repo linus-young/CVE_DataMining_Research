@@ -98,12 +98,14 @@ int frequencyOf(int id, vector< WeaknessWithFrequency > & vec)
 
 int main()
 {
+    // Setting up filestreams
     ifstream ifs("./statistics/completeTable.csv");
     ofstream ofs;
     if (!ifs.is_open()) return -1;
 
     vector< WeaknessWithTime > weaknesses;
 
+    // Reading the completeTable.csv file and extract information
     string str;
     getline(ifs, str); // remove the first line (header)
     while (getline(ifs, str))
@@ -123,6 +125,7 @@ int main()
     }
     ifs.close();
 
+    // Print out the top 10 and least 10 CWE
     std::sort(weaknesses.begin(), weaknesses.end(), comByID);
 
     auto alltime = countFrequencies(weaknesses.begin(), weaknesses.end());
@@ -134,8 +137,15 @@ int main()
     {
         ofs << alltime[i].cweID << '-' << dict[alltime[i].cweID] << "," << alltime[i].frequency << '\n';
     }
+    ofs << "Least 10\n";
+    for (auto itt = alltime.end() - 10; itt != alltime.end(); itt++)
+    {
+        ofs << itt->cweID << '-' << dict[itt->cweID] << "," << itt->frequency << '\n';
+    }
     ofs.close();
 
+
+    // Print out top/least 10 for each bin
     std::sort(weaknesses.begin(), weaknesses.end(), comByTime);
 
     int minYear = weaknesses[0].year;
@@ -159,6 +169,11 @@ int main()
         for (int i = 0; i < 10; ++i)
         {
             ofs << thisBin[i].cweID << '-' << dict[thisBin[i].cweID] << "," << thisBin[i].frequency << '\n';
+        }
+        ofs << "Least 10\n";
+        for (auto itt = thisBin.end() - 10; itt != thisBin.end(); itt++)
+        {
+            ofs << itt->cweID << '-' << dict[itt->cweID] << "," << itt->frequency << '\n';
         }
     }
     ofs.close();

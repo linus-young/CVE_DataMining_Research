@@ -9,3 +9,14 @@ ID, frequency
 310-Cryptographic Issues,2233
 94-Improper Control of Generation of Code ('Code Injection'),2063
 22-Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal'),1848
+Least 10
+17-Code,157
+254-Security Features,150
+19-Data Handling,96
+77-Improper Neutralization of Special Elements used in a Command ('Command Injection'),56
+345-Insufficient Verification of Data Authenticity,20
+74-Improper Neutralization of Special Elements in Output Used by a Downstream Component ('Injection'),19
+18-Source Code,5
+199-Information Management Errors,2
+21-Pathname Traversal and Equivalence Errors,2
+361-Time and State,1

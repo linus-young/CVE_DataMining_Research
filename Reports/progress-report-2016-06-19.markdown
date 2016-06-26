@@ -17,6 +17,22 @@ The following CWE IDs top the list of all weaknesses overall:
  - 94-Improper Control of Generation of Code ('Code Injection')
  - 22-Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal')
 
+The Least frequent 10:
+
+id | frequency
+--- | ---
+17-Code | 157
+254-Security Features | 150
+19-Data Handling | 96
+77-Improper Neutralization of Special Elements used in a Command ('Command Injection') | 56
+345-Insufficient Verification of Data Authenticity | 20
+74-Improper Neutralization of Special Elements in Output Used by a Downstream Component ('Injection') | 19
+18-Source Code | 5
+199-Information Management Errors | 2
+21-Pathname Traversal and Equivalence Errors | 2
+361-Time and State | 1
+
+
 
 See `allTimeWeaknesses.csv`
 
@@ -46,6 +62,17 @@ The most frequent ids for each bin is listed in the following table:
 59-Improper Link Resolution Before File Access ('Link Following') | 200-Information Exposure | 22-Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal') | 89-Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection')
 255-Credentials Management | 22-Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal') | 200-Information Exposure | 352-Cross-Site Request Forgery (CSRF)
 287-Improper Authentication | 189-Numeric Errors | 189-Numeric Errors | 22-Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal')
+**Least 10** | | | 	
+94-Improper Control of Generation of Code ('Code Injection') | 189-Numeric Errors | 310-Cryptographic Issues | 19-Data Handling
+200-Information Exposure | 287-Improper Authentication | 59-Improper Link Resolution Before File Access ('Link Following') | 16-Configuration
+310-Cryptographic Issues | 255-Credentials Management | 255-Credentials Management | 77-Improper Neutralization of Special Elements used in a Command ('Command Injection')
+59-Improper Link Resolution Before File Access ('Link Following') | 16-Configuration | 16-Configuration | 134-Uncontrolled Format String
+255-Credentials Management | 134-Uncontrolled Format String | 362-Concurrent Execution using Shared Resource with Improper Synchronization ('Race Condition') | 345-Insufficient Verification of Data Authenticity
+287-Improper Authentication | 310-Cryptographic Issues | 134-Uncontrolled Format String | 74-Improper Neutralization of Special Elements in Output Used by a Downstream Component ('Injection')
+22-Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal') | 59-Improper Link Resolution Before File Access ('Link Following') | 78-Improper Neutralization of Special Elements used in an OS Command ('OS Command Injection') | 18-Source Code
+362-Concurrent Execution using Shared Resource with Improper Synchronization ('Race Condition') | 362-Concurrent Execution using Shared Resource with Improper Synchronization ('Race Condition') | 19-Data Handling | 199-Information Management Errors
+79-Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting') | 78-Improper Neutralization of Special Elements used in an OS Command ('OS Command Injection') | 254-Security Features | 21-Pathname Traversal and Equivalence Errors
+399-Resource Management Errors | 352-Cross-Site Request Forgery (CSRF) | 17-Code | 361-Time and State
 
 
 See `4_Bin_Weaknesses.csv`
