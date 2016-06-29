@@ -1,0 +1,408 @@
+
+                <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<?xml version="1.0" encoding="iso-8859-1"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<meta name="description" content="Common Weakness Enumeration (CWE) is a list of software weaknesses." />
+	<link rel="shortcut icon" href="/favicon.ico" />
+	<link href="/css/main.css?version=1.11" rel="stylesheet" type="text/css" />
+	<!--[if IE]>
+	<link rel="stylesheet" type="text/css" href="/css/ie.css?version=1.7" />
+	<![endif]-->
+	
+	<script src="/includes/browserheight.js" language="JavaScript" type="text/javascript"></script>
+	<script src="/includes/jquery.js" language="JavaScript" type="text/javascript"></script>               	
+    <script src="/includes/cwe_minimizer.js" language="JavaScript" type="text/javascript"></script>
+	<script src="/includes/includeglossarydef.js" language="JavaScript" type="text/javascript"></script>
+
+	<link href="/css/print.css?version=1.11" rel="stylesheet" media="print" type="text/css" />
+	<noscript>
+	<style type="text/css">
+		#script { visibility:collapse; visibility:hidden; font-size:0px; height:0px; width:0px  }
+		#noscript { visibility:visible; font-size:inherit;  height:inherit; width:inherit}
+	</style>
+	</noscript>
+	<title>CWE -
+                CWE-2: Environment (2.9)                </title>
+</head>
+<body>
+<a name="top" id="top"></a>
+
+<div id="MastHead" style="width:100%;padding-top:5px">
+
+	<div style="width:70%;float:left;padding-top:30px;padding-left:10px;">
+		<a href="/index.html" style="color:#32498D; text-decoration:none">
+		<img src="/images/cwe_logo.jpg" width="153" height="55" style="float:left;border:0;margin-right:6px" alt="CWE" />
+		<h1 style="color:#314a8d;font-size:1.5em;font-family:'Verdana',sans-serif;text-shadow: 2px 2px #eee;margin: .1em auto">Common Weakness Enumeration</h1>
+		<p style="color:#314a8d;font-style:italic;font-family:'Times New Roman';font-size:1em;text-shadow: 2px 2px #eee;margin:.1em auto 0 auto">A Community-Developed Dictionary of Software Weakness Types</p>
+		</a>	
+	</div>
+	
+	<table style="width:28%;float:right;border-collapse:collapse" summary="Layout Table">
+    <tr>
+    <td style="width:96px"><!--a href="/top25/"><img src="/images/top25.gif" width="96" height="90" border="0" alt="CWE/SANS Top 25 Most Dangerous Software Errors"/></a>--></td>
+    <td style="width:140px">
+    <a href="/cwss/"><img src="/images/cwss.gif" width="140" height="45" alt="Common Weakness Scoring System" style="margin-bottom:5px;border:0" /></a><br />
+    <a href="/cwraf/"><img src="/images/cwraf.gif" width="140" height="45" alt="Common Weakness Risk Analysis Framework" style="border:0"/></a>
+    </td>
+    </tr>
+    </table>
+	
+<div style="clear:both"></div>
+</div><!--End Masthead div-->
+
+<div id="HeaderBar" class="noprint">
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+	<tr> 
+		<td width="100%" align="left" style="padding-left:10px;">
+		<a href="/" >Home</a>  &gt;  <a href="/http:/cwe.mitre.org/data/index.html" >CWE List</a>  &gt;  
+                CWE- Individual Dictionary Definition (2.9)                		&nbsp;
+		</td>
+		<td align="right" nowrap="nowrap" style="padding-right:12px">
+		<!-- Begin /includes/search_cwe_id.html -->
+<div class="noprint">
+  <form action="/cgi-bin/jumpmenu.cgi" align="right" style="padding:0px; margin:0px">
+	<label for="id" style="padding-right:5px">Search by ID:</label>
+    <input id="id" name="id" type="text" style="width:50px; font-size:80%" maxlength="10" />
+	<input value="Go" style="padding: 0px; font-size:80%" type="submit">
+  </form>
+</div>
+<!-- End /includes/search_cwe_id.html -->
+		</td>
+	</tr>
+</table>
+</div> <!--//HeaderBar-->
+<div class="yesprint">
+<hr width="100%" size="1" style="clear:both" color="#000000" />
+</div>
+<div class="noprint" style="height: 5px; width: 100%"><!--SPACER--></div>
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0" id="MainPane">
+  <tr>
+	<!-- begin left side menu -->
+    <td valign="top" rowspan="2" id="LeftPane">
+	<div id="LeftSideBar" class="noprint">
+<table width="120" border="0" align="left" cellpadding="0" cellspacing="0" style="margin-right:5px; box-shadow:5px 5px 5px #bbbbbb">
+	<tr> 
+		<th nowrap="nowrap">
+			<a href="/data/index.html">CWE List</a>
+		</th>
+    </tr>
+	<tr> 
+		<td valign="top" nowrap="nowrap" id="menuitem"> 
+			<a href="/data/slices/2000.html">Full Dictionary View</a>
+		</td>
+    </tr>
+		<tr> 
+		<td valign="top" nowrap="nowrap" id="menuitem"> 
+			<a href="/data/graphs/699.html">Development View</a>
+		</td>
+    </tr>
+	<tr> 
+		<td valign="top" nowrap="nowrap" id="menuitem"> 
+			<a href="/data/graphs/1000.html">Research View</a>
+		</td>
+    </tr>
+    <tr> 
+		<td valign="top" nowrap="nowrap" id="menuitem"> 
+			<a href="/data/graphs/888.html">Fault Pattern View</a>
+		</td>
+    </tr>
+	<tr> 
+		<td valign="top" nowrap="nowrap" id="menuitem"> 
+			<a href="/data/index.html#release_notes">Reports</a>
+		</td>
+    </tr>
+	<tr> 
+		<td valign="top" nowrap="nowrap" id="menuitem"> 
+			<a href="/documents/cwe_usage/mapping_navigation.html">Mapping &amp; Navigation</a>
+		</td>
+    </tr>
+	<tr> 
+	  <td valign="top" nowrap="nowrap" id="spacer"><div style="height:1px; width:100%" /></td>
+    </tr>
+	<tr> 
+		<th nowrap="nowrap">
+			<a href="/about/index.html">About</a>
+		</th>
+    </tr>
+	<tr> 
+		<td valign="top" nowrap="nowrap" id="menuitem"> 
+			<a href="/about/sources.html">Sources</a>
+		</td>
+    </tr>
+	<tr> 
+		<td valign="top" nowrap="nowrap" id="menuitem"> 
+			<a href="/about/process.html">Process</a>
+		</td>
+    </tr>
+	<tr> 
+		<td valign="top" nowrap="nowrap" id="menuitem"> 
+			<a href="/about/documents.html">Documents</a>
+		</td>
+    </tr>
+    <tr> 
+		<td valign="top" nowrap="nowrap" id="menuitem"> 
+			<a href="/about/faq.html">FAQs</a>
+		</td>
+    </tr>
+	<tr> 
+	  <td valign="top" nowrap="nowrap" id="spacer"><div style="height:1px; width:100%" /></td>
+    </tr>
+	<tr> 
+		<th nowrap="nowrap">
+			<a href="/community/index.html">Community</a>
+		</th>
+    </tr>
+   
+	<tr> 
+		<td valign="top" nowrap="nowrap" id="menuitem"> 
+			<a href="/community/citations.html"> Use &amp; Citations</a>
+		</td>
+    </tr><tr> 
+		<td valign="top" nowrap="nowrap" id="menuitem"> 
+			<a href="/community/swa/index.html">SwA On-Ramp</a>
+		</td>
+	    </tr>
+	
+	</tr>
+		
+	
+        <tr> 
+		<td valign="top" nowrap="nowrap" id="menuitem"> 
+			<a href="/community/registration.html">Discussion List</a>
+            </td>
+        </tr>
+        <tr> 
+		<td valign="top" nowrap="nowrap" id="menuitem"> 
+			<a href="http://making-security-measurable.1364806.n2.nabble.com/Common-Weakness-Enumeration-f4149182.html" target="_blank">Discussion Archives</a>
+            </td>
+        </tr>
+        
+         <tr> 
+		<td valign="top" nowrap="nowrap" id="menuitem"> 
+			<a href="mailto:cwe@mitre.org">Contact Us</a>
+		</td>        
+        
+	    <td valign="top" nowrap="nowrap" class="dkgreybackground"></td>
+	</tr>
+	<tr> 
+	  <td valign="top" nowrap="nowrap" id="spacer"><div style="height:1px; width:100%" /></td>
+    </tr>
+    
+    <tr> 
+		<th nowrap="nowrap">
+			<a href="/scoring/index.html">Scoring</a>
+		</th>
+    </tr>
+	<tr> 
+		<td valign="top" nowrap="nowrap" id="menuitem"> 
+			<a href="/community/swa/priority.html">Prioritization</a>
+		</td>
+    </tr>
+	<tr> 
+		<td valign="top" nowrap="nowrap" id="menuitem"> 
+			<a href="/cwss/index.html">CWSS</a>
+		</td>
+    </tr>
+    	<tr> 
+		<td valign="top" nowrap="nowrap" id="menuitem"> 
+			<a href="/cwraf/index.html">CWRAF</a>
+		</td>
+    </tr>
+    	<tr> 
+		<td valign="top" nowrap="nowrap" id="menuitem"> 
+			<a href="/top25/index.html">CWE/SANS Top 25</a>
+		</td>
+    </tr>
+    
+    <tr> 
+	  <td valign="top" nowrap="nowrap" id="spacer"><div style="height:1px; width:100%" /></td>
+    </tr>
+    
+    
+    
+    
+	<tr> 
+		<th nowrap="nowrap">
+			<a href="/compatible/index.html">Compatibility</a>
+		</th>
+    </tr>
+	<tr> 
+		<td valign="top" nowrap="nowrap" id="menuitem"> 
+			<a href="/compatible/requirements.html">Requirements</a>
+		</td>
+    </tr>
+	<tr> 
+		<td valign="top" nowrap="nowrap" id="menuitem"> 
+			<a href="/compatible/ccr.html">Coverage Claims<br />Representation</a>
+		</td>
+    </tr>
+    <tr> 
+		<td valign="top" nowrap="nowrap" id="menuitem"> 
+			<a href="/compatible/compatible.html">Compatible Products</a>
+		</td>
+    </tr>
+    
+	<tr> 
+		<td valign="top" nowrap="nowrap" id="menuitem"> 
+			<a href="/compatible/declare.html">Make a Declaration</a>
+            </td>
+        </tr>
+           <tr> 
+	  <td valign="top" nowrap="nowrap" id="spacer"><div style="height:1px; width:100%" /></td>
+    </tr>
+	<tr> 
+		<th nowrap="nowrap">
+			<a href="/news/index.html">News</a>
+		</th>
+    </tr>
+	<tr> 
+		<td valign="top" nowrap="nowrap" id="menuitem"> 
+			<a href="/news/calendar.html">Calendar</a>
+		</td>
+    </tr>
+	<tr> 
+		<td valign="top" nowrap="nowrap" id="menuitem"> 
+			<a href="/news/newsletters.html">Free Newsletter</a>
+		</td>
+    </tr>
+	<tr> 
+	  <td valign="top" nowrap="nowrap" id="spacer"><div style="height:1px; width:100%" /></td>
+    </tr>
+	<tr> 
+		<th nowrap="nowrap">
+			<a href="/find/index.html">Search the Site</a>
+		</th>
+	</tr>
+</table>
+</div>
+	<script type="text/javascript">browserheight();</script>
+	</td>
+	<!-- end left side menu -->
+    <td style="height:1px"></td>
+	<!-- begin right column -->
+	<td valign="top" align="center" rowspan="2" nowrap="nowrap" id="RightPane">
+
+                	</td>
+	<!-- end right side menu -->
+  </tr>
+  <tr>
+	<!-- begin content pane -->
+    <td valign="top" width="100%" id="Contentpane">
+	
+	<!--Glossary tags-->
+	
+<div id="styled_popup" name="styled_popup" style="display:none; position:fixed; top:300; height:auto; width:300px; z-index:1000">
+<table width="300" cellpadding="0" cellspacing="0" border="0" style="border:1px solid #32498D;">
+<tr style="background-color:#32498D; color:#ffffff;">
+<td width="100%" style="padding:1px 5px 1px 5px; border-bottom:1px solid #000000"><div width="100%" style="font-weight:bold;">CWE Glossary Definition</div></td>
+<td nowrap="nowrap" style="padding:1px; border-bottom:1px solid #000000" valign="top"><a href="javascript:styledPopupClose();"><img src="/images/layout/close.gif" border="0"  alt="x"></a></td>
+</tr>
+<tr><td colspan="2" style="background: url(/images/layout/ylgradient.jpg); background-repeat: repeat-x repeat-y; padding:5px; background-color:#FFFFCC; " valign="top">
+<div id="output" style="max-height:400px; overflow-y:auto"></div>
+</td></tr>
+</table>
+</div>
+
+                <script src="/includes/nav.js" language="JavaScript" type="text/javascript" /></script>
+                <noscript>
+                     <style>div.collapseblock { display:inline} </style>
+                </noscript>
+            <div style="text-align:right">
+<div style="font-size:75%; color:#000066; font-style:italic; display:inline">Presentation Filter: </div>
+    <select id="SkinSelector" onchange="skinSelector();">
+    <option>--None--</option>
+    <option value="basic_summary">Basic Summary</option>
+    <option value="high_level">High Level</option>
+    <option value="acquisition">Acquisition</option>
+    <option value="dev_manager">Development Manager</option>
+    <option value="dev_ed">Development Education</option>
+    <option value="vuln_research">Vulnerability Research</option>
+    <option value="mapping_friendly">Mapping-Friendly</option>
+    </select> 
+</div>
+           <div xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" class="noprint"><h2 style="display:inline; margin:0px 0px 2px 0px; vertical-align: text-bottom">CWE-2: Environment</h2><div style="text-align:right; margin:5px 0px 0px 5px; padding-bottom:1px; white-space:nowrap;"><ul id="navPyra"></ul></div></div>
+            <html xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" encoding="iso-8859-1">
+            <!-- Copyright (c) 2006-2015, The MITRE Corporation. CWE and the CWE logo are trademarks of The MITRE Corporation. -->            <a name="2"></a><div id="CWEDefinition" class="Category"><div class="title"><table cellpadding="0" cellspacing="0" border="0" width="100%"><tr><td valign="top" width="20px"> </td><td valign="top"><div align="center"><span style="font-weight:bold;">Environment</span></div></td><td valign="top" width="20px"><div class="left noprint">
+										
+									</div></td></tr></table></div><div class="status"><table width="100%" border="0" cellpadding="0" cellspacing="0"><tr><td valign="top" align="left" width="33%" nowrap><b>Category ID: </b>2<span style="font-style:italic; font-size:80%"> (Category)</span></td><td valign="top" align="center" nowrap></td><td valign="top" align="right" nowrap><b>Status: </b><span class="Draft">Draft</span></td></tr></table></div><div id="Description"><div class="heading"><span id="script"><a href="javascript:toggleblocksOC('2_Description');"><img id="ocimg_2_Description" src="/images/head_more.gif" border="0" alt="+"></a> </span>Description</div><div name="oc_2_Description" id="oc_2_Description" class="expandblock"><div class="detail">
+            <p class="subheading">Description Summary</p><div class="indent"><span onclick="getDef('Weakness')" class="gterm">Weaknesses</span> in this <span onclick="getDef('Category')" class="gterm">category</span> are typically introduced during <span onclick="getDef('Unexpected')" class="gterm">unexpected</span> environmental conditions. </div>
+         </div></div></div><div id="Relationships"><div class="heading"><span id="script"><a href="javascript:toggleblocksOC('2_Relationships');"><img id="ocimg_2_Relationships" src="/images/head_more.gif" border="0" alt="+"></a> </span>Relationships</div><div name="oc_2_Relationships" id="oc_2_Relationships" class="expandblock"><div class="tabledetail"><table width="100%" cellpadding="0" cellspacing="0" border="0" id="Detail"><tr><th valign="top">Nature</th><th valign="top">Type</th><th valign="top">ID</th><th valign="top" width="100%">Name</th><th valign="middle" class="left" style="text-align:center"><span class="tool"><span class="tip">View(s) this relationship pertains to</span><img src="/images/icons/view.gif" alt="View(s)"></span></th></tr>
+         <tbody><tr class="primary Category"><td valign="top">ChildOf</td><td valign="top" nowrap class="right" align="center" style="padding-top:1px"><span class="tool"><img src="/images/icons/category.gif" alt="Category" class="icon"><span class="tip">Category</span></span></td><td valign="top">1</td><td valign="top"><a href="/data/definitions/1.html" target="_blank">Location</a></td><td valign="top"><div class="left"><b><span class="tool"><span class="tip">Development Concepts <b>(primary)</b></span>699</span></b></div></td></tr></tbody><tbody><tr class="primary Category"><td valign="top">ChildOf</td><td valign="top" nowrap class="right" align="center" style="padding-top:1px"><span class="tool"><img src="/images/icons/category.gif" alt="Category" class="icon"><span class="tip">Category</span></span></td><td valign="top">933</td><td valign="top"><a href="/data/definitions/933.html" target="_blank">OWASP Top Ten 2013 Category A5 - Security Misconfiguration</a></td><td valign="top"><div class="left"><b><span class="tool"><span class="tip">Weaknesses in OWASP Top Ten (2013) <b>(primary)</b></span>928</span></b></div></td></tr></tbody>
+         <tbody><tr class="foreign Category"><td valign="top">ParentOf</td><td valign="middle" nowrap class="right" align="center"><span class="tool"><img src="/images/icons/category.gif" alt="Category" class="icon"><span class="tip">Category</span></span></td><td valign="top">3</td><td valign="top"><a href="/data/definitions/3.html" target="_blank">Technology-specific Environment Issues</a></td><td valign="top"><div class="left"><b><span class="tool"><span class="tip">Development Concepts <b>(primary)</b></span>699</span></b></div></td></tr></tbody><tbody><tr class="foreign Weakness"><td valign="top">ParentOf</td><td valign="middle" nowrap class="right" align="center"><span class="tool"><img src="/images/icons/variant.gif" alt="Weakness Variant" class="icon"><span class="tip">Weakness Variant</span></span></td><td valign="top">5</td><td valign="top"><a href="/data/definitions/5.html" target="_blank">J2EE Misconfiguration: Data Transmission Without Encryption</a></td><td valign="top"><div class="left"><b><span class="tool"><span class="tip">Seven Pernicious Kingdoms <b>(primary)</b></span>700</span></b></div></td></tr></tbody><tbody><tr class="foreign Weakness"><td valign="top">ParentOf</td><td valign="middle" nowrap class="right" align="center"><span class="tool"><img src="/images/icons/variant.gif" alt="Weakness Variant" class="icon"><span class="tip">Weakness Variant</span></span></td><td valign="top">6</td><td valign="top"><a href="/data/definitions/6.html" target="_blank">J2EE Misconfiguration: Insufficient Session-ID Length</a></td><td valign="top"><div class="left"><b><span class="tool"><span class="tip">Seven Pernicious Kingdoms <b>(primary)</b></span>700</span></b></div></td></tr></tbody><tbody><tr class="foreign Weakness"><td valign="top">ParentOf</td><td valign="middle" nowrap class="right" align="center"><span class="tool"><img src="/images/icons/variant.gif" alt="Weakness Variant" class="icon"><span class="tip">Weakness Variant</span></span></td><td valign="top">7</td><td valign="top"><a href="/data/definitions/7.html" target="_blank">J2EE Misconfiguration: Missing Custom Error Page</a></td><td valign="top"><div class="left"><b><span class="tool"><span class="tip">Seven Pernicious Kingdoms <b>(primary)</b></span>700</span></b></div></td></tr></tbody><tbody><tr class="foreign Weakness"><td valign="top">ParentOf</td><td valign="middle" nowrap class="right" align="center"><span class="tool"><img src="/images/icons/variant.gif" alt="Weakness Variant" class="icon"><span class="tip">Weakness Variant</span></span></td><td valign="top">8</td><td valign="top"><a href="/data/definitions/8.html" target="_blank">J2EE Misconfiguration: Entity Bean Declared Remote</a></td><td valign="top"><div class="left"><b><span class="tool"><span class="tip">Seven Pernicious Kingdoms <b>(primary)</b></span>700</span></b></div></td></tr></tbody><tbody><tr class="foreign Weakness"><td valign="top">ParentOf</td><td valign="middle" nowrap class="right" align="center"><span class="tool"><img src="/images/icons/variant.gif" alt="Weakness Variant" class="icon"><span class="tip">Weakness Variant</span></span></td><td valign="top">9</td><td valign="top"><a href="/data/definitions/9.html" target="_blank">J2EE Misconfiguration: Weak Access Permissions for EJB Methods</a></td><td valign="top"><div class="left"><b><span class="tool"><span class="tip">Seven Pernicious Kingdoms <b>(primary)</b></span>700</span></b></div></td></tr></tbody><tbody><tr class="foreign Weakness"><td valign="top">ParentOf</td><td valign="middle" nowrap class="right" align="center"><span class="tool"><img src="/images/icons/variant.gif" alt="Weakness Variant" class="icon"><span class="tip">Weakness Variant</span></span></td><td valign="top">11</td><td valign="top"><a href="/data/definitions/11.html" target="_blank">ASP.NET Misconfiguration: Creating Debug Binary</a></td><td valign="top"><div class="left"><b><span class="tool"><span class="tip">Seven Pernicious Kingdoms <b>(primary)</b></span>700</span></b></div></td></tr></tbody><tbody><tr class="foreign Weakness"><td valign="top">ParentOf</td><td valign="middle" nowrap class="right" align="center"><span class="tool"><img src="/images/icons/variant.gif" alt="Weakness Variant" class="icon"><span class="tip">Weakness Variant</span></span></td><td valign="top">12</td><td valign="top"><a href="/data/definitions/12.html" target="_blank">ASP.NET Misconfiguration: Missing Custom Error Page</a></td><td valign="top"><div class="left"><b><span class="tool"><span class="tip">Seven Pernicious Kingdoms <b>(primary)</b></span>700</span></b></div></td></tr></tbody><tbody><tr class="foreign Weakness"><td valign="top">ParentOf</td><td valign="middle" nowrap class="right" align="center"><span class="tool"><img src="/images/icons/variant.gif" alt="Weakness Variant" class="icon"><span class="tip">Weakness Variant</span></span></td><td valign="top">13</td><td valign="top"><a href="/data/definitions/13.html" target="_blank">ASP.NET Misconfiguration: Password in Configuration File</a></td><td valign="top"><div class="left"><b><span class="tool"><span class="tip">Seven Pernicious Kingdoms <b>(primary)</b></span>700</span></b></div></td></tr></tbody><tbody><tr class="foreign Weakness"><td valign="top">ParentOf</td><td valign="middle" nowrap class="right" align="center"><span class="tool"><img src="/images/icons/base.gif" alt="Weakness Base" class="icon"><span class="tip">Weakness Base</span></span></td><td valign="top">14</td><td valign="top"><a href="/data/definitions/14.html" target="_blank">Compiler Removal of Code to Clear Buffers</a></td><td valign="top"><div class="left"><span class="tool"><span class="tip">Development Concepts</span>699</span></div><div class="left"><b><span class="tool"><span class="tip">Seven Pernicious Kingdoms <b>(primary)</b></span>700</span></b></div></td></tr></tbody><tbody><tr class="foreign Weakness"><td valign="top">ParentOf</td><td valign="middle" nowrap class="right" align="center"><span class="tool"><img src="/images/icons/base.gif" alt="Weakness Base" class="icon"><span class="tip">Weakness Base</span></span></td><td valign="top">15</td><td valign="top"><a href="/data/definitions/15.html" target="_blank">External Control of System or Configuration Setting</a></td><td valign="top"><div class="left"><b><span class="tool"><span class="tip">Development Concepts <b>(primary)</b></span>699</span></b></div></td></tr></tbody><tbody><tr class="foreign Weakness"><td valign="top">ParentOf</td><td valign="middle" nowrap class="right" align="center"><span class="tool"><img src="/images/icons/class.gif" alt="Weakness Class" class="icon"><span class="tip">Weakness Class</span></span></td><td valign="top">435</td><td valign="top"><a href="/data/definitions/435.html" target="_blank">Interaction Error</a></td><td valign="top"><div class="left"><b><span class="tool"><span class="tip">Development Concepts <b>(primary)</b></span>699</span></b></div><div class="left"><b><span class="tool"><span class="tip">Weaknesses for Simplified Mapping of Published Vulnerabilities <b>(primary)</b></span>1003</span></b></div></td></tr></tbody><tbody><tr class="foreign Weakness"><td valign="top">ParentOf</td><td valign="middle" nowrap class="right" align="center"><span class="tool"><img src="/images/icons/base.gif" alt="Weakness Base" class="icon"><span class="tip">Weakness Base</span></span></td><td valign="top">552</td><td valign="top"><a href="/data/definitions/552.html" target="_blank">Files or Directories Accessible to External Parties</a></td><td valign="top"><div class="left"><b><span class="tool"><span class="tip">Development Concepts <b>(primary)</b></span>699</span></b></div></td></tr></tbody><tbody><tr class="foreign Weakness"><td valign="top">ParentOf</td><td valign="middle" nowrap class="right" align="center"><span class="tool"><img src="/images/icons/variant.gif" alt="Weakness Variant" class="icon"><span class="tip">Weakness Variant</span></span></td><td valign="top">650</td><td valign="top"><a href="/data/definitions/650.html" target="_blank">Trusting HTTP Permission Methods on the Server Side</a></td><td valign="top"><div class="left"><b><span class="tool"><span class="tip">Development Concepts <b>(primary)</b></span>699</span></b></div></td></tr></tbody><tbody><tr class="foreign View"><td valign="top">MemberOf</td><td valign="middle" nowrap class="right" align="center"><span class="tool"><img src="/images/icons/view.gif" alt="View" class="icon"><span class="tip">View</span></span></td><td valign="top">700</td><td valign="top"><a href="/data/definitions/700.html" target="_blank">Seven Pernicious Kingdoms</a></td><td valign="top"><div class="left"><b><span class="tool"><span class="tip">Seven Pernicious Kingdoms <b>(primary)</b></span>700</span></b></div></td></tr></tbody><tbody><tr class="foreign View"><td valign="top">MemberOf</td><td valign="middle" nowrap class="right" align="center"><span class="tool"><img src="/images/icons/view.gif" alt="View" class="icon"><span class="tip">View</span></span></td><td valign="top">1003</td><td valign="top"><a href="/data/definitions/1003.html" target="_blank">Weaknesses for Simplified Mapping of Published Vulnerabilities</a></td><td valign="top"><div class="left"><b><span class="tool"><span class="tip">Weaknesses for Simplified Mapping of Published Vulnerabilities <b>(primary)</b></span>1003</span></b></div></td></tr></tbody>
+      </table></div></div></div><div id="Content_History"><div class="heading"><span id="script"><a href="javascript:toggleblocksOC('2_Content_History');"><img id="ocimg_2_Content_History" src="/images/head_more.gif" border="0" alt="+"></a> </span>Content History</div><div name="oc_2_Content_History" id="oc_2_Content_History" class="expandblock"><div class="tabledetail"><table width="100%" cellpadding="0" cellspacing="0" border="0" class="Detail"><tbody class="Modifications"><tr><th valign="top" colspan="5" class="title">Modifications</th></tr><tr><th valign="top">Modification Date</th><th valign="top" nowrap>Modifier</th><th valign="top" nowrap>Organization</th><th valign="top" nowrap>Source</th></tr><tr><td valign="top" nowrap rowspan="2" style="border-bottom:1px solid #BAC5E3">2008-09-08</td><td valign="top">CWE Content Team</td><td valign="top">MITRE</td><td valign="top">Internal</td></tr><tr><td valign="top" colspan="3" style="border-bottom:1px solid #BAC5E3; font-size:90%; background-color:#eeeeee">updated Relationships</td></tr><tr><td valign="top" nowrap rowspan="2" style="border-bottom:1px solid #BAC5E3">2013-07-17</td><td valign="top">CWE Content Team</td><td valign="top">MITRE</td><td valign="top">Internal</td></tr><tr><td valign="top" colspan="3" style="border-bottom:1px solid #BAC5E3; font-size:90%; background-color:#eeeeee">updated Relationships</td></tr><tr><td valign="top" nowrap rowspan="2" style="border-bottom:1px solid #BAC5E3">2015-12-07</td><td valign="top">CWE Content Team</td><td valign="top">MITRE</td><td valign="top">Internal</td></tr><tr><td valign="top" colspan="3" style="border-bottom:1px solid #BAC5E3; font-size:90%; background-color:#eeeeee">updated Relationships</td></tr></tbody></table></div></div></div></div></html>            	</td>
+	<!-- end content pane -->
+  </tr>
+</table>
+<div id="FootBar">
+<table cellpadding="0" cellpadding="0" border="0" width="100%">
+<tr>
+<td><div class="noprint" style="width:170px; height:1px"></div>
+</td>
+<td width="100%">
+		<div id="footbar" class="footbar noprint">
+		<b>Page Last Updated: </b>
+
+
+            December 08, 2015            ﻿		</div>
+</td>
+</tr>
+</table>
+
+<table width="100%" cellpadding="0" cellspacing="0" border="0" class="ltgreybackground" style="clear:both">
+  <tr>
+	<td colspan="4" id="line"><div class="line">&nbsp;</div>
+	</td>
+  </tr>
+  <tr>
+    <td valign="middle" nowrap="nowrap">
+		<div id="footlogo" class="noprint">
+		<!--<a href="http://www.dhs.gov" target="_blank"><img src="/images/dohs.gif" alt="Department of Homeland Security" border="0" /></a> -->
+		<a href="http://www.mitre.org" target="_blank"><img src="/images/mitre_logo.gif" width="125" height="36" border="0" alt="MITRE"/></a>
+		</div>
+    </td>
+	<td id="Contentpane" width="100%" valign="top" style="padding-top:10px">
+		<div style="clear:both">
+			<p class="footer">Use of the Common Weakness Enumeration and the associated references from this website are subject to the 
+			<a href="/about/termsofuse.html">Terms of Use</a>. For more information, please email 
+			<a href="mailto:cwe@mitre.org">cwe@mitre.org</a>.</p>
+			<p class="footer">CWE is sponsored by 
+			<a target="_blank" href="https://www.us-cert.gov/">US-CERT</a> in the office of 
+			<a target="_blank" href="http://www.dhs.gov/office-cybersecurity-and-communications/">Cybersecurity and Communications</a> at the 
+			<a target="_blank" href="http://www.dhs.gov/">U.S. Department of Homeland Security</a>. Copyright &copy; 2006-2015, The MITRE Corporation. CWE, CWSS, CWRAF, and the CWE logo are trademarks of 
+			<a target="_blank" href="http://www.mitre.org/">The MITRE Corporation</a>.</p>
+		</div>
+		</td>
+    <td valign="top" nowrap="nowrap" style="padding-top:10px">
+	<div class="footer">
+		<a href="http://cwe.mitre.org/about/privacy_policy.html">Privacy policy</a><br />
+		<a href="http://cwe.mitre.org/about/termsofuse.html">Terms of use</a><br />
+		<a href="mailto:cwe@mitre.org">Contact us</a>
+	</div>
+	</td>
+    <td valign="top" nowrap="nowrap" style="padding-right:20px; padding-left:20px">
+		<div id="footlogo" class="noprint">
+		&nbsp;</div>
+    </td>
+	</tr>
+</table>
+</div>
+</div>
+
+<!-- Google Analytics Code -->
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-5164081-1");
+pageTracker._trackPageview();
+</script>
+
+</body>
+</html>
+
+            
+            
