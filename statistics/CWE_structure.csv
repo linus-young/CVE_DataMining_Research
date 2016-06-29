@@ -1,0 +1,958 @@
+id,description,children,parents
+1,"Location",2|16|17|,
+2,"Environment",3|5|6|7|8|9|11|12|13|14|15|435|552|650|,1|933|
+3,"Technology-specific Environment Issues",4|519|,2|
+4,"J2EE Environment Issues",5|6|7|8|9|555|,3|731|
+5,"J2EE Misconfiguration: Data Transmission Without Encryption",,2|4|319|963|
+6,"J2EE Misconfiguration: Insufficient Session-ID Length",,2|4|334|965|
+7,"J2EE Misconfiguration: Missing Custom Error Page",,2|4|728|756|963|
+8,"J2EE Misconfiguration: Entity Bean Declared Remote",,2|4|668|963|
+9,"J2EE Misconfiguration: Weak Access Permissions for EJB Methods",,2|4|266|723|901|
+10,"ASP.NET Environment Issues",11|12|13|554|556|,519|731|
+11,"ASP.NET Misconfiguration: Creating Debug Binary",,2|10|215|963|
+12,"ASP.NET Misconfiguration: Missing Custom Error Page",,2|10|756|963|
+13,"ASP.NET Misconfiguration: Password in Configuration File",,2|10|260|963|
+14,"Compiler Removal of Code to Clear Buffers",,2|503|633|729|733|747|883|963|
+15,"External Control of System or Configuration Setting",,2|20|610|642|994|
+16,"Configuration",,1|933|
+17,"Code",18|18|503|657|,1|
+18,"Source Code",19|19|227|254|361|388|398|417|429|438|442|445|452|465|485|,17|17|
+19,"Data Handling",20|116|118|133|136|137|185|189|189|199|228|461|471|,18|18|
+20,"Improper Input Validation",15|21|73|77|79|89|99|100|102|103|104|105|106|107|108|109|110|111|112|113|114|117|119|120|129|134|170|190|466|470|554|601|606|622|626|680|690|692|781|785|789|,19|693|722|738|742|746|747|751|872|876|883|994|
+21,"Pathname Traversal and Equivalence Errors",22|41|59|66|,20|
+22,"Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal')",23|36|,21|632|668|706|715|723|743|802|813|865|877|932|981|
+23,"Relative Path Traversal",24|25|26|27|28|29|30|31|32|33|34|35|,22|981|
+24,"Path Traversal: '../filedir'",,23|981|
+25,"Path Traversal: '/../filedir'",,23|981|
+26,"Path Traversal: '/dir/../filename'",,23|981|
+27,"Path Traversal: 'dir/../../filename'",,23|981|
+28,"Path Traversal: '..\filedir'",,23|981|
+29,"Path Traversal: '\..\filename'",,23|981|
+30,"Path Traversal: '\dir\..\filename'",,23|981|
+31,"Path Traversal: 'dir\..\..\filename'",,23|981|
+32,"Path Traversal: '...' (Triple Dot)",,23|981|
+33,"Path Traversal: '....' (Multiple Dot)",,23|981|
+34,"Path Traversal: '....//'",,23|981|
+35,"Path Traversal: '.../...//'",,23|981|
+36,"Absolute Path Traversal",37|38|39|40|,22|981|
+37,"Path Traversal: '/absolute/pathname/here'",,36|160|743|877|981|
+38,"Path Traversal: '\absolute\pathname\here'",,36|743|877|981|
+39,"Path Traversal: 'C:dirname'",,36|743|877|981|
+40,"Path Traversal: '\\UNC\share\name\' (Windows UNC Share)",,36|981|
+41,"Improper Resolution of Path Equivalence",42|44|46|47|48|49|50|51|52|53|54|55|56|57|58|,21|632|706|723|743|877|981|
+42,"Path Equivalence: 'filename.' (Trailing Dot)",43|,41|162|981|
+43,"Path Equivalence: 'filename....' (Multiple Trailing Dot)",,42|163|981|
+44,"Path Equivalence: 'file.name' (Internal Dot)",45|,41|981|
+45,"Path Equivalence: 'file...name' (Multiple Internal Dot)",,44|165|981|
+46,"Path Equivalence: 'filename ' (Trailing Space)",,41|162|981|
+47,"Path Equivalence: ' filename' (Leading Space)",,41|981|
+48,"Path Equivalence: 'file name' (Internal Whitespace)",,41|981|
+49,"Path Equivalence: 'filename/' (Trailing Slash)",,41|162|981|
+50,"Path Equivalence: '//multiple/leading/slash'",,41|161|981|
+51,"Path Equivalence: '/multiple//internal/slash'",,41|981|
+52,"Path Equivalence: '/multiple/trailing/slash//'",,41|163|981|
+53,"Path Equivalence: '\multiple\\internal\backslash'",,41|165|981|
+54,"Path Equivalence: 'filedir\' (Trailing Backslash)",,41|162|981|
+55,"Path Equivalence: '/./' (Single Dot Directory)",,41|981|
+56,"Path Equivalence: 'filedir*' (Wildcard)",,41|155|981|
+57,"Path Equivalence: 'fakedir/../realdir/filename'",,41|981|
+58,"Path Equivalence: Windows 8.3 Filename",,41|981|
+59,"Improper Link Resolution Before File Access ('Link Following')",60|61|62|63|64|65|,21|632|706|743|748|808|877|980|
+60,"UNIX Path Link Problems",61|62|,59|632|
+61,"UNIX Symbolic Link (Symlink) Following",,59|60|
+62,"UNIX Hard Link",,59|60|743|877|980|
+63,"Windows Path Link Problems",64|65|,59|632|
+64,"Windows Shortcut Following (.LNK)",,59|63|743|877|980|
+65,"Windows Hard Link",,59|63|743|877|980|
+66,"Improper Handling of File Names that Identify Virtual Resources",67|68|69|70|71|72|,21|706|981|
+67,"Improper Handling of Windows Device Names",,66|68|632|743|857|877|981|
+68,"Windows Virtual File Problems",67|69|,66|632|
+69,"Improper Handling of Windows ::DATA Alternate Data Stream",,66|68|634|904|
+70,"Mac Virtual File Problems",71|72|,66|632|
+71,"Apple '.DS_Store'",,66|70|980|
+72,"Improper Handling of Apple HFS+ Alternate Data Stream Path",,66|70|981|
+73,"External Control of File Name or Path",,20|610|642|723|752|877|981|
+74,"Improper Neutralization of Special Elements in Output Used by a Downstream Component ('Injection')",75|77|79|91|93|94|99|134|138|943|,20|707|727|990|
+75,"Failure to Sanitize Special Elements into a Different Plane (Special Element Injection)",76|,74|990|
+76,"Improper Neutralization of Equivalent Special Elements",,75|990|
+77,"Improper Neutralization of Special Elements used in a Command ('Command Injection')",78|88|624|917|,20|74|713|722|727|929|990|
+78,"Improper Neutralization of Special Elements used in an OS Command ('OS Command Injection')",,77|634|714|727|741|744|751|801|810|845|864|875|878|929|990|
+79,"Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')",80|81|83|84|85|86|87|,20|74|442|712|722|725|751|801|811|864|931|990|
+80,"Improper Neutralization of Script-Related HTML Tags in a Web Page (Basic XSS)",,79|990|
+81,"Improper Neutralization of Script in an Error Message Web Page",,79|990|
+82,"Improper Neutralization of Script in Attributes of IMG Tags in a Web Page",,83|990|
+83,"Improper Neutralization of Script in Attributes in a Web Page",82|,79|990|
+84,"Improper Neutralization of Encoded URI Schemes in a Web Page",,79|990|
+85,"Doubled Character XSS Manipulations",,79|990|
+86,"Improper Neutralization of Invalid Characters in Identifiers in Web Pages",,79|436|990|
+87,"Improper Neutralization of Alternate XSS Syntax",,79|990|
+88,"Argument Injection or Modification",,77|634|741|744|810|875|878|929|990|
+89,"Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection')",564|,20|713|722|727|751|801|810|864|929|943|990|
+90,"Improper Neutralization of Special Elements used in an LDAP Query ('LDAP Injection')",,713|810|929|943|990|
+91,"XML Injection (aka Blind XPath Injection)",643|652|,74|713|727|810|929|990|
+93,"Improper Neutralization of CRLF Sequences ('CRLF Injection')",113|,74|713|990|
+94,"Improper Control of Generation of Code ('Code Injection')",95|96|,74|691|752|913|991|
+95,"Improper Neutralization of Directives in Dynamically Evaluated Code ('Eval Injection')",,94|714|727|990|
+96,"Improper Neutralization of Directives in Statically Saved Code ('Static Code Injection')",97|,94|632|990|
+97,"Improper Neutralization of Server-Side Includes (SSI) Within a Web Page",,96|990|
+98,"Improper Control of Filename for Include/Require Statement in PHP Program ('PHP Remote File Inclusion')",,632|706|714|727|802|829|
+99,"Improper Control of Resource Identifiers ('Resource Injection')",641|694|914|,20|74|813|932|990|
+100,"Technology-Specific Input Validation Problems",101|,20|990|
+101,"Struts Validation Problems",102|103|104|105|106|107|108|109|110|608|,100|
+102,"Struts: Duplicate Validation Forms",,20|101|694|722|990|
+103,"Struts: Incomplete validate() Method Definition",,20|101|573|722|990|
+104,"Struts: Form Bean Does Not Extend Validation Class",,20|101|573|722|990|
+105,"Struts: Form Field Without Validator",,20|101|990|
+106,"Struts: Plug-in Framework not in Use",,20|101|722|990|
+107,"Struts: Unused Validation Form",,20|101|398|990|
+108,"Struts: Unvalidated Action Form",,20|101|990|
+109,"Struts: Validator Turned Off",,20|101|722|990|
+110,"Struts: Validator Without Form Field",,20|101|398|990|
+111,"Direct Use of Unsafe JNI",,20|695|859|1001|
+112,"Missing XML Validation",,20|990|
+113,"Improper Neutralization of CRLF Sequences in HTTP Headers ('HTTP Response Splitting')",,20|93|442|990|
+114,"Process Control",,20|634|991|
+115,"Misinterpretation of Input",,436|977|
+116,"Improper Encoding or Escaping of Output",117|644|838|,19|707|751|845|883|992|
+117,"Improper Output Neutralization for Logs",,20|116|727|963|
+118,"Improper Access of Indexable Resource ('Range Error')",119|,19|970|
+119,"Improper Restriction of Operations within the Bounds of a Memory Buffer",120|123|125|130|466|786|787|788|805|822|823|824|825|,20|118|633|726|740|741|742|743|744|752|874|875|876|877|878|970|
+120,"Buffer Copy without Checking Size of Input ('Classic Buffer Overflow')",785|,20|119|633|722|726|741|802|865|875|970|
+121,"Stack-based Buffer Overflow",,787|788|970|
+122,"Heap-based Buffer Overflow",,633|787|788|970|
+123,"Write-what-where Condition",,119|970|
+124,"Buffer Underwrite ('Buffer Underflow')",,786|787|970|
+125,"Out-of-bounds Read",126|127|,119|970|
+126,"Buffer Over-read",,125|788|970|
+127,"Buffer Under-read",,125|786|970|
+128,"Wrap-around Error",,189|682|742|876|998|
+129,"Improper Validation of Array Index",,20|189|633|738|740|802|867|872|874|970|
+130,"Improper Handling of Length Parameter Inconsistency ",,119|240|990|
+131,"Incorrect Calculation of Buffer Size",,682|742|802|865|876|974|
+133,"String Errors",134|135|251|597|,19|
+134,"Use of Externally-Controlled Format String",,20|74|133|633|726|743|808|845|865|877|990|
+135,"Incorrect Calculation of Multi-Byte String Length",,133|682|741|857|974|
+136,"Type Errors",681|,19|
+137,"Representation Errors",138|171|188|228|,19|
+138,"Improper Neutralization of Special Elements",140|147|148|149|150|151|152|153|154|155|156|157|158|159|169|464|790|,74|137|707|990|
+140,"Improper Neutralization of Delimiters",141|142|143|144|145|146|,138|990|
+141,"Improper Neutralization of Parameter/Argument Delimiters",,140|990|
+142,"Improper Neutralization of Value Delimiters",,140|990|
+143,"Improper Neutralization of Record Delimiters",,140|990|
+144,"Improper Neutralization of Line Delimiters",,140|845|990|
+145,"Improper Neutralization of Section Delimiters",,140|990|
+146,"Improper Neutralization of Expression/Command Delimiters",,140|990|
+147,"Improper Neutralization of Input Terminators",,138|990|
+148,"Improper Neutralization of Input Leaders",,138|990|
+149,"Improper Neutralization of Quoting Syntax",,138|990|
+150,"Improper Neutralization of Escape, Meta, or Control Sequences",,138|845|990|
+151,"Improper Neutralization of Comment Delimiters",,138|990|
+152,"Improper Neutralization of Macro Symbols",,138|990|
+153,"Improper Neutralization of Substitution Characters",,138|990|
+154,"Improper Neutralization of Variable Name Delimiters",,138|990|
+155,"Improper Neutralization of Wildcards or Matching Symbols",56|,138|990|
+156,"Improper Neutralization of Whitespace",,138|990|
+157,"Failure to Sanitize Paired Delimiters",,138|990|
+158,"Improper Neutralization of Null Byte or NUL Character",,138|990|
+159,"Failure to Sanitize Special Element",160|162|164|166|167|168|,138|990|
+160,"Improper Neutralization of Leading Special Elements",37|161|,159|990|
+161,"Improper Neutralization of Multiple Leading Special Elements",50|,160|990|
+162,"Improper Neutralization of Trailing Special Elements",42|46|49|54|163|,159|990|
+163,"Improper Neutralization of Multiple Trailing Special Elements",43|52|,162|990|
+164,"Improper Neutralization of Internal Special Elements",165|,159|990|
+165,"Improper Neutralization of Multiple Internal Special Elements",45|53|,164|990|
+166,"Improper Handling of Missing Special Element",,159|703|722|992|
+167,"Improper Handling of Additional Special Element",,159|703|722|992|
+168,"Improper Handling of Inconsistent Special Elements",,159|703|992|
+169,"Technology-Specific Special Elements",170|,138|
+170,"Improper Null Termination",,20|169|707|730|741|748|875|973|
+171,"Cleansing, Canonicalization, and Comparison Errors",172|178|179|180|181|182|183|184|185|187|478|486|595|596|697|707|768|,137|845|
+172,"Encoding Error",173|174|175|176|177|,171|707|992|
+173,"Improper Handling of Alternate Encoding",,172|992|
+174,"Double Decoding of the Same Data",,172|675|992|
+175,"Improper Handling of Mixed Encoding",,172|992|
+176,"Improper Handling of Unicode Encoding",,172|747|883|992|
+177,"Improper Handling of URL Encoding (Hex Encoding)",,172|992|
+178,"Improper Handling of Case Sensitivity",,171|632|706|992|
+179,"Incorrect Behavior Order: Early Validation",180|181|,171|693|696|722|992|
+180,"Incorrect Behavior Order: Validate Before Canonicalize",,171|179|722|845|992|
+181,"Incorrect Behavior Order: Validate Before Filter",,171|179|722|992|
+182,"Collapse of Data into Unsafe Value",,171|693|722|845|992|
+183,"Permissive Whitelist",942|,171|693|697|722|990|
+184,"Incomplete Blacklist",,171|693|697|990|
+185,"Incorrect Regular Expression",186|625|,19|171|697|990|
+186,"Overly Restrictive Regular Expression",,185|990|
+187,"Partial Comparison",839|,171|697|977|
+188,"Reliance on Data/Memory Layout",198|,137|435|758|977|
+189,"Numeric Errors",128|129|190|195|198|681|682|682|839|,19|19|
+190,"Integer Overflow or Wraparound",,20|189|682|738|742|802|865|872|876|998|
+191,"Integer Underflow (Wrap or Wraparound)",,682|998|
+192,"Integer Coercion Error",,681|682|738|872|
+193,"Off-by-one Error",,682|741|875|977|
+194,"Unexpected Sign Extension",,681|998|
+195,"Signed to Unsigned Conversion Error",,189|681|998|
+196,"Unsigned to Signed Conversion Error",,681|998|
+197,"Numeric Truncation Error",,681|738|848|872|998|
+198,"Use of Incorrect Byte Ordering",,188|189|857|993|
+199,"Information Management Errors",200|216|221|779|,19|
+200,"Information Exposure",201|202|203|209|212|213|214|215|226|359|497|524|526|538|598|612|,199|668|717|840|963|
+201,"Information Exposure Through Sent Data",,200|963|
+202,"Exposure of Sensitive Data Through Data Queries",,200|359|967|
+203,"Information Exposure Through Discrepancy",204|205|208|,200|717|728|967|
+204,"Response Discrepancy Information Exposure",,203|967|
+205,"Information Exposure Through Behavioral Discrepancy",206|207|,203|967|
+206,"Information Exposure of Internal State Through Behavioral Inconsistency",,205|967|
+207,"Information Exposure Through an External Behavioral Inconsistency",,205|967|
+208,"Information Exposure Through Timing Discrepancy",,203|967|
+209,"Information Exposure Through an Error Message",210|211|550|,200|717|728|731|751|755|801|815|851|867|880|933|963|
+210,"Information Exposure Through Self-generated Error Message",535|536|537|,209|963|
+211,"Information Exposure Through Externally-generated Error Message",,209|963|
+212,"Improper Cross-boundary Removal of Sensitive Data",,200|669|808|867|963|
+213,"Intentional Information Exposure",,200|963|
+214,"Information Exposure Through Process Environment",,200|634|963|
+215,"Information Exposure Through Debug Information",11|,200|717|731|933|963|
+216,"Containment Errors (Container Errors)",219|220|493|,199|485|978|
+219,"Sensitive Data Under Web Root",433|,216|285|731|815|963|
+220,"Sensitive Data Under FTP Root",,216|668|963|
+221,"Information Loss or Omission",222|223|224|356|396|397|451|,199|664|997|
+222,"Truncation of Security-relevant Information",,221|997|
+223,"Omission of Security-relevant Information",778|,221|997|
+224,"Obscured Security-relevant Information by Alternate Name",,221|997|
+226,"Sensitive Information Uncleared Before Release",244|,200|459|633|729|742|876|963|
+227,"Improper Fulfillment of API Contract ('API Abuse')",242|243|244|245|246|248|250|251|252|253|350|382|558|559|573|586|589|605|648|650|684|,18|710|1001|
+228,"Improper Handling of Syntactically Invalid Structure",229|233|237|241|,19|137|703|707|728|993|
+229,"Improper Handling of Values",230|231|232|,228|993|
+230,"Improper Handling of Missing Values",,229|851|993|
+231,"Improper Handling of Extra Values",,229|993|
+232,"Improper Handling of Undefined Values",,229|851|993|
+233,"Improper Handling of Parameters",234|235|236|,228|993|
+234,"Failure to Handle Missing Parameter",,233|993|
+235,"Improper Handling of Extra Parameters",,233|993|
+236,"Improper Handling of Undefined Parameters",,233|993|
+237,"Improper Handling of Structural Elements",238|239|240|,228|993|
+238,"Improper Handling of Incomplete Structural Elements",,237|993|
+239,"Failure to Handle Incomplete Element",,237|993|
+240,"Improper Handling of Inconsistent Structural Elements",130|,237|707|993|
+241,"Improper Handling of Unexpected Data Type",,228|743|877|993|
+242,"Use of Inherently Dangerous Function",,227|710|748|1001|
+243,"Creation of chroot Jail Without Changing Working Directory",,227|573|632|669|979|
+244,"Improper Clearing of Heap Memory Before Release ('Heap Inspection')",,226|227|633|742|876|963|
+245,"J2EE Bad Practices: Direct Management of Connections",,227|695|1001|
+246,"J2EE Bad Practices: Direct Use of Sockets",,227|695|1001|
+248,"Uncaught Exception",600|,227|389|703|705|730|851|962|
+250,"Execution with Unnecessary Privileges",,227|265|269|657|753|815|858|866|901|
+251,"Often Misused: String Management",,133|227|633|
+252,"Unchecked Return Value",,227|389|728|742|754|847|876|962|
+253,"Incorrect Check of Function Return Value",,227|389|573|754|962|
+254,"Security Features",255|256|258|259|260|261|264|272|285|287|295|310|330|345|355|358|359|565|602|653|654|655|656|693|778|779|784|798|807|,18|
+255,"Credentials Management",261|262|263|521|522|549|620|640|798|,254|724|
+256,"Plaintext Storage of a Password",,254|522|930|963|
+257,"Storing Passwords in a Recoverable Format",,522|963|
+258,"Empty Password in Configuration File",,254|260|521|950|
+259,"Use of Hard-coded Password",,254|724|753|798|861|950|
+260,"Password in Configuration File",13|258|,254|522|632|963|
+261,"Weak Cryptography for Passwords",,254|255|287|326|729|959|
+262,"Not Using Password Aging",,255|287|404|951|
+263,"Password Aging with Long Expiration",,255|287|404|951|
+264,"Permissions, Privileges, and Access Controls",265|275|282|284|,254|
+265,"Privilege / Sandbox Issues",250|266|267|268|269|271|274|610|648|,264|
+266,"Incorrect Privilege Assignment",9|520|556|,265|269|634|723|859|901|
+267,"Privilege Defined With Unsafe Actions",623|,265|269|901|
+268,"Privilege Chaining",,265|269|723|901|
+269,"Improper Privilege Management",250|266|267|268|270|271|274|648|,265|284|901|
+270,"Privilege Context Switching Error",,269|901|
+271,"Privilege Dropping / Lowering Errors",272|273|,265|269|901|
+272,"Least Privilege Violation",,254|271|748|859|901|
+273,"Improper Check for Dropped Privileges",,271|634|748|754|962|
+274,"Improper Handling of Insufficient Privileges",,265|269|703|901|
+275,"Permission Issues",276|277|278|279|280|281|618|689|732|,264|632|723|731|
+276,"Incorrect Default Permissions",,275|732|743|857|877|946|
+277,"Insecure Inherited Permissions",,275|732|946|
+278,"Insecure Preserved Inherited Permissions",,275|732|946|
+279,"Incorrect Execution-Assigned Permissions",,275|732|743|857|877|946|
+280,"Improper Handling of Insufficient Permissions or Privileges ",,275|703|962|
+281,"Improper Preservation of Permissions",,275|732|946|
+282,"Improper Ownership Management",283|708|,264|284|632|840|944|
+283,"Unverified Ownership",,282|723|944|
+284,"Improper Access Control",269|282|285|286|287|346|782|923|942|,264|632|664|693|723|944|
+285,"Improper Authorization",219|732|862|863|926|927|,254|284|721|723|753|803|817|840|935|945|
+286,"Incorrect User Management",842|,284|944|
+287,"Improper Authentication",261|262|263|301|303|304|306|307|308|309|384|521|522|592|603|620|640|645|798|804|836|,254|284|718|724|812|930|935|947|
+288,"Authentication Bypass Using an Alternate Path or Channel",,592|721|840|947|
+289,"Authentication Bypass by Alternate Name",,592|845|947|
+290,"Authentication Bypass by Spoofing",291|293|350|,592|956|
+291,"Reliance on IP Address for Authentication",,290|471|923|
+293,"Using Referer Field for Authentication",,290|949|
+294,"Authentication Bypass by Capture-replay",,592|956|
+295,"Improper Certificate Validation",296|297|298|299|599|,254|693|731|
+296,"Improper Following of a Certificate's Chain of Trust",,295|573|724|948|
+297,"Improper Validation of Certificate with Host Mismatch",,295|923|948|
+298,"Improper Validation of Certificate Expiration",,295|672|724|948|
+299,"Improper Check for Certificate Revocation",370|,295|404|948|
+300,"Channel Accessible by Non-Endpoint ('Man-in-the-Middle')",,859|923|956|
+301,"Reflection Attack in an Authentication Protocol",,287|718|956|
+302,"Authentication Bypass by Assumed-Immutable Data",,592|724|807|859|949|
+303,"Incorrect Implementation of Authentication Algorithm",,287|947|
+304,"Missing Critical Step in Authentication",,287|573|724|947|
+305,"Authentication Bypass by Primary Weakness",,592|947|
+306,"Missing Authentication for Critical Function",,287|803|812|866|952|
+307,"Improper Restriction of Excessive Authentication Attempts",,287|724|799|808|812|866|955|
+308,"Use of Single-factor Authentication",,287|654|947|
+309,"Use of Password System for Primary Authentication",,287|654|724|947|
+310,"Cryptographic Issues",311|320|325|326|327|328|329|780|,254|934|
+311,"Missing Encryption of Sensitive Data",312|319|614|,310|693|719|720|729|803|816|818|861|866|930|934|963|
+312,"Cleartext Storage of Sensitive Information",313|314|315|316|317|318|,311|816|922|934|963|
+313,"Cleartext Storage in a File or on Disk",,312|963|
+314,"Cleartext Storage in the Registry",,312|963|
+315,"Cleartext Storage of Sensitive Information in a Cookie",,312|963|
+316,"Cleartext Storage of Sensitive Information in Memory",,312|633|963|
+317,"Cleartext Storage of Sensitive Information in GUI",,312|963|
+318,"Cleartext Storage of Sensitive Information in Executable",,312|963|
+319,"Cleartext Transmission of Sensitive Information",5|,311|751|818|858|859|930|934|963|
+320,"Key Management Errors",321|322|323|324|,310|934|
+321,"Use of Hard-coded Cryptographic Key",,320|719|720|729|798|950|
+322,"Key Exchange without Entity Authentication",,320|923|959|
+323,"Reusing a Nonce, Key Pair in Encryption",,320|344|959|
+324,"Use of a Key Past its Expiration Date",,320|672|959|
+325,"Missing Required Cryptographic Step",,310|573|719|720|934|958|
+326,"Inadequate Encryption Strength",261|328|,310|693|719|720|729|816|934|959|
+327,"Use of a Broken or Risky Cryptographic Algorithm",328|780|916|,310|693|729|753|803|816|866|883|934|958|
+328,"Reversible One-Way Hash",,310|326|327|934|958|
+329,"Not Using a Random IV with CBC Mode",,310|330|573|959|
+330,"Use of Insufficiently Random Values",329|331|334|335|338|340|341|342|343|344|804|,254|723|747|753|808|861|867|883|905|
+331,"Insufficient Entropy",332|333|,330|905|
+332,"Insufficient Entropy in PRNG",,331|861|905|
+333,"Improper Handling of Insufficient Entropy in TRNG",,331|703|861|905|
+334,"Small Space of Random Values",6|,330|905|
+335,"PRNG Seed Error",336|337|339|,330|905|
+336,"Same Seed in PRNG",,335|861|905|
+337,"Predictable Seed in PRNG",,335|861|905|
+338,"Use of Cryptographically Weak Pseudo-Random Number Generator (PRNG)",,330|905|
+339,"Small Seed Space in PRNG",,335|905|
+340,"Predictability Problems",,330|905|
+341,"Predictable from Observable State",,330|905|
+342,"Predictable Exact Value from Previous Values",,330|905|
+343,"Predictable Value Range from Previous Values",,330|905|
+344,"Use of Invariant Value in Dynamically Changing Context",323|587|798|,330|905|
+345,"Insufficient Verification of Data Authenticity",346|347|348|349|351|352|353|354|360|616|646|649|924|,254|693|724|949|
+346,"Origin Validation Error",,284|345|949|
+347,"Improper Verification of Cryptographic Signature",,345|859|959|
+348,"Use of Less Trusted Source",,345|975|
+349,"Acceptance of Extraneous Untrusted Data With Trusted Data",,345|860|977|
+350,"Reliance on Reverse DNS Resolution for a Security-Critical Action",,227|290|807|923|949|
+351,"Insufficient Type Distinction",,345|993|
+352,"Cross-Site Request Forgery (CSRF)",,345|442|716|751|801|814|864|936|
+353,"Missing Support for Integrity Check",,345|957|
+354,"Improper Validation of Integrity Check Value",,345|754|993|
+355,"User Interface Security Issues",356|357|549|,254|
+356,"Product UI does not Warn User of Unsafe Actions",,221|355|996|
+357,"Insufficient UI Warning of Dangerous Operations",450|,355|693|996|
+358,"Improperly Implemented Security Check for Standard",,254|573|693|978|
+359,"Exposure of Private Information ('Privacy Violation')",202|,200|254|857|975|
+360,"Trust of System Event Data",422|,345|949|
+361,"Time and State",362|364|367|371|376|377|380|382|383|384|385|386|387|412|557|609|613|662|663|664|668|669|672|673|674|691|698|,18|
+362,"Concurrent Execution using Shared Resource with Improper Synchronization ('Race Condition')",364|366|367|368|421|,361|691|743|751|801|852|867|877|882|988|
+363,"Race Condition Enabling Link Following",,367|748|988|
+364,"Signal Handler Race Condition",432|828|831|,361|362|387|634|986|
+365,"Race Condition in Switch",,367|748|986|
+366,"Race Condition within a Thread",,362|557|634|748|852|882|986|
+367,"Time-of-check Time-of-use (TOCTOU) Race Condition",363|365|,361|362|743|877|988|
+368,"Context Switching Race Condition",,362|986|
+369,"Divide By Zero",,682|730|738|739|848|872|873|998|
+370,"Missing Check for Certificate Revocation after Initial Check",,299|988|
+371,"State Issues",372|374|375|472|585|642|,361|
+372,"Incomplete Internal State Distinction",,371|697|962|
+374,"Passing Mutable Objects to an Untrusted Method",,371|668|849|963|
+375,"Returning a Mutable Object to an Untrusted Caller",,371|668|849|963|
+376,"Temporary File Issues",377|378|379|,361|632|
+377,"Insecure Temporary File",378|379|,361|376|668|857|964|
+378,"Creation of Temporary File With Insecure Permissions",,376|377|964|
+379,"Creation of Temporary File in Directory with Incorrect Permissions",,376|377|743|877|964|
+380,"Technology-Specific Time and State Issues",381|,361|
+381,"J2EE Time and State Issues",382|383|543|,380|
+382,"J2EE Bad Practices: Use of System.exit()",,227|361|381|705|730|851|1001|
+383,"J2EE Bad Practices: Direct Use of Threads",,361|381|634|695|1001|
+384,"Session Fixation",,287|361|724|930|
+385,"Covert Timing Channel",,361|514|968|
+386,"Symbolic Name not Mapping to Correct Object",,361|706|980|
+387,"Signal Errors",364|,361|634|
+388,"Error Handling",389|391|395|396|397|544|600|636|754|756|,18|728|
+389,"Error Conditions, Return Values, Status Codes",248|252|253|390|391|392|393|394|395|396|397|584|,388|
+390,"Detection of Error Condition Without Action",,389|728|755|851|880|962|
+391,"Unchecked Error Condition",,388|389|703|728|743|746|876|877|880|962|
+392,"Missing Report of Error Condition",,389|684|703|855|961|
+393,"Return of Wrong Status Code",,389|684|703|961|
+394,"Unexpected Status Code or Return Value",,389|728|754|962|
+395,"Use of NullPointerException Catch to Detect NULL Pointer Dereference",,388|389|705|755|851|962|
+396,"Declaration of Catch for Generic Exception",,221|388|389|705|755|960|
+397,"Declaration of Throws for Generic Exception",,221|388|389|703|705|851|960|
+398,"Indicator of Poor Code Quality",107|110|399|401|404|415|416|457|474|475|476|477|478|483|484|546|547|561|562|563|569|585|586|617|676|,18|710|978|
+399,"Resource Management Errors",400|401|402|404|405|410|411|415|416|417|568|590|761|762|763|,398|
+400,"Uncontrolled Resource Consumption ('Resource Exhaustion')",769|770|771|772|779|920|,399|664|730|858|861|985|
+401,"Improper Release of Memory Before Removing Last Reference ('Memory Leak')",,398|399|633|730|772|861|982|
+402,"Transmission of Private Resources into a New Sphere ('Resource Leak')",403|619|,399|668|963|
+403,"Exposure of File Descriptor to Unintended Control Sphere ('File Descriptor Leak')",,402|634|743|877|963|
+404,"Improper Resource Shutdown or Release",262|263|299|459|619|763|772|,398|399|664|730|743|752|857|876|877|882|982|
+405,"Asymmetric Resource Consumption (Amplification)",406|407|408|409|,399|664|730|855|857|977|
+406,"Insufficient Control of Network Message Volume (Network Amplification)",,405|977|
+407,"Algorithmic Complexity",,405|977|
+408,"Incorrect Behavior Order: Early Amplification",,405|696|840|977|
+409,"Improper Handling of Highly Compressed Data (Data Amplification)",776|,405|845|977|
+410,"Insufficient Resource Pool",,399|664|730|855|977|
+411,"Resource Locking Problems",412|413|414|,399|
+412,"Unrestricted Externally Accessible Lock",,361|411|667|730|853|989|
+413,"Improper Resource Locking",591|,411|667|852|853|986|
+414,"Missing Lock Check",,411|667|986|
+415,"Double Free",,398|399|633|666|675|742|825|876|969|
+416,"Use After Free",,398|399|633|742|808|825|876|983|
+417,"Channel and Path Errors",418|424|426|427|428|,18|399|
+418,"Channel Errors",419|420|514|,417|
+419,"Unprotected Primary Channel",,418|923|956|
+420,"Unprotected Alternate Channel",421|422|,418|923|956|
+421,"Race Condition During Access to Alternate Channel",,362|420|634|956|
+422,"Unprotected Windows Messaging Channel ('Shatter')",,360|420|634|953|
+424,"Improper Protection of Alternate Path",425|,417|638|693|945|
+425,"Direct Request ('Forced Browsing')",,288|424|442|721|722|723|862|953|
+426,"Untrusted Search Path",,417|634|642|673|744|752|808|878|
+427,"Uncontrolled Search Path Element",,417|668|991|
+428,"Unquoted Search Path or Element",,417|668|981|
+429,"Handler Errors",430|431|432|433|434|479|616|,18|
+430,"Deployment of Wrong Handler",,429|691|977|
+431,"Missing Handler",,429|691|962|
+432,"Dangerous Signal Handler not Disabled During Sensitive Operations",,364|429|1001|
+433,"Unparsed Raw Web Content Delivery",,219|429|963|
+434,"Unrestricted Upload of File with Dangerous Type",,429|632|669|714|801|813|864|
+435,"Interaction Error",188|436|439|733|,2|957|
+436,"Interpretation Conflict",86|115|437|444|626|650|,435|957|
+437,"Incomplete Model of Endpoint Features",,436|957|
+438,"Behavioral Problems",439|440|799|840|841|,18|
+439,"Behavioral Change in New Version or Environment",,435|438|1001|
+440,"Expected Behavior Violation",,438|684|1001|
+441,"Unintended Proxy or Intermediary ('Confused Deputy')",918|,610|956|
+442,"Web Problems",79|113|352|425|444|601|611|644|646|647|776|784|827|,18|
+444,"Inconsistent Interpretation of HTTP Requests ('HTTP Request Smuggling')",,436|442|990|
+445,"User Interface Errors",446|450|451|,18|
+446,"UI Discrepancy for Security Feature",447|448|449|,445|684|996|
+447,"Unimplemented or Unsupported Feature in UI",,446|671|995|
+448,"Obsolete Feature in UI",,446|995|
+449,"The UI Performs the Wrong Action",,446|995|
+450,"Multiple Interpretations of UI Input",,357|445|995|
+451,"User Interface (UI) Misrepresentation of Critical Information",,221|445|684|995|
+452,"Initialization and Cleanup Errors",453|454|455|456|459|460|665|908|909|910|911|,18|
+453,"Insecure Default Variable Initialization",,452|665|966|
+454,"External Initialization of Trusted Variables or Data Stores",,452|665|808|994|
+455,"Non-exit on Failed Initialization",,452|636|665|705|961|
+456,"Missing Initialization of a Variable",,452|808|867|909|998|
+457,"Use of Uninitialized Variable",,398|665|998|
+459,"Incomplete Cleanup",226|460|568|,404|452|731|857|982|
+460,"Improper Cleanup on Thrown Exception",,452|459|755|851|880|961|
+461,"Data Structure Issues",462|463|464|,19|
+462,"Duplicate Key in Associative List (Alist)",,461|694|744|878|977|
+463,"Deletion of Data Structure Sentinel",,461|707|977|
+464,"Addition of Data Structure Sentinel",,138|461|741|875|977|
+465,"Pointer Issues",466|467|468|469|476|587|588|761|763|781|822|823|824|825|,18|
+466,"Return of Pointer Value Outside of Expected Range",,20|119|465|738|872|998|
+467,"Use of sizeof() on a Pointer Type",,465|682|737|740|874|974|
+468,"Incorrect Pointer Scaling",,465|682|737|998|
+469,"Use of Pointer Subtraction to Determine Size",,465|682|740|874|971|
+470,"Use of Externally-Controlled Input to Select Classes or Code ('Unsafe Reflection')",,20|610|859|913|991|
+471,"Modification of Assumed-Immutable Data (MAID)",291|472|473|607|,19|664|991|
+472,"External Control of Assumed-Immutable Web Parameter",,371|471|642|715|722|991|
+473,"PHP External Variable Modification",,471|991|
+474,"Use of Function with Inconsistent Implementations",589|,398|1001|
+475,"Undefined Behavior for Input to API",,398|573|998|
+476,"NULL Pointer Dereference",,398|465|730|737|742|808|867|871|876|971|
+477,"Use of Obsolete Functions",,398|1001|
+478,"Missing Default Case in Switch Statement",,171|398|697|962|
+479,"Signal Handler Use of a Non-reentrant Function",,429|634|663|745|828|847|879|1001|
+480,"Use of Incorrect Operator",481|482|597|,569|670|747|871|883|977|
+481,"Assigning instead of Comparing",,480|569|998|
+482,"Comparing instead of Assigning",,480|569|747|883|886|
+483,"Incorrect Block Delimitation",,398|670|977|
+484,"Omitted Break Statement in Switch",,398|670|962|
+485,"Insufficient Encapsulation",216|486|487|488|489|490|491|492|493|495|496|497|498|499|501|545|580|594|607|749|766|767|,18|664|881|966|
+486,"Comparison of Classes by Name",,171|485|697|849|998|
+487,"Reliance on Package-level Scope",,485|850|966|
+488,"Exposure of Data Element to Wrong Session",,485|882|965|
+489,"Leftover Debug Code",,485|731|1002|
+490,"Mobile Code Issues",491|492|493|494|582|583|,485|503|
+491,"Public cloneable() Method Without Final ('Object Hijack')",,485|490|668|849|1002|
+492,"Use of Inner Class Containing Sensitive Data",,485|490|668|849|966|
+493,"Critical Public Variable Without Final Modifier",500|,216|485|490|668|849|1002|
+494,"Download of Code Without Integrity Check",,490|669|752|802|859|865|991|
+495,"Private Array-Typed Field Returned From A Public Method",,485|963|
+496,"Public Data Assigned to Private Array-Typed Field",,485|994|
+497,"Exposure of System Data to an Unauthorized Control Sphere",,200|485|851|880|963|
+498,"Cloneable Class Containing Sensitive Information",,485|849|963|
+499,"Serializable Class Containing Sensitive Data",,485|858|963|
+500,"Public Static Field Not Marked Final",,493|849|1002|
+501,"Trust Boundary Violation",,485|963|
+502,"Deserialization of Untrusted Data",,858|913|994|
+503,"Byte/Object Code",14|490|,17|
+504,"Motivation/Intent",505|518|,
+505,"Intentionally Introduced Weakness",506|513|912|913|,504|
+506,"Embedded Malicious Code",507|510|511|512|,505|904|912|
+507,"Trojan Horse",508|509|,506|904|
+508,"Non-Replicating Malicious Code",,507|904|
+509,"Replicating Malicious Code (Virus or Worm)",,507|904|
+510,"Trapdoor",,506|904|
+511,"Logic/Time Bomb",,506|904|
+512,"Spyware",,506|904|
+513,"Intentionally Introduced Nonmalicious Weakness",517|,505|
+514,"Covert Channel",385|515|,418|518|668|912|968|
+515,"Covert Storage Channel",,514|968|
+517,"Other Intentional, Nonmalicious Weakness",,513|
+518,"Inadvertently Introduced Weakness",514|,504|
+519,".NET Environment Issues",10|520|,3|
+520,".NET Misconfiguration: Use of Impersonation",,266|519|901|
+521,"Weak Password Requirements",258|,255|287|724|951|
+522,"Insufficiently Protected Credentials",256|257|260|523|549|555|,255|287|668|718|724|930|963|
+523,"Unprotected Transport of Credentials",,522|930|963|
+524,"Information Exposure Through Caching",525|,200|965|
+525,"Information Exposure Through Browser Caching",,524|723|724|966|
+526,"Information Exposure Through Environmental Variables",,200|731|963|
+527,"Exposure of CVS Repository to an Unauthorized Control Sphere",,538|552|731|963|
+528,"Exposure of Core Dump File to an Unauthorized Control Sphere",,538|552|731|742|876|963|
+529,"Exposure of Access Control List Files to an Unauthorized Control Sphere",,538|552|731|963|
+530,"Exposure of Backup File to an Unauthorized Control Sphere",,538|552|731|963|
+531,"Information Exposure Through Test Code",,540|731|1002|
+532,"Information Exposure Through Log Files",533|534|542|,538|552|731|857|963|
+533,"Information Exposure Through Server Log Files",,532|552|632|731|857|963|
+534,"Information Exposure Through Debug Log Files",,532|552|731|963|
+535,"Information Exposure Through Shell Error Message",,210|963|
+536,"Information Exposure Through Servlet Runtime Error Message",,210|963|
+537,"Information Exposure Through Java Runtime Error Message",,210|963|
+538,"File and Directory Information Exposure",527|528|529|530|532|539|540|548|651|,200|815|963|
+539,"Information Exposure Through Persistent Cookies",,538|729|963|
+540,"Information Exposure Through Source Code",531|541|615|,538|552|731|963|
+541,"Information Exposure Through Include Source Code",,540|731|963|
+542,"Information Exposure Through Cleanup Log Files",,532|552|731|857|963|
+543,"Use of Singleton Pattern Without Synchronization in a Multithreaded Context",,381|820|861|986|
+544,"Missing Standardized Error Handling Mechanism",,388|746|755|880|961|
+545,"Use of Dynamic Class Loading",,485|991|
+546,"Suspicious Comment",,398|963|
+547,"Use of Hard-coded, Security-relevant Constants",,398|736|950|
+548,"Information Exposure Through Directory Listing",,538|552|731|933|963|
+549,"Missing Password Field Masking",,255|355|522|995|
+550,"Information Exposure Through Server Error Message",,209|963|
+551,"Incorrect Behavior Order: Authorization Before Parsing and Canonicalization",,696|723|863|949|
+552,"Files or Directories Accessible to External Parties",527|528|529|530|532|533|534|540|542|548|553|,2|632|668|731|743|815|877|963|
+553,"Command Shell in Externally Accessible Directory",,552|990|
+554,"ASP.NET Misconfiguration: Not Using Input Validation Framework",,10|20|990|
+555,"J2EE Misconfiguration: Plaintext Password in Configuration File",,4|522|963|
+556,"ASP.NET Misconfiguration: Use of Identity Impersonation",,10|266|723|951|
+557,"Concurrency Issues",366|558|567|572|,361|
+558,"Use of getlogin() in Multithreaded Application",,227|557|663|1001|
+559,"Often Misused: Arguments and Parameters",560|628|,227|
+560,"Use of umask() with chmod-style Argument",,559|687|946|
+561,"Dead Code",570|571|,398|747|883|886|
+562,"Return of Stack Variable Address",,398|672|748|998|
+563,"Assignment to Variable without Use ('Unused Variable')",,398|747|883|886|
+564,"SQL Injection: Hibernate",,89|990|
+565,"Reliance on Cookies without Validation and Integrity Checking",784|,254|602|642|949|
+566,"Authorization Bypass Through User-Controlled SQL Primary Key",,639|994|
+567,"Unsynchronized Access to Shared Data in a Multithreaded Context",,557|820|852|986|
+568,"finalize() Method Without super.finalize()",,399|459|573|850|1002|
+569,"Expression Issues",480|481|482|570|571|588|595|596|783|,398|
+570,"Expression is Always False",,561|569|747|883|998|
+571,"Expression is Always True",,561|569|747|883|998|
+572,"Call to Thread run() instead of start()",,557|634|821|854|1001|
+573,"Improper Following of Specification by Caller",103|104|243|253|296|304|325|329|358|475|568|577|578|579|580|581|628|675|694|695|,227|850|1001|
+574,"EJB Bad Practices: Use of Synchronization Primitives",,695|821|1001|
+575,"EJB Bad Practices: Use of AWT Swing",,695|1001|
+576,"EJB Bad Practices: Use of Java I/O",,695|1001|
+577,"EJB Bad Practices: Use of Sockets",,573|1001|
+578,"EJB Bad Practices: Use of Class Loader",,573|1001|
+579,"J2EE Bad Practices: Non-serializable Object Stored in Session",,573|998|
+580,"clone() Method Without super.clone()",,485|573|1002|
+581,"Object Model Violation: Just One of Equals and Hashcode Defined",,573|850|977|
+582,"Array Declared Public, Final, and Static",,490|668|849|1002|
+583,"finalize() Method Declared Public",,490|668|850|1002|
+584,"Return Inside Finally Block",,389|705|851|961|
+585,"Empty Synchronized Block",,371|398|987|
+586,"Explicit Call to Finalize()",,227|398|850|1001|
+587,"Assignment of a Fixed Address to a Pointer",,344|465|738|758|872|998|
+588,"Attempt to Access Child of a Non-structure Pointer",,465|569|704|758|971|
+589,"Call to Non-ubiquitous API",,227|474|850|858|1001|
+590,"Free of Memory not on the Heap",,399|742|762|876|969|
+591,"Sensitive Data Storage in Improperly Locked Memory",,413|633|729|742|876|963|
+592,"Authentication Bypass Issues",288|289|290|294|302|305|593|,287|724|947|
+593,"Authentication Bypass: OpenSSL CTX Object Modified after SSL Objects are Created",,592|666|948|
+594,"J2EE Framework: Saving Unserializable Objects to Disk",,485|998|
+595,"Comparison of Object References Instead of Object Contents",597|,171|569|697|847|977|
+596,"Incorrect Semantic Object Comparison",,171|569|697|840|977|
+597,"Use of Wrong Operator in String Comparison",,133|480|595|847|998|
+598,"Information Exposure Through Query Strings in GET Request",,200|729|963|
+599,"Missing Validation of OpenSSL Certificate",,295|948|
+600,"Uncaught Exception in Servlet ",,248|388|851|962|
+601,"URL Redirection to Untrusted Site ('Open Redirect')",,20|442|610|722|801|819|864|938|990|
+602,"Client-Side Enforcement of Server-Side Security",565|603|,254|669|693|722|753|975|
+603,"Use of Client-Side Authentication",,287|602|947|
+605,"Multiple Binds to the Same Port",,227|666|675|954|
+606,"Unchecked Input for Loop Condition",,20|738|872|994|
+607,"Public Static Final Field References Mutable Object",,471|485|963|
+608,"Struts: Non-private Field in ActionForm Class",,101|668|1002|
+609,"Double-Checked Locking",,361|667|853|986|
+610,"Externally Controlled Reference to a Resource in Another Sphere",15|73|441|470|601|611|,265|664|980|
+611,"Improper Restriction of XML External Entity Reference ('XXE')",,442|610|990|
+612,"Information Exposure Through Indexing of Private Data",,200|963|
+613,"Insufficient Session Expiration",,361|672|724|930|951|
+614,"Sensitive Cookie in HTTPS Session Without 'Secure' Attribute",,311|966|
+615,"Information Exposure Through Comments",,540|963|
+616,"Incomplete Identification of Uploaded File Variables (PHP)",,345|429|994|
+617,"Reachable Assertion",,398|670|850|1001|
+618,"Exposed Unsafe ActiveX Method",,275|749|977|
+619,"Dangling Database Cursor ('Cursor Injection')",,402|404|990|
+620,"Unverified Password Change",,255|287|724|930|952|
+621,"Variable Extraction Error",,914|990|
+622,"Improper Validation of Function Hook Arguments",,20|991|
+623,"Unsafe ActiveX Control Marked Safe For Scripting",,267|691|978|
+624,"Executable Regular Expression Error",,77|990|
+625,"Permissive Regular Expression",777|,185|845|990|
+626,"Null Byte Interaction Error (Poison Null Byte)",,20|436|990|
+627,"Dynamic Variable Evaluation",,914|990|
+628,"Function Call with Incorrectly Specified Arguments",683|685|686|687|688|,559|573|736|737|742|998|
+632,"Weaknesses that Affect Files or Directories",22|41|59|60|63|67|68|70|96|98|178|243|260|275|282|284|376|434|533|552|785|,
+633,"Weaknesses that Affect Memory",14|119|120|122|129|134|226|244|251|316|401|415|416|591|763|785|,
+634,"Weaknesses that Affect System Processes",69|78|88|114|214|266|273|364|366|383|387|403|421|422|426|479|572|,
+636,"Not Failing Securely ('Failing Open')",455|,388|657|728|755|961|
+637,"Unnecessary Complexity in Protection Mechanism (Not Using 'Economy of Mechanism')",,657|975|
+638,"Not Using Complete Mediation",424|,657|862|988|
+639,"Authorization Bypass Through User-Controlled Key",566|,715|723|813|840|862|932|945|
+640,"Weak Password Recovery Mechanism for Forgotten Password",,255|287|724|840|930|959|
+641,"Improper Restriction of Names for Files and Other Resources",,99|990|
+642,"External Control of Critical State Data",15|73|426|472|565|,371|668|752|963|
+643,"Improper Neutralization of Data within XPath Expressions ('XPath Injection')",,91|943|990|
+644,"Improper Neutralization of HTTP Headers for Scripting Syntax",,116|442|725|990|
+645,"Overly Restrictive Account Lockout Mechanism",,287|951|
+646,"Reliance on File Name or Extension of Externally-Supplied File",,345|442|990|
+647,"Use of Non-Canonical URL Paths for Authorization Decisions",,442|845|863|949|
+648,"Incorrect Use of Privileged APIs",,227|265|269|977|
+649,"Reliance on Obfuscation or Encryption of Security-Relevant Inputs without Integrity Checking",,345|975|
+650,"Trusting HTTP Permission Methods on the Server Side",,2|227|436|945|
+651,"Information Exposure Through WSDL File",,538|966|
+652,"Improper Neutralization of Data within XQuery Expressions ('XQuery Injection')",,91|943|990|
+653,"Insufficient Compartmentalization",,254|657|693|901|
+654,"Reliance on a Single Factor in a Security Decision",308|309|,254|657|693|975|
+655,"Insufficient Psychological Acceptability",,254|657|693|995|
+656,"Reliance on Security Through Obscurity",,254|657|693|975|
+657,"Violation of Secure Design Principles",250|636|637|638|653|654|655|656|671|,17|710|975|
+662,"Improper Synchronization",663|667|820|821|,361|664|691|745|852|879|986|
+663,"Use of a Non-reentrant Function in a Concurrent Context",479|558|,361|662|986|
+664,"Improper Control of a Resource Through its Lifetime",221|284|400|404|405|410|471|485|610|662|665|666|668|669|673|704|706|908|911|913|922|,361|984|
+665,"Improper Initialization",453|454|455|457|770|909|,452|664|740|742|752|846|874|876|962|
+666,"Operation on Resource in Wrong Phase of Lifetime",415|593|605|672|826|,664|840|984|
+667,"Improper Locking",412|413|414|609|764|765|832|833|,662|748|852|853|986|
+668,"Exposure of Resource to Wrong Sphere",8|22|200|220|374|375|377|402|427|428|491|492|493|514|522|552|582|583|608|642|732|766|767|927|942|,361|664|963|
+669,"Incorrect Resource Transfer Between Spheres",212|243|434|494|602|829|,361|664|963|
+670,"Always-Incorrect Control Flow Implementation",480|483|484|617|698|783|,691|977|
+671,"Lack of Administrator Control over Security",447|798|,657|975|
+672,"Operation on a Resource after Expiration or Release",298|324|562|613|825|910|,361|666|808|983|
+673,"External Influence of Sphere Definition",426|,361|664|991|
+674,"Uncontrolled Recursion",776|,361|730|834|985|
+675,"Duplicate Operations on Resource",174|415|605|764|765|,573|743|877|984|
+676,"Use of Potentially Dangerous Function",785|,398|738|743|746|865|872|877|1001|
+680,"Integer Overflow to Buffer Overflow",,20|
+681,"Incorrect Conversion between Numeric Types",192|194|195|196|197|,136|189|704|738|739|808|848|867|872|873|998|
+682,"Incorrect Calculation",128|131|135|190|191|192|193|369|467|468|469|,189|189|738|739|752|872|873|977|
+683,"Function Call With Incorrect Order of Arguments",,628|998|
+684,"Incorrect Provision of Specified Functionality",392|393|440|446|451|,227|735|1001|
+685,"Function Call With Incorrect Number of Arguments",,628|998|
+686,"Function Call With Incorrect Argument Type",,628|736|739|741|743|748|873|875|998|
+687,"Function Call With Incorrectly Specified Argument Value",560|,628|742|876|998|
+688,"Function Call With Incorrect Variable or Reference as Argument",,628|998|
+689,"Permission Race Condition During Resource Copy",,275|732|
+690,"Unchecked Return Value to NULL Pointer Dereference",,20|851|876|
+691,"Insufficient Control Flow Management",94|362|430|431|623|662|670|696|705|749|768|799|834|841|,361|977|
+692,"Incomplete Blacklist to Cross-Site Scripting",,20|
+693,"Protection Mechanism Failure",20|179|182|183|184|284|295|311|326|327|345|357|358|424|602|653|654|655|656|757|778|807|,254|975|
+694,"Use of Multiple Resources with Duplicate Identifier",102|462|,99|573|984|
+695,"Use of Low-Level Functionality",111|245|246|383|574|575|576|,573|1001|
+696,"Incorrect Behavior Order",179|408|551|,691|748|840|977|
+697,"Insufficient Comparison",183|184|185|187|372|478|486|595|596|,171|747|883|977|
+698,"Execution After Redirect (EAR)",,361|670|705|977|
+703,"Improper Check or Handling of Exceptional Conditions",166|167|168|228|248|274|280|333|391|392|393|397|754|755|,851|876|880|961|
+704,"Incorrect Type Conversion or Cast",588|681|843|,664|737|741|747|875|883|998|
+705,"Incorrect Control Flow Scoping",248|382|395|396|397|455|584|698|,691|744|746|851|854|878|880|977|
+706,"Use of Incorrectly-Resolved Name or Reference",22|41|59|66|98|178|386|827|,664|981|
+707,"Improper Enforcement of Message or Data Structure",74|116|138|170|172|228|240|463|,171|990|
+708,"Incorrect Ownership Assignment",,282|723|944|
+710,"Coding Standards Violation",227|242|398|657|758|912|,978|
+712,"OWASP Top Ten 2007 Category A1 - Cross Site Scripting (XSS)",79|,
+713,"OWASP Top Ten 2007 Category A2 - Injection Flaws",77|89|90|91|93|,
+714,"OWASP Top Ten 2007 Category A3 - Malicious File Execution",78|95|98|434|,
+715,"OWASP Top Ten 2007 Category A4 - Insecure Direct Object Reference",22|472|639|,
+716,"OWASP Top Ten 2007 Category A5 - Cross Site Request Forgery (CSRF)",352|,
+717,"OWASP Top Ten 2007 Category A6 - Information Leakage and Improper Error Handling",200|203|209|215|,
+718,"OWASP Top Ten 2007 Category A7 - Broken Authentication and Session Management",287|301|522|,
+719,"OWASP Top Ten 2007 Category A8 - Insecure Cryptographic Storage",311|321|325|326|,
+720,"OWASP Top Ten 2007 Category A9 - Insecure Communications",311|321|325|326|,
+721,"OWASP Top Ten 2007 Category A10 - Failure to Restrict URL Access",285|288|425|,
+722,"OWASP Top Ten 2004 Category A1 - Unvalidated Input",20|77|79|89|102|103|104|106|109|120|166|167|179|180|181|182|183|425|472|601|602|,
+723,"OWASP Top Ten 2004 Category A2 - Broken Access Control",9|22|41|73|266|268|275|283|284|285|330|425|525|551|556|639|708|,
+724,"OWASP Top Ten 2004 Category A3 - Broken Authentication and Session Management",255|259|287|296|298|302|304|307|309|345|384|521|522|525|592|613|620|640|798|,
+725,"OWASP Top Ten 2004 Category A4 - Cross-Site Scripting (XSS) Flaws",79|644|,
+726,"OWASP Top Ten 2004 Category A5 - Buffer Overflows",119|120|134|,
+727,"OWASP Top Ten 2004 Category A6 - Injection Flaws",74|77|78|89|91|95|98|117|,
+728,"OWASP Top Ten 2004 Category A7 - Improper Error Handling",7|203|209|228|252|388|390|391|394|636|,
+729,"OWASP Top Ten 2004 Category A8 - Insecure Storage",14|226|261|311|321|326|327|539|591|598|,
+730,"OWASP Top Ten 2004 Category A9 - Denial of Service",170|248|369|382|400|401|404|405|410|412|476|674|,
+731,"OWASP Top Ten 2004 Category A10 - Insecure Configuration Management",4|10|209|215|219|275|295|459|489|526|527|528|529|530|531|532|533|534|540|541|542|548|552|,
+732,"Incorrect Permission Assignment for Critical Resource",276|277|278|279|281|689|,275|285|668|743|753|803|815|840|857|859|860|866|877|946|
+733,"Compiler Optimization Removal or Modification of Security-critical Code",14|,435|758|976|
+735,"CERT C Secure Coding Section 01 - Preprocessor (PRE)",684|,
+736,"CERT C Secure Coding Section 02 - Declarations and Initialization (DCL)",547|628|686|,
+737,"CERT C Secure Coding Section 03 - Expressions (EXP)",467|468|476|628|704|783|,
+738,"CERT C Secure Coding Section 04 - Integers (INT)",20|129|190|192|197|369|466|587|606|676|681|682|,
+739,"CERT C Secure Coding Section 05 - Floating Point (FLP)",369|681|682|686|,
+740,"CERT C Secure Coding Section 06 - Arrays (ARR)",119|129|467|469|665|805|,
+741,"CERT C Secure Coding Section 07 - Characters and Strings (STR)",78|88|119|120|135|170|193|464|686|704|,
+742,"CERT C Secure Coding Section 08 - Memory Management (MEM)",20|119|128|131|190|226|244|252|415|416|476|528|590|591|628|665|687|754|,
+743,"CERT C Secure Coding Section 09 - Input Output (FIO)",22|37|38|39|41|59|62|64|65|67|119|134|241|276|279|362|367|379|391|403|404|552|675|676|686|732|,
+744,"CERT C Secure Coding Section 10 - Environment (ENV)",78|88|119|426|462|705|,
+745,"CERT C Secure Coding Section 11 - Signals (SIG)",479|662|,
+746,"CERT C Secure Coding Section 12 - Error Handling (ERR)",20|391|544|676|705|,
+747,"CERT C Secure Coding Section 49 - Miscellaneous (MSC)",14|20|176|330|480|482|561|563|570|571|697|704|,
+748,"CERT C Secure Coding Section 50 - POSIX (POS)",59|170|242|272|273|363|365|366|562|667|686|696|,
+749,"Exposed Dangerous Method or Function",618|782|,485|691|808|975|
+751,"2009 Top 25 - Insecure Interaction Between Components",20|78|79|89|116|209|319|352|362|,
+752,"2009 Top 25 - Risky Resource Management",73|94|119|404|426|494|642|665|682|,
+753,"2009 Top 25 - Porous Defenses",250|259|285|327|330|602|732|798|,
+754,"Improper Check for Unusual or Exceptional Conditions",252|253|273|354|394|,388|703|742|802|840|867|876|880|962|
+755,"Improper Handling of Exceptional Conditions",209|390|395|396|460|544|636|756|,703|880|962|
+756,"Missing Custom Error Page",7|12|,388|755|963|
+757,"Selection of Less-Secure Algorithm During Negotiation ('Algorithm Downgrade')",,693|957|
+758,"Reliance on Undefined, Unspecified, or Implementation-Defined Behavior",188|587|588|733|,710|1001|
+759,"Use of a One-Way Hash without a Salt",,816|866|916|958|
+760,"Use of a One-Way Hash with a Predictable Salt",,916|958|
+761,"Free of Pointer not at Start of Buffer",,399|465|763|969|
+762,"Mismatched Memory Management Routines",590|,399|763|876|969|
+763,"Release of Invalid Pointer or Reference",761|762|,399|404|465|633|969|
+764,"Multiple Locks of a Critical Resource",,667|675|987|
+765,"Multiple Unlocks of a Critical Resource",,667|675|987|
+766,"Critical Variable Declared Public",,485|668|849|1002|
+767,"Access to Critical Private Variable via Public Method",,485|668|963|
+768,"Incorrect Short Circuit Evaluation",,171|691|871|998|
+769,"File Descriptor Exhaustion",773|774|775|,400|
+770,"Allocation of Resources Without Limits or Throttling",774|789|,400|665|802|840|857|858|861|867|876|877|985|
+771,"Missing Reference to Active Allocated Resource",773|,400|982|
+772,"Missing Release of Resource after Effective Lifetime",401|775|,400|404|808|867|882|982|
+773,"Missing Reference to Active File Descriptor or Handle",,769|771|982|
+774,"Allocation of File Descriptors or Handles Without Limits or Throttling",,769|770|985|
+775,"Missing Release of File Descriptor or Handle after Effective Lifetime",,769|772|982|
+776,"Improper Restriction of Recursive Entity References in DTDs ('XML Entity Expansion')",,409|442|674|
+777,"Regular Expression without Anchors",,625|
+778,"Insufficient Logging",,223|254|693|
+779,"Logging of Excessive Data",,199|254|400|
+780,"Use of RSA Algorithm without OAEP",,310|327|
+781,"Improper Address Validation in IOCTL with METHOD_NEITHER I/O Control Code",,20|465|
+782,"Exposed IOCTL with Insufficient Access Control",,284|749|
+783,"Operator Precedence Logic Error",,569|670|737|
+784,"Reliance on Cookies without Validation and Integrity Checking in a Security Decision",,254|442|565|807|
+785,"Use of Path Manipulation Function without Maximum-sized Buffer",,20|120|632|633|676|972|
+786,"Access of Memory Location Before Start of Buffer",124|127|,119|
+787,"Out-of-bounds Write",121|122|124|,119|
+788,"Access of Memory Location After End of Buffer",121|122|126|,119|
+789,"Uncontrolled Memory Allocation",,20|770|
+790,"Improper Filtering of Special Elements",791|,138|
+791,"Incomplete Filtering of Special Elements",792|795|,790|
+792,"Incomplete Filtering of One or More Instances of Special Elements",793|794|,791|
+793,"Only Filtering One Instance of a Special Element",,792|
+794,"Incomplete Filtering of Multiple Instances of Special Elements",,792|
+795,"Only Filtering Special Elements at a Specified Location",796|797|,791|
+796,"Only Filtering Special Elements Relative to a Marker",,795|
+797,"Only Filtering Special Elements at an Absolute Position",,795|
+798,"Use of Hard-coded Credentials",259|321|,254|255|287|344|671|724|753|803|812|861|866|
+799,"Improper Control of Interaction Frequency",307|837|,438|691|808|840|
+801,"2010 Top 25 - Insecure Interaction Between Components",78|79|89|209|352|362|434|601|,
+802,"2010 Top 25 - Risky Resource Management",22|98|120|129|131|190|494|754|770|805|,
+803,"2010 Top 25 - Porous Defenses",285|306|311|327|732|798|807|,
+804,"Guessable CAPTCHA",,287|330|808|863|
+805,"Buffer Access with Incorrect Length Value",806|,119|740|802|867|874|
+806,"Buffer Access Using Size of Source Buffer",,805|
+807,"Reliance on Untrusted Inputs in a Security Decision",302|350|784|,254|693|803|859|866|878|
+808,"2010 Top 25 - Weaknesses On the Cusp",59|134|212|307|330|416|426|454|456|476|672|681|749|772|799|804|,
+810,"OWASP Top Ten 2010 Category A1 - Injection",78|88|89|90|91|,
+811,"OWASP Top Ten 2010 Category A2 - Cross-Site Scripting (XSS)",79|,
+812,"OWASP Top Ten 2010 Category A3 - Broken Authentication and Session Management",287|306|307|798|,
+813,"OWASP Top Ten 2010 Category A4 - Insecure Direct Object References",22|99|434|639|829|862|863|,
+814,"OWASP Top Ten 2010 Category A5 - Cross-Site Request Forgery(CSRF)",352|,
+815,"OWASP Top Ten 2010 Category A6 - Security Misconfiguration",209|219|250|538|552|732|,
+816,"OWASP Top Ten 2010 Category A7 - Insecure Cryptographic Storage",311|312|326|327|759|,
+817,"OWASP Top Ten 2010 Category A8 - Failure to Restrict URL Access",285|862|863|,
+818,"OWASP Top Ten 2010 Category A9 - Insufficient Transport Layer Protection",311|319|,
+819,"OWASP Top Ten 2010 Category A10 - Unvalidated Redirects and Forwards",601|,
+820,"Missing Synchronization",543|567|,662|853|
+821,"Incorrect Synchronization",572|574|,662|
+822,"Untrusted Pointer Dereference",,119|465|867|876|
+823,"Use of Out-of-range Pointer Offset",,119|465|
+824,"Access of Uninitialized Pointer",,119|465|
+825,"Expired Pointer Dereference",415|416|,119|465|672|867|
+826,"Premature Release of Resource During Expected Lifetime",,666|
+827,"Improper Control of Document Type Definition",,442|706|829|
+828,"Signal Handler with Functionality that is not Asynchronous-Safe",479|,364|
+829,"Inclusion of Functionality from Untrusted Control Sphere",98|827|830|,669|813|864|
+830,"Inclusion of Web Functionality from an Untrusted Source",,829|
+831,"Signal Handler Function Associated with Multiple Signals",,364|
+832,"Unlock of a Resource that is not Locked",,667|
+833,"Deadlock",,667|853|
+834,"Excessive Iteration",674|835|,691|
+835,"Loop with Unreachable Exit Condition ('Infinite Loop')",,834|
+836,"Use of Password Hash Instead of Password for Authentication",,287|
+837,"Improper Enforcement of a Single, Unique Action",,799|
+838,"Inappropriate Encoding for Output Context",,116|845|867|
+839,"Numeric Range Comparison Without Minimum Check",,187|189|
+840,"Business Logic Errors",200|282|285|288|408|596|639|640|666|696|732|754|770|799|841|,438|
+841,"Improper Enforcement of Behavioral Workflow",,438|691|840|867|
+842,"Placement of User into Incorrect Group",,286|
+843,"Access of Resource Using Incompatible Type ('Type Confusion')",,704|
+845,"CERT Java Secure Coding Section 00 - Input Validation and Data Sanitization (IDS)",78|116|134|144|150|171|180|182|289|409|625|647|838|,
+846,"CERT Java Secure Coding Section 01 - Declarations and Initialization (DCL)",665|,
+847,"CERT Java Secure Coding Section 02 - Expressions (EXP)",252|479|595|597|,
+848,"CERT Java Secure Coding Section 03 - Numeric Types and Operations (NUM)",197|369|681|,
+849,"CERT Java Secure Coding Section 04 - Object Orientation (OBJ)",374|375|486|491|492|493|498|500|582|766|,
+850,"CERT Java Secure Coding Section 05 - Methods (MET)",487|568|573|581|583|586|589|617|,
+851,"CERT Java Secure Coding Section 06 - Exceptional Behavior (ERR)",209|230|232|248|382|390|395|397|460|497|584|600|690|703|705|,
+852,"CERT Java Secure Coding Section 07 - Visibility and Atomicity (VNA)",362|366|413|567|662|667|,
+853,"CERT Java Secure Coding Section 08 - Locking (LCK)",412|413|609|667|820|833|,
+854,"CERT Java Secure Coding Section 09 - Thread APIs (THI)",572|705|,
+855,"CERT Java Secure Coding Section 10 - Thread Pools (TPS)",392|405|410|,
+856,"CERT Java Secure Coding Section 11 - Thread-Safety Miscellaneous (TSM)",,
+857,"CERT Java Secure Coding Section 12 - Input Output (FIO)",67|135|198|276|279|359|377|404|405|459|532|533|542|732|770|,
+858,"CERT Java Secure Coding Section 13 - Serialization (SER)",250|319|400|499|502|589|770|,
+859,"CERT Java Secure Coding Section 14 - Platform Security (SEC)",111|266|272|300|302|319|347|470|494|732|807|,
+860,"CERT Java Secure Coding Section 15 - Runtime Environment (ENV)",349|732|,
+861,"CERT Java Secure Coding Section 49 - Miscellaneous (MSC)",259|311|330|332|333|336|337|400|401|543|770|798|,
+862,"Missing Authorization",425|638|639|939|,285|813|817|866|
+863,"Incorrect Authorization",551|647|804|,285|813|817|866|
+864,"2011 Top 25 - Insecure Interaction Between Components",78|79|89|352|434|601|829|,
+865,"2011 Top 25 - Risky Resource Management",22|120|131|134|190|494|676|,
+866,"2011 Top 25 - Porous Defenses",250|306|307|311|327|732|759|798|807|862|863|,
+867,"2011 Top 25 - Weaknesses On the Cusp",129|209|212|330|362|456|476|681|754|770|772|805|822|825|838|841|,
+869,"CERT C++ Secure Coding Section 01 - Preprocessor (PRE)",,
+870,"CERT C++ Secure Coding Section 02 - Declarations and Initialization (DCL)",,
+871,"CERT C++ Secure Coding Section 03 - Expressions (EXP)",476|480|768|,
+872,"CERT C++ Secure Coding Section 04 - Integers (INT)",20|129|190|192|197|369|466|587|606|676|681|682|,
+873,"CERT C++ Secure Coding Section 05 - Floating Point Arithmetic (FLP)",369|681|682|686|,
+874,"CERT C++ Secure Coding Section 06 - Arrays and the STL (ARR)",119|129|467|469|665|805|,
+875,"CERT C++ Secure Coding Section 07 - Characters and Strings (STR)",78|88|119|120|170|193|464|686|704|,
+876,"CERT C++ Secure Coding Section 08 - Memory Management (MEM)",20|119|128|131|190|226|244|252|391|404|415|416|476|528|590|591|665|687|690|703|754|762|770|822|,
+877,"CERT C++ Secure Coding Section 09 - Input Output (FIO)",22|37|38|39|41|59|62|64|65|67|73|119|134|241|276|279|362|367|379|391|403|404|552|675|676|732|770|,
+878,"CERT C++ Secure Coding Section 10 - Environment (ENV)",78|88|119|426|462|705|807|,
+879,"CERT C++ Secure Coding Section 11 - Signals (SIG)",479|662|,
+880,"CERT C++ Secure Coding Section 12 - Exceptions and Error Handling (ERR)",209|390|391|460|497|544|703|705|754|755|,
+881,"CERT C++ Secure Coding Section 13 - Object Oriented Programming (OOP)",485|,
+882,"CERT C++ Secure Coding Section 14 - Concurrency (CON)",362|366|404|488|772|,
+883,"CERT C++ Secure Coding Section 49 - Miscellaneous (MSC)",14|20|116|176|327|330|480|482|561|563|570|571|697|704|,
+885,"SFP Primary Cluster: Risky Values",998|,
+886,"SFP Primary Cluster: Unused entities",482|561|563|,
+887,"SFP Primary Cluster: API",1001|,
+889,"SFP Primary Cluster: Exception Management",960|961|962|,
+890,"SFP Primary Cluster: Memory Access",970|971|972|973|974|,
+891,"SFP Primary Cluster: Memory Management",969|,
+892,"SFP Primary Cluster: Resource Management",982|983|984|985|,
+893,"SFP Primary Cluster: Path Resolution",979|980|981|,
+894,"SFP Primary Cluster: Synchronization",986|987|988|989|,
+895,"SFP Primary Cluster: Information Leak",963|964|965|966|967|,
+896,"SFP Primary Cluster: Tainted Input",990|991|992|993|994|,
+897,"SFP Primary Cluster: Entry Points",1002|,
+898,"SFP Primary Cluster: Authentication",947|948|949|950|951|952|953|954|955|,
+899,"SFP Primary Cluster: Access Control",944|945|946|,
+901,"SFP Primary Cluster: Privilege",9|250|266|267|268|269|270|271|272|274|520|653|,
+902,"SFP Primary Cluster: Channel",956|957|,
+903,"SFP Primary Cluster: Cryptography",958|959|,
+904,"SFP Primary Cluster: Malware",69|506|507|508|509|510|511|512|968|,
+905,"SFP Primary Cluster: Predictability",330|331|332|333|334|335|336|337|338|339|340|341|342|343|344|,
+906,"SFP Primary Cluster: UI",995|996|997|,
+907,"SFP Primary Cluster: Other",975|976|977|978|,
+908,"Use of Uninitialized Resource",,452|664|
+909,"Missing Initialization of Resource",456|,452|665|
+910,"Use of Expired File Descriptor",,452|672|
+911,"Improper Update of Reference Count",,452|664|
+912,"Hidden Functionality",506|514|,505|710|
+913,"Improper Control of Dynamically-Managed Code Resources",94|470|502|914|915|,505|664|
+914,"Improper Control of Dynamically-Identified Variables",621|627|,99|913|
+915,"Improperly Controlled Modification of Dynamically-Determined Object Attributes",,913|
+916,"Use of Password Hash With Insufficient Computational Effort",759|760|,327|
+917,"Improper Neutralization of Special Elements used in an Expression Language Statement ('Expression Language Injection')",,77|
+918,"Server-Side Request Forgery (SSRF)",,441|
+920,"Improper Restriction of Power Consumption",,400|
+921,"Storage of Sensitive Data in a Mechanism without Access Control",,922|
+922,"Insecure Storage of Sensitive Information",312|921|,664|
+923,"Improper Restriction of Communication Channel to Intended Endpoints",291|297|300|322|350|419|420|925|940|941|,284|
+924,"Improper Enforcement of Message Integrity During Transmission in a Communication Channel",,345|
+925,"Improper Verification of Intent by Broadcast Receiver",,923|
+926,"Improper Export of Android Application Components",,285|
+927,"Use of Implicit Intent for Sensitive Communication",,285|668|
+929,"OWASP Top Ten 2013 Category A1 - Injection",77|78|88|89|90|91|,
+930,"OWASP Top Ten 2013 Category A2 - Broken Authentication and Session Management",256|287|311|319|384|522|523|613|620|640|,
+931,"OWASP Top Ten 2013 Category A3 - Cross-Site Scripting (XSS)",79|,
+932,"OWASP Top Ten 2013 Category A4 - Insecure Direct Object References",22|99|639|,
+933,"OWASP Top Ten 2013 Category A5 - Security Misconfiguration",2|16|209|215|548|,
+934,"OWASP Top Ten 2013 Category A6 - Sensitive Data Exposure",310|311|312|319|320|325|326|327|328|,
+935,"OWASP Top Ten 2013 Category A7 - Missing Function Level Access Control",285|287|,
+936,"OWASP Top Ten 2013 Category A8 - Cross-Site Request Forgery (CSRF)",352|,
+937,"OWASP Top Ten 2013 Category A9 - Using Components with Known Vulnerabilities",,
+938,"OWASP Top Ten 2013 Category A10 - Unvalidated Redirects and Forwards",601|,
+939,"Improper Authorization in Handler for Custom URL Scheme",,862|
+940,"Improper Verification of Source of a Communication Channel",,923|
+941,"Incorrectly Specified Destination in a Communication Channel",,923|
+942,"Overly Permissive Cross-domain Whitelist",,183|284|668|
+943,"Improper Neutralization of Special Elements in Data Query Logic",89|90|643|652|,74|
+944,"SFP Secondary Cluster: Access Management",282|283|284|286|708|,899|
+945,"SFP Secondary Cluster: Insecure Resource Access",285|424|639|650|,899|
+946,"SFP Secondary Cluster: Insecure Resource Permissions",276|277|278|279|281|560|732|,899|
+947,"SFP Secondary Cluster: Authentication Bypass",287|288|289|303|304|305|308|309|592|603|,898|
+948,"SFP Secondary Cluster: Digital Certificate",296|297|298|299|593|599|,898|
+949,"SFP Secondary Cluster: Faulty Endpoint Authentication",293|302|345|346|350|360|551|565|647|,898|
+950,"SFP Secondary Cluster: Hardcoded Sensitive Data",258|259|321|547|,898|
+951,"SFP Secondary Cluster: Insecure Authentication Policy",262|263|521|556|613|645|,898|
+952,"SFP Secondary Cluster: Missing Authentication",306|620|,898|
+953,"SFP Secondary Cluster: Missing Endpoint Authentication",422|425|,898|
+954,"SFP Secondary Cluster: Multiple Binds to the Same Port",605|,898|
+955,"SFP Secondary Cluster: Unrestricted Authentication",307|,898|
+956,"SFP Secondary Cluster: Channel Attack",290|294|300|301|419|420|421|441|,902|
+957,"SFP Secondary Cluster: Protocol Error",353|435|436|437|757|,902|
+958,"SFP Secondary Cluster: Broken Cryptography",325|327|328|759|760|,903|
+959,"SFP Secondary Cluster: Weak Cryptography",261|322|323|324|326|329|347|640|,903|
+960,"SFP Secondary Cluster: Ambiguous Exception Type",396|397|,889|
+961,"SFP Secondary Cluster: Incorrect Exception Behavior",392|393|455|460|544|584|636|703|,889|
+962,"SFP Secondary Cluster: Unchecked Status Condition",248|252|253|273|280|372|390|391|394|395|431|478|484|600|665|754|755|,889|
+963,"SFP Secondary Cluster: Exposed Data",5|7|8|11|12|13|14|117|200|201|209|210|211|212|213|214|215|219|220|226|244|256|257|260|311|312|313|314|315|316|317|318|319|374|375|402|403|433|495|497|498|499|501|522|523|526|527|528|529|530|532|533|534|535|536|537|538|539|540|541|542|546|548|550|552|555|591|598|607|612|615|642|668|669|756|767|,895|
+964,"SFP Secondary Cluster: Exposure Temporary File",377|378|379|,895|
+965,"SFP Secondary Cluster: Insecure Session Management",6|488|524|,895|
+966,"SFP Secondary Cluster: Other Exposures",453|485|487|492|525|614|651|,895|
+967,"SFP Secondary Cluster: State Disclosure",202|203|204|205|206|207|208|,895|
+968,"SFP Secondary Cluster: Covert Channel",385|514|515|,904|
+969,"SFP Secondary Cluster: Faulty Memory Release",415|590|761|762|763|,891|
+970,"SFP Secondary Cluster: Faulty Buffer Access",118|119|120|121|122|123|124|125|126|127|129|,890|
+971,"SFP Secondary Cluster: Faulty Pointer Use",469|476|588|,890|
+972,"SFP Secondary Cluster: Faulty String Expansion",785|,890|
+973,"SFP Secondary Cluster: Improper NULL Termination",170|,890|
+974,"SFP Secondary Cluster: Incorrect Buffer Length Computation",131|135|467|,890|
+975,"SFP Secondary Cluster: Architecture",348|359|602|637|649|654|656|657|671|693|749|,907|
+976,"SFP Secondary Cluster: Compiler",733|,907|
+977,"SFP Secondary Cluster: Design",115|187|188|193|349|405|406|407|408|409|410|430|462|463|464|480|483|581|595|596|618|648|670|682|691|696|697|698|705|,907|
+978,"SFP Secondary Cluster: Implementation",216|358|398|623|710|,907|
+979,"SFP Secondary Cluster: Failed Chroot Jail",243|,893|
+980,"SFP Secondary Cluster: Link in Resource Name Resolution",59|62|64|65|71|386|610|,893|
+981,"SFP Secondary Cluster: Path Traversal",22|23|24|25|26|27|28|29|30|31|32|33|34|35|36|37|38|39|40|41|42|43|44|45|46|47|48|49|50|51|52|53|54|55|56|57|58|66|67|72|73|428|706|,893|
+982,"SFP Secondary Cluster: Failure to Release Resource",401|404|459|771|772|773|775|,892|
+983,"SFP Secondary Cluster: Faulty Resource Use",416|672|,892|
+984,"SFP Secondary Cluster: Life Cycle",664|666|675|694|,892|
+985,"SFP Secondary Cluster: Unrestricted Consumption",400|674|770|774|,892|
+986,"SFP Secondary Cluster: Missing Lock",364|365|366|368|413|414|543|567|609|662|663|667|,894|
+987,"SFP Secondary Cluster: Multiple Locks/Unlocks",585|764|765|,894|
+988,"SFP Secondary Cluster: Race Condition Window",362|363|367|370|638|,894|
+989,"SFP Secondary Cluster: Unrestricted Lock",412|,894|
+990,"SFP Secondary Cluster: Tainted Input to Command",74|75|76|77|78|79|80|81|82|83|84|85|86|87|88|89|90|91|93|95|96|97|99|100|102|103|104|105|106|107|108|109|110|112|113|130|134|138|140|141|142|143|144|145|146|147|148|149|150|151|152|153|154|155|156|157|158|159|160|161|162|163|164|165|183|184|185|186|444|553|554|564|601|611|619|621|624|625|626|627|641|643|644|646|652|707|,896|
+991,"SFP Secondary Cluster: Tainted Input to Environment",94|114|427|470|471|472|473|494|545|622|673|,896|
+992,"SFP Secondary Cluster: Faulty Input Transformation",116|166|167|168|172|173|174|175|176|177|178|179|180|181|182|,896|
+993,"SFP Secondary Cluster: Incorrect Input Handling",198|228|229|230|231|232|233|234|235|236|237|238|239|240|241|351|354|,896|
+994,"SFP Secondary Cluster: Tainted Input to Variable",15|20|454|496|502|566|606|616|,896|
+995,"SFP Secondary Cluster: Feature",447|448|449|450|451|549|655|,906|
+996,"SFP Secondary Cluster: Security",356|357|446|,906|
+997,"SFP Secondary Cluster: Information Loss",221|222|223|224|,906|
+998,"SFP Secondary Cluster: Glitch in Computation",128|190|191|194|195|196|197|369|456|457|466|468|475|481|486|562|570|571|579|587|594|597|628|681|683|685|686|687|688|704|768|,885|
+1001,"SFP Secondary Cluster: Use of an Improper API",111|227|242|245|246|382|383|432|439|440|474|477|479|558|572|573|574|575|576|577|578|586|589|617|676|684|695|758|,887|
+1002,"SFP Secondary Cluster: Unexpected Entry Points",489|491|493|500|531|568|580|582|583|608|766|,897|

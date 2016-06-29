@@ -47,5 +47,5 @@ def get_cwe_info(url_str)
     i = i + 1
   end
 
-  node.to_json
+  node
 end

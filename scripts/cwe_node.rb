@@ -15,4 +15,17 @@ class CweNode
         JSON.generate a
     end
 
+    def to_s
+        str = "#{@id},\"#{@name}\","
+        @children.each { |c|
+            str += "#{c}|"
+        }
+        str += ','
+        @parents.each { |c|
+            str += "#{c}|"
+        }
+
+        str
+    end
+
 end
