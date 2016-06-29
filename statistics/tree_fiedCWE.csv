@@ -1,31 +1,131 @@
 id, name, frequency
-16,,554
-17,,314
-18,,10
-19,,192
-20,,7330
-21,,4
-22,,3696
-59,,842
-74,,38
-77,,112
-78,,388
-79,,12754
-89,,8264
-94,,4126
-119,,13186
-134,,324
-189,,2576
-199,,4
-200,,4962
-254,,300
-255,,1166
-264,,8954
-284,,400
-287,,1952
-310,,4466
-345,,40
-352,,2236
-361,,2
-362,,706
-399,,5296
+1,Location,42597
+16,Configuration,277
+17,Code,42320
+18,Source Code,42163
+19,Data Handling,29399
+20,Improper Input Validation,25532
+21,Pathname Traversal and Equivalence Errors,2271
+22,Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal'),1848
+59,Improper Link Resolution Before File Access ('Link Following'),421
+74,Improper Neutralization of Special Elements in Output Used by a Downstream Component ('Injection'),13003
+77,Improper Neutralization of Special Elements used in a Command ('Command Injection'),250
+78,Improper Neutralization of Special Elements used in an OS Command ('OS Command Injection'),194
+79,Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting'),6377
+89,Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection'),4132
+94,Improper Control of Generation of Code ('Code Injection'),2063
+118,Improper Access of Indexable Resource ('Range Error'),6593
+119,Improper Restriction of Operations within the Bounds of a Memory Buffer,6593
+133,String Errors,162
+134,Use of Externally-Controlled Format String,162
+137,Representation Errors,13003
+171,Cleansing, Canonicalization, and Comparison Errors,13003
+189,Numeric Errors,1288
+199,Information Management Errors,2483
+200,Information Exposure,2481
+254,Security Features,35289
+255,Credentials Management,583
+264,Permissions, Privileges, and Access Controls,5653
+284,Improper Access Control,1176
+287,Improper Authentication,976
+310,Cryptographic Issues,2233
+345,Insufficient Verification of Data Authenticity,1138
+352,Cross-Site Request Forgery (CSRF),1118
+361,Time and State,8343
+362,Concurrent Execution using Shared Resource with Improper Synchronization ('Race Condition'),353
+398,Indicator of Poor Code Quality,2648
+399,Resource Management Errors,2648
+438,Behavioral Problems,2481
+442,Web Problems,7495
+504,Motivation/Intent,2063
+505,Intentionally Introduced Weakness,2063
+632,Weaknesses that Affect Files or Directories,3445
+633,Weaknesses that Affect Memory,6755
+634,Weaknesses that Affect System Processes,194
+664,Improper Control of a Resource Through its Lifetime,7989
+668,Exposure of Resource to Wrong Sphere,4329
+691,Insufficient Control Flow Management,2416
+693,Protection Mechanism Failure,27846
+706,Use of Incorrectly-Resolved Name or Reference,2269
+707,Improper Enforcement of Message or Data Structure,13003
+710,Coding Standards Violation,2648
+712,OWASP Top Ten 2007 Category A1 - Cross Site Scripting (XSS),6377
+713,OWASP Top Ten 2007 Category A2 - Injection Flaws,4382
+714,OWASP Top Ten 2007 Category A3 - Malicious File Execution,194
+715,OWASP Top Ten 2007 Category A4 - Insecure Direct Object Reference,1848
+716,OWASP Top Ten 2007 Category A5 - Cross Site Request Forgery (CSRF),1118
+717,OWASP Top Ten 2007 Category A6 - Information Leakage and Improper Error Handling,2481
+718,OWASP Top Ten 2007 Category A7 - Broken Authentication and Session Management,976
+722,OWASP Top Ten 2004 Category A1 - Unvalidated Input,25532
+723,OWASP Top Ten 2004 Category A2 - Broken Access Control,3024
+724,OWASP Top Ten 2004 Category A3 - Broken Authentication and Session Management,2697
+725,OWASP Top Ten 2004 Category A4 - Cross-Site Scripting (XSS) Flaws,6377
+726,OWASP Top Ten 2004 Category A5 - Buffer Overflows,6755
+727,OWASP Top Ten 2004 Category A6 - Injection Flaws,13003
+738,CERT C Secure Coding Section 04 - Integers (INT),25532
+740,CERT C Secure Coding Section 06 - Arrays (ARR),6593
+741,CERT C Secure Coding Section 07 - Characters and Strings (STR),6787
+742,CERT C Secure Coding Section 08 - Memory Management (MEM),25532
+743,CERT C Secure Coding Section 09 - Input Output (FIO),9377
+744,CERT C Secure Coding Section 10 - Environment (ENV),6787
+746,CERT C Secure Coding Section 12 - Error Handling (ERR),25532
+747,CERT C Secure Coding Section 49 - Miscellaneous (MSC),25532
+748,CERT C Secure Coding Section 50 - POSIX (POS),421
+751,2009 Top 25 - Insecure Interaction Between Components,27003
+752,2009 Top 25 - Risky Resource Management,8656
+801,2010 Top 25 - Insecure Interaction Between Components,12174
+802,2010 Top 25 - Risky Resource Management,1848
+808,2010 Top 25 - Weaknesses On the Cusp,583
+810,OWASP Top Ten 2010 Category A1 - Injection,4326
+811,OWASP Top Ten 2010 Category A2 - Cross-Site Scripting (XSS),6377
+812,OWASP Top Ten 2010 Category A3 - Broken Authentication and Session Management,976
+813,OWASP Top Ten 2010 Category A4 - Insecure Direct Object References,1848
+814,OWASP Top Ten 2010 Category A5 - Cross-Site Request Forgery(CSRF),1118
+840,Business Logic Errors,2481
+845,CERT Java Secure Coding Section 00 - Input Validation and Data Sanitization (IDS),13003
+852,CERT Java Secure Coding Section 07 - Visibility and Atomicity (VNA),353
+864,2011 Top 25 - Insecure Interaction Between Components,11821
+865,2011 Top 25 - Risky Resource Management,2010
+867,2011 Top 25 - Weaknesses On the Cusp,353
+872,CERT C++ Secure Coding Section 04 - Integers (INT),25532
+874,CERT C++ Secure Coding Section 06 - Arrays and the STL (ARR),6593
+875,CERT C++ Secure Coding Section 07 - Characters and Strings (STR),6787
+876,CERT C++ Secure Coding Section 08 - Memory Management (MEM),25532
+877,CERT C++ Secure Coding Section 09 - Input Output (FIO),9377
+878,CERT C++ Secure Coding Section 10 - Environment (ENV),6787
+882,CERT C++ Secure Coding Section 14 - Concurrency (CON),353
+883,CERT C++ Secure Coding Section 49 - Miscellaneous (MSC),25532
+890,SFP Primary Cluster: Memory Access,6593
+892,SFP Primary Cluster: Resource Management,7989
+893,SFP Primary Cluster: Path Resolution,2269
+894,SFP Primary Cluster: Synchronization,353
+895,SFP Primary Cluster: Information Leak,4329
+896,SFP Primary Cluster: Tainted Input,25532
+898,SFP Primary Cluster: Authentication,2114
+899,SFP Primary Cluster: Access Control,1176
+907,SFP Primary Cluster: Other,30847
+913,Improper Control of Dynamically-Managed Code Resources,2063
+929,OWASP Top Ten 2013 Category A1 - Injection,4382
+930,OWASP Top Ten 2013 Category A2 - Broken Authentication and Session Management,976
+931,OWASP Top Ten 2013 Category A3 - Cross-Site Scripting (XSS),6377
+932,OWASP Top Ten 2013 Category A4 - Insecure Direct Object References,1848
+933,OWASP Top Ten 2013 Category A5 - Security Misconfiguration,277
+934,OWASP Top Ten 2013 Category A6 - Sensitive Data Exposure,2233
+935,OWASP Top Ten 2013 Category A7 - Missing Function Level Access Control,976
+936,OWASP Top Ten 2013 Category A8 - Cross-Site Request Forgery (CSRF),1118
+943,Improper Neutralization of Special Elements in Data Query Logic,4132
+944,SFP Secondary Cluster: Access Management,1176
+947,SFP Secondary Cluster: Authentication Bypass,976
+949,SFP Secondary Cluster: Faulty Endpoint Authentication,1138
+963,SFP Secondary Cluster: Exposed Data,4329
+970,SFP Secondary Cluster: Faulty Buffer Access,6593
+975,SFP Secondary Cluster: Architecture,27846
+977,SFP Secondary Cluster: Design,2416
+978,SFP Secondary Cluster: Implementation,2648
+980,SFP Secondary Cluster: Link in Resource Name Resolution,421
+981,SFP Secondary Cluster: Path Traversal,2269
+984,SFP Secondary Cluster: Life Cycle,7989
+988,SFP Secondary Cluster: Race Condition Window,353
+990,SFP Secondary Cluster: Tainted Input to Command,13003
+991,SFP Secondary Cluster: Tainted Input to Environment,2063
+994,SFP Secondary Cluster: Tainted Input to Variable,25532

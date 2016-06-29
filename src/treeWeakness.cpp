@@ -31,8 +31,7 @@ map<int, CWE> loadCWETree()
     char readBuffer[65536];
     while (getline(ifs, line))
     {
-        cout << line << endl;
-        line = "rawdata/" + line;
+        line = "rawdata/cwe/" + line;
         FILE* file = fopen(line.c_str(), "r");
         FileReadStream is(file, readBuffer, sizeof(readBuffer));
         Document d;
@@ -68,38 +67,49 @@ map<int, int> loadFrequencies()
     return frequencies;
 }
 
-set< int > allAffected(int id, map<int, CWE>& dict) 
+vector< int > allAffected(int id, map<int, CWE>& dict) 
 {
-    set < int > s;
-    s.insert(id);
+    vector < int > s;
+    s.push_back(id);
     for (auto p : dict[id].parents) 
     {
-        set<int> sp = allAffected(p, dict);
-        for (auto i : sp) s.insert(i);
+        vector<int> sp = allAffected(p, dict);
+        for (auto i : sp) s.push_back(i);
     }
+    std::vector<int>::iterator it;
+    std::sort(s.begin(), s.end());
+    it = std::unique (s.begin(), s.end());
+    s.resize(it - s.begin());
     return s;
 }
 
 int main()
 {
     auto cwes = loadCWETree();
-    for (auto &q : cwes) {
-        cout << q.first << " " << q.second.name << endl;
-    }
+
     auto freq = loadFrequencies();
+
+    map<int, int> treeiedfreq;
+
     for (auto &p : freq) 
     {
-        set<int> s = allAffected(p.first, cwes);
+        cout << "ADDING " << p.first << ":" << p.second << endl;
+        auto s = allAffected(p.first, cwes);
         for (auto i : s) 
         {
-            if (freq.find(i) == freq.end()) freq[i] = 0;
-            freq[i] += p.second;
+            if (treeiedfreq.find(i) == treeiedfreq.end()) treeiedfreq[i] = 0;
+            treeiedfreq[i] += p.second;
         }
+        
+        // for (auto &f : treeiedfreq)
+        //     cout << f.first << "," << cwes[f.first].name << "," << f.second << endl;
+        // int q;
+        // cin >> q;
     }
     ofstream ofs;
     ofs.open("statistics/tree_fiedCWE.csv");
     ofs << "id, name, frequency\n";
-    for (auto &f : freq)
+    for (auto &f : treeiedfreq)
     {
         ofs << f.first << "," << cwes[f.first].name << "," << f.second << "\n";
     }
