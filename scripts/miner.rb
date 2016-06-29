@@ -11,7 +11,7 @@ total.write("\n")
 
 for i in min..max do
     next if exceptions.include?(i)
-    node = get_cwe_info("http://localhost:5000/#{i}.html")
+    node = get_cwe_info("http://0.0.0.0:8000/#{i}.json")
     next if node == false
 
     filename = "rawdata/cwe/#{i}.json"

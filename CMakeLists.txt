@@ -8,9 +8,11 @@ include_directories(include)
 # add source files 
 set (COMPLETETABLESOURCES src/JsonHelper.cpp src/completeTable.cpp)
 set (TIMEWEAKNESSSOURCES src/timeWeakness.cpp)
+set (TREESTRUCTURECWE src/treeWeakness.cpp)
 
 add_definitions("-std=c++11")
 add_definitions("-g")
 
 add_executable(Stats ${COMPLETETABLESOURCES})
 add_executable(Time ${TIMEWEAKNESSSOURCES})
+add_executable(CWEWithTree ${TREESTRUCTURECWE})
