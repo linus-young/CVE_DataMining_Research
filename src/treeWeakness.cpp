@@ -71,7 +71,7 @@ int parseID(string str)
 map<int, CWE> loadCWETree()
 {
     ifstream ifs ("/rawdata/cwe/filelist.txt");
-    vector<string> files;
+    map<int, CWE> CWEpointers;
     string line;
     char readBuffer[65536];
     while (getline(ifs, line))
@@ -79,7 +79,9 @@ map<int, CWE> loadCWETree()
         FileReadStream is(line, readBuffer, sizeof(readBuffer));
         Document d;
         d.ParseStream(is);
-
+        CWE cwe = new CWE()
+        cwe.id = d["id"].GetInt();
+        cwe.name = d["name"].GetString();
     }
 
     
