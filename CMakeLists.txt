@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 2.6)
 
-set (DCMAKE_CXX_COMPILER /usr/bin/clang++ )
+Project(CXX)
 
 # Bring the included files into project
 include_directories(include)

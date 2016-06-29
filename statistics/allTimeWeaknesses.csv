@@ -9,7 +9,16 @@ ID, frequency
 310-Cryptographic Issues,2233
 94-Improper Control of Generation of Code ('Code Injection'),2063
 22-Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal'),1848
-Least 10
+189-Numeric Errors,1288
+352-Cross-Site Request Forgery (CSRF),1118
+287-Improper Authentication,976
+255-Credentials Management,583
+59-Improper Link Resolution Before File Access ('Link Following'),421
+362-Concurrent Execution using Shared Resource with Improper Synchronization ('Race Condition'),353
+16-Configuration,277
+284-Improper Access Control,200
+78-Improper Neutralization of Special Elements used in an OS Command ('OS Command Injection'),194
+134-Uncontrolled Format String,162
 17-Code,157
 254-Security Features,150
 19-Data Handling,96

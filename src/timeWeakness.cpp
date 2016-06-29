@@ -133,7 +133,7 @@ int main()
 
     ofs.open("statistics/allTimeWeaknesses.csv");
     ofs << "ID, frequency\n";
-    for (int i = 0; i < 10; ++i)
+    for (int i = 0; i < alltime.size(); ++i)
     {
         ofs << alltime[i].cweID << '-' << dict[alltime[i].cweID] << "," << alltime[i].frequency << '\n';
     }
