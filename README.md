@@ -3,7 +3,19 @@ Programs and Data used in CVE Data Mining Research (University of Virginia)
 
 # Versions
 
-## Lastest Progress [2016-06-20]
+## Lastest Progress [2016-06-29]
+
+ - mined CWE tree from CWE website [Ruby]
+ - filtered entries that are deprecated, views, etc.
+ - Save the tree structure using json files
+ - This is accomplished using ruby scripts in folder ./scripts
+
+ - Using the json files to create a new statistics
+ - Count frequency of each item as the sum of all its children's frequency
+ - the results are listed in `./statistics/tree_fiedCWE.csv`
+ - The program is written in C++, souce file `treeWeakness.cpp`, executable `CWEWithTree`
+
+## [2016-06-20]
 
  - Add names to all CWE over time statistics
 

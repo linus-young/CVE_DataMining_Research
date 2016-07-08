@@ -23,6 +23,14 @@ public:
     int frequency = 0;
 };
 
+void removeDuplicates(vector<int> &vec)
+{
+    std::vector<int>::iterator it;
+    std::sort(vec.begin(), vec.end());
+    it = std::unique (vec.begin(), vec.end());
+    vec.resize(it - vec.begin());
+}
+
 map<int, CWE> loadCWETree()
 {
     ifstream ifs ("rawdata/cwe/filelist.txt");
@@ -45,10 +53,12 @@ map<int, CWE> loadCWETree()
         Value &childrenList = d["children"];
         for (SizeType i = 0; i < childrenList.Size(); ++i)
             cwe.children.push_back(childrenList[i].GetInt());
+        removeDuplicates(cwe.parents);
+        removeDuplicates(cwe.children);
         CWEpointers[cwe.id] = cwe;
         fclose(file);
     }
-    return CWEpointers;    
+    return CWEpointers;
 }
 
 map<int, int> loadFrequencies()
@@ -60,58 +70,71 @@ map<int, int> loadFrequencies()
     while (getline(ifs, line))
     {
         if (line.length() < 1) break;
-        int number =    stoi(line.substr(0, line.find('-')));
+        int number    = stoi(line.substr(0, line.find('-')));
         int frequency = stoi(line.substr(line.find(',') + 1));
         frequencies[number] = frequency;
     }
     return frequencies;
 }
 
-vector< int > allAffected(int id, map<int, CWE>& dict) 
+vector< int > allAffected(int id, map<int, CWE>& dict)
 {
     vector < int > s;
     s.push_back(id);
-    for (auto p : dict[id].parents) 
+    for (auto p : dict[id].parents)
     {
         vector<int> sp = allAffected(p, dict);
         for (auto i : sp) s.push_back(i);
     }
-    std::vector<int>::iterator it;
-    std::sort(s.begin(), s.end());
-    it = std::unique (s.begin(), s.end());
-    s.resize(it - s.begin());
+    removeDuplicates(s);
     return s;
 }
+
 
 int main()
 {
     auto cwes = loadCWETree();
-
     auto freq = loadFrequencies();
-
     map<int, int> treeiedfreq;
 
-    for (auto &p : freq) 
+    for (auto &p : freq)
     {
-        cout << "ADDING " << p.first << ":" << p.second << endl;
         auto s = allAffected(p.first, cwes);
-        for (auto i : s) 
+        for (auto i : s)
         {
             if (treeiedfreq.find(i) == treeiedfreq.end()) treeiedfreq[i] = 0;
             treeiedfreq[i] += p.second;
         }
-        
-        // for (auto &f : treeiedfreq)
-        //     cout << f.first << "," << cwes[f.first].name << "," << f.second << endl;
-        // int q;
-        // cin >> q;
     }
+
     ofstream ofs;
-    ofs.open("statistics/tree_fiedCWE.csv");
-    ofs << "id, name, frequency\n";
+    ofs.open("statistics/tree_fiedCWE.r");
+    ofs << "id, name, children, frequency\n";
     for (auto &f : treeiedfreq)
     {
-        ofs << f.first << "," << cwes[f.first].name << "," << f.second << "\n";
+        ofs << f.first << ",\"" << cwes[f.first].name << "\",\"" ;
+        for (auto i : cwes[f.first].children) ofs << cwes[i].name << " | ";
+        ofs << "\"" << f.second << "\n";
     }
+    ofs.close();
+
+    ofs.open("statistics/graph/matrix_CWE_graph_structure.csv");
+    ofs << "library(igraph)\n"
+        << "library(Cairo)\n"
+        << "g = graph.formula(";
+    for (auto &c : treeiedfreq) {
+        auto parentID = cwes[c.first].id;
+        for (auto &child : cwes[c.first].children)
+            ofs << parentID << "-+" << child << "," ;
+    }
+    ofs << "\b)\n"
+        << R"(Cairo(2000, 2000, file="CWEStructure.png", type="png", bg="white"))"
+        << R"(plot.igraph(g, edge.color = "black"))" << '\n'
+        << R"(dev.off())"
+        ;
+    ofs.close();
+
+
     return 0;
 }
+
