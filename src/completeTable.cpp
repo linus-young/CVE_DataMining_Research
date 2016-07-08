@@ -1,9 +1,9 @@
 #include "JsonHelper.h"
+#include "progressBar.h"
 #include <cstdio>
 #include <fstream>
 #include <iostream>
 #include <vector>
-#include "progressBar.h"
 
 using namespace std;
 using namespace rapidjson;
