@@ -3,6 +3,7 @@
 #include <fstream>
 #include <iostream>
 #include <vector>
+#include "progressBar.h"
 
 using namespace std;
 using namespace rapidjson;
@@ -19,7 +20,7 @@ vector<string> readfilenames()
         if (str.length() > 4)
         {
             str = "rawdata/" + str;
-            filenames.push_back(str);     
+            filenames.push_back(str);
         }
     }
     return filenames;
@@ -27,16 +28,17 @@ vector<string> readfilenames()
 
 int main()
 {
+    ProgressBar progressBar(cout);
+    progressBar.displayProgress(0.01);
     auto filenames = readfilenames();
     JsonHelper jsonHelper;
     std::ofstream ofs ("statistics/completeTable.csv", std::ofstream::out);
 
-    ofs << "CVE_ID, Published_Time, Lastest_Modification_Time, " 
+    ofs << "CVE_ID, Published_Time, Lastest_Modification_Time, "
         << "CAPEC_IDs, CWE_IDs, CPE_IDs, Risk_Severity\n";
-
+    double progress = 0.01;
     for (auto &filename : filenames)
     {
-        cout << filename << endl;
         auto d = jsonHelper.parseComplete(fopen(filename.c_str(), "r"));
 
         Value & Information = d["Information"];
@@ -70,7 +72,9 @@ int main()
         if (!(Information["CAPEC"].IsNull()))
         {
             Value & CAPEC = Information["CAPEC"];
-            for (SizeType i = 0; i < CAPEC.Size(); ++i) ofs << CAPEC[i]["id"].GetInt() << "|";
+            set<int> capecs;
+            for (SizeType i = 0; i < CAPEC.Size(); ++i) capecs.insert(CAPEC[i]["id"].GetInt());
+            for (auto c : capecs) ofs << c << "|";
         }
 
         ofs << ",";
@@ -84,9 +88,11 @@ int main()
         if (!(Information["CPE"].IsNull()))
         {
             Value & CPE = Information["CPE"];
-            for (SizeType i = 0; i < CPE.Size(); ++i) ofs << jsonHelper.CPEStringSimplify(CPE[i]["id"].GetString()) << "|";
+            set<string> cpes;
+            for (SizeType i = 0; i < CPE.Size(); ++i) cpes.insert(jsonHelper.CPEStringSimplify(CPE[i]["id"].GetString()));
+            for (auto s : cpes) ofs << s << "|";
         }
-        
+
         ofs << ",";
         if (!(d["Risk"][0]["severity"].IsNull()))
         {
@@ -94,7 +100,12 @@ int main()
             ofs << RiskSeverity.GetString();
         }
         ofs << "\n";
+        progress += 1.0 / filenames.size();
+        progressBar.displayProgress(progress);
     }
+
+    progressBar.displayProgress(1.0);
+    cout << endl;
 
     ofs.close();
     return 0;

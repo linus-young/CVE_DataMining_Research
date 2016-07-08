@@ -11,10 +11,10 @@ Item* JsonHelper::parse(FILE* file)
 {
     char readBuffer[65536];
     FileReadStream is(file, readBuffer, sizeof(readBuffer));
-    
+
     Document d;
     d.ParseStream(is);
-    
+
     Value& info  = d["Information"];
     Value& CWE   = info["CWE"];
     Value& CAPEC = info["CAPEC"];
@@ -56,7 +56,7 @@ void JsonHelper::getCAPEC(set<string> & CAPECList, Value& CAPEC)
     {
         CAPECList.insert(CAPECStringfy(CAPEC[i]["id"].GetInt()));
     }
-    
+
 }
 
 void JsonHelper::getRisk(string& Riskstr, Value& Risk)
@@ -64,7 +64,7 @@ void JsonHelper::getRisk(string& Riskstr, Value& Risk)
     Riskstr = (Risk.IsNull()) ? "Null" : Risk[0]["severity"].GetString();
 }
 
-void JsonHelper::getCPE(set<string> & CPEList, Value& CPE) 
+void JsonHelper::getCPE(set<string> & CPEList, Value& CPE)
 {
     if (CPE.IsNull() || !CPE.IsArray()) return;
     for (SizeType i = 0; i < CPE.Size(); ++i)
@@ -77,7 +77,7 @@ Document JsonHelper::parseComplete(FILE* file)
 {
     char readBuffer[65536];
     FileReadStream is(file, readBuffer, sizeof(readBuffer));
-    
+
     Document d;
     d.ParseStream(is);
     fclose(file);
