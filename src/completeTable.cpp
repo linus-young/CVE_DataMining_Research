@@ -28,8 +28,7 @@ vector<string> readfilenames()
 
 int main()
 {
-    ProgressBar progressBar(cout);
-    progressBar.displayProgress(0.01);
+    ProgressBar::getInstance().displayProgress(0.01, cout);
     auto filenames = readfilenames();
     JsonHelper jsonHelper;
     std::ofstream ofs ("statistics/completeTable.csv", std::ofstream::out);
@@ -101,10 +100,10 @@ int main()
         }
         ofs << "\n";
         progress += 1.0 / filenames.size();
-        progressBar.displayProgress(progress);
+        ProgressBar::getInstance().displayProgress(progress, cout);
     }
 
-    progressBar.displayProgress(1.0);
+    ProgressBar::getInstance().displayProgress(1.0, cout);
     cout << endl;
 
     ofs.close();

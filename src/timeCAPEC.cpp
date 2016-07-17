@@ -114,7 +114,6 @@ bool comByFreq (CAPECwithFrequency first, CAPECwithFrequency second) { return fi
 
 int main()
 {
-    ProgressBar bar(cout, 80);
     double progress = 0.0;
     auto filenames = readfilenames();
     ofstream ofs;
@@ -123,7 +122,7 @@ int main()
     // parse all files
     for (auto filename : filenames)
     {
-        bar.displayProgress(progress);
+        ProgressBar::getInstance().displayProgress(progress, cout);
         FILE* file = fopen(filename.c_str(), "r");
         auto thisline = getCAPEC(file);
         fclose(file);
@@ -140,7 +139,7 @@ int main()
     ofs.open("statistics/CAPECwithTime/alltimes.csv");
     ofs << "ID, frequency\n";
     for (auto f : frequencyTableOfAlltime) {
-        bar.displayProgress(progress);
+        ProgressBar::getInstance().displayProgress(progress, cout);
         ofs << f.capecID << "," << f.frequency <<"\n";
         progress += 1.0 / frequencyTableOfAlltime.size() * 0.2;
     }
@@ -161,7 +160,6 @@ int main()
     auto it = CAPECsTimeTable.begin();
     for (auto hi : bins)
     {
-        bar.displayProgress(progress);
         auto lo = it;
         ofs << "From " << lo->year << " to "  << hi << '\n';
         while (it != CAPECsTimeTable.end() && it->year <= hi) ++it;
@@ -173,12 +171,7 @@ int main()
         groupedFrequencies.push_back(thisBin);
 
         for (int i = 0; i < 10; ++i)
-            ofs << thisBin[i].capecID << "," << thisBin[i].frequency << '\n';
-
-        ofs << "Least 10\n";
-        for (auto itt = thisBin.end() - 10; itt != thisBin.end(); itt++)
-            ofs << itt->capecID << "," << itt->frequency << '\n';
-        progress += 1.0 / 4 * 0.4;
+            ofs << "\"" << thisBin[i].capecID << "\"" << "," << thisBin[i].frequency << '\n';
     }
     ofs.close();
 
@@ -214,7 +207,7 @@ int main()
     }
     ofs.close();
 
-    bar.displayProgress(1.0);
+    ProgressBar::getInstance().displayProgress(1.0, cout);
     cout << endl;
 
     return 0;
