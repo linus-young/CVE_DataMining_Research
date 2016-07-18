@@ -36,7 +36,7 @@ struct CPEwithFrequency
     bool operator != (CPEwithFrequency second ) { return cpe != second.cpe; }
 };
 
-vector<CPEwithTime> getCPE(FILE* file)
+vector<CPEwithTime> getCPE(FILE* file, bool trunc = false)
 {
     char readBuffer[65536];
     FileReadStream is(file, readBuffer, sizeof(readBuffer));
@@ -57,6 +57,7 @@ vector<CPEwithTime> getCPE(FILE* file)
         {
             string id = jsonCPE[i]["id"].GetString();
             string conciseId = id.substr(7);
+            if (trunc) conciseId = conciseId.substr(0, conciseId.find(":", conciseId.find(":") + 1));
             cpes.push_back(CPEwithTime(year, conciseId));
         }
     }
@@ -128,9 +129,9 @@ void printStatsinTable(vector< CPEwithTime > &cpesTimeTable, string directory)
     std::sort(frequencyTableOfAlltime.begin(), frequencyTableOfAlltime.end(), comByFreq);
 
     ofs.open(directory + "/alltimes.csv");
-    ofs << "ID, frequency\n";
+    ofs << "\"ID\", \"frequency\"\n";
     for (auto f : frequencyTableOfAlltime) {
-        ofs << f.cpe << "," << f.frequency <<"\n";
+        ofs << "\"" << f.cpe << "\"" << "," << f.frequency <<"\n";
     }
     ofs.close();
 
@@ -144,13 +145,11 @@ void printStatsinTable(vector< CPEwithTime > &cpesTimeTable, string directory)
     auto bins = divideBins(minYear, maxYear, 4);
     std::sort(cpesTimeTable.begin(), cpesTimeTable.end(), comByTime);
 
-    ofs.open(directory + "4_Bin.csv");
-    ofs << "ID, frequency\n";
     auto it = cpesTimeTable.begin();
     for (auto hi : bins)
     {
         auto lo = it;
-        ofs << "From " << lo->year << " to "  << hi << '\n';
+        ofs.open(directory + "bin" + std::to_string(hi) + ".csv");
         while (it != cpesTimeTable.end() && it->year <= hi) ++it;
 
         // count frequencies
@@ -159,25 +158,20 @@ void printStatsinTable(vector< CPEwithTime > &cpesTimeTable, string directory)
         std::sort(thisBin.begin(), thisBin.end(), comByFreq);
         groupedFrequencies.push_back(thisBin);
 
-        for (int i = 0; i < 10; ++i)
-            ofs << thisBin[i].cpe << "," << thisBin[i].frequency << '\n';
-
-        ofs << "Least 10\n";
-        for (auto itt = thisBin.end() - 10; itt != thisBin.end(); itt++)
-            ofs << itt->cpe << "," << itt->frequency << '\n';
+        for (auto &c : thisBin)
+            ofs << "\"" << c.cpe << "\"" << "," << c.frequency << '\n';
+        ofs.close();
     }
-    ofs.close();
 
     // Persistant
     ofs.open(directory + "overtimeconsistent.csv");
-    ofs << "Until Year,";
+    ofs << "\"Until Year\",";
     for (auto h : bins) ofs << h << ",";
     ofs << '\n'  ;
 
     vector <string> overLappingIds;
     for (auto g : groupedFrequencies[0])
         overLappingIds.push_back(g.cpe);
-    groupedFrequencies.erase(groupedFrequencies.begin());
 
     for (auto group : groupedFrequencies)
     {
@@ -185,6 +179,8 @@ void printStatsinTable(vector< CPEwithTime > &cpesTimeTable, string directory)
         for (auto g : group)
             vec.push_back(g.cpe);
         vector <string> o(1000);
+        std::sort(vec.begin(), vec.end());
+        std::sort(overLappingIds.begin(), overLappingIds.end());
         auto qit = std::set_intersection(vec.begin(), vec.end(),
                                 overLappingIds.begin(), overLappingIds.end(), o.begin());
         o.resize(qit - o.begin());
@@ -193,14 +189,14 @@ void printStatsinTable(vector< CPEwithTime > &cpesTimeTable, string directory)
 
     for (auto id : overLappingIds)
     {
-        ofs << id;
+        ofs << "\"" << id << "\"";
         for (auto v : groupedFrequencies)
+        {
             ofs << ',' << frequencyOf(id, v);
+        }
         ofs << '\n';
     }
     ofs.close();
-
-    cout << endl;
 }
 
 int main()
@@ -224,22 +220,22 @@ int main()
     cout << "With Version" << endl;
     printStatsinTable(cpesTimeTable, "statistics/CPEwithTime/withVersion/");
 
-    for (auto &c : cpesTimeTable)
+    ProgressBar::getInstance().displayProgress(0.0, cout);
+    cpesTimeTable.clear();
+    for (auto &filename : filenames)
     {
-        auto secondColon = c.cpe.find(":", c.cpe.find(":") + 1);
-        if (secondColon != std::string::npos)
-            c.cpe = c.cpe.substr(0, secondColon);
+        FILE* file = fopen(filename.c_str(), "r");
+        auto thisline = getCPE(file, true);
+        auto it = std::unique (thisline.begin(), thisline.end());   // 10 20 30 20 10 ?  ?  ?  ?
+        thisline.resize(std::distance(thisline.begin(),it) );
+        fclose(file);
+        for (auto cpe : thisline)
+            cpesTimeTable.push_back(cpe);
+        ProgressBar::getInstance().incrementProgress(1.0 / filenames.size(), cout);
     }
-
-    auto it = std::unique(cpesTimeTable.begin(), cpesTimeTable.end(),
-                            [] (const CPEwithTime &a, const CPEwithTime &b)
-                            {
-                                return a.cpe == b.cpe;
-                            });
-    cpesTimeTable.resize(it - cpesTimeTable.begin());
-
     cout << "Merged Version" << endl;
     printStatsinTable(cpesTimeTable, "statistics/CPEwithTime/mergedVersion/");
+
 
     return 0;
 }

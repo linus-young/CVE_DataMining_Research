@@ -11,6 +11,8 @@
 using namespace rapidjson;
 using namespace std;
 
+
+
 struct CAPECwithTime
 {
 public:
@@ -33,6 +35,11 @@ struct CAPECwithFrequency
     bool operator == (CAPECwithFrequency second ) { return capecID == second.capecID; }
     bool operator != (CAPECwithFrequency second ) { return capecID != second.capecID; }
 };
+
+map<int, string> getCAPECNames()
+{
+        
+}
 
 vector<CAPECwithTime> getCAPEC(FILE* file)
 {
@@ -192,6 +199,8 @@ int main()
         for (auto g : group)
             vec.push_back(g.capecID);
         vector <int> o(1000);
+        std::sort(vec.begin(), vec.end());
+        std::sort(overLappingIds.begin(), overLappingIds.end());
         auto qit = std::set_intersection(vec.begin(), vec.end(),
                                 overLappingIds.begin(), overLappingIds.end(), o.begin());
         o.resize(qit - o.begin());

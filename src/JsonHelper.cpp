@@ -25,7 +25,7 @@ Item* JsonHelper::parse(FILE* file)
     getCWE(item->CWE, CWE);
     getCAPEC(item->CAPEC, CAPEC);
     getRisk(item->Risk, Risk);
-    getCPE(item->CPE, CPE);
+    getCPE(item->CPE, item->CPE_with_version, CPE);
     fclose (file);
     return item;
 }
@@ -56,7 +56,6 @@ void JsonHelper::getCAPEC(set<string> & CAPECList, Value& CAPEC)
     {
         CAPECList.insert(CAPECStringfy(CAPEC[i]["id"].GetInt()));
     }
-
 }
 
 void JsonHelper::getRisk(string& Riskstr, Value& Risk)
@@ -64,12 +63,14 @@ void JsonHelper::getRisk(string& Riskstr, Value& Risk)
     Riskstr = (Risk.IsNull()) ? "Null" : Risk[0]["severity"].GetString();
 }
 
-void JsonHelper::getCPE(set<string> & CPEList, Value& CPE)
+void JsonHelper::getCPE(set<string> & CPEList, set<string> &CPEwithVersion, Value& CPE)
 {
     if (CPE.IsNull() || !CPE.IsArray()) return;
     for (SizeType i = 0; i < CPE.Size(); ++i)
     {
-        CPEList.insert(CPEStringSimplify(CPE[i]["id"].GetString()));
+        string original = CPE[i]["id"].GetString();
+        CPEwithVersion.insert(original.substr(7));
+        CPEList.insert(CPEStringSimplify(original));
     }
 }
 

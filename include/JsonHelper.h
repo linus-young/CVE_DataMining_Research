@@ -14,20 +14,21 @@ public:
     set<string> CAPEC;
     string Risk;
     set<string> CPE;
+    set<string> CPE_with_version;
 };
 
 
 class JsonHelper
 {
 public:
-    Item* parse(FILE*); 
+    Item* parse(FILE*);
     Document parseComplete(FILE*);
     string CAPECStringfy(int);
-    string CPEStringSimplify(string);   
+    string CPEStringSimplify(string);
 
 private:
     void getCWE(string&, Value&);
     void getCAPEC(set<string> &, Value&);
     void getRisk(string&, Value&);
-    void getCPE(set<string> &, Value&);
+    void getCPE(set<string> &, set<string> &, Value&);
 };
