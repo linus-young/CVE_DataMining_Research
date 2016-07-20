@@ -140,14 +140,9 @@ int main()
     ofs.close();
 
 
-    // Print out top/least 10 for each bin
     std::sort(weaknesses.begin(), weaknesses.end(), comByTime);
-
-    int minYear = weaknesses[0].year;
-    int maxYear = weaknesses[weaknesses.size() - 1].year;
-
     vector < vector < WeaknessWithFrequency > > groupedFrequencies;
-    auto bins = divideBins(minYear, maxYear, 4);
+    int bins[] = {2001, 2006, 2011, 2016}; // upper bounds of time bins
     std::sort(weaknesses.begin(), weaknesses.end(), comByTime);
     auto it = weaknesses.begin();
     for (auto hi : bins)

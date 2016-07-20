@@ -1,0 +1,106 @@
+"47","Buffer Overflow via Parameter Expansion",,5459
+"42","MIME Conversion",,5459
+"8","Buffer Overflow in an API Call",,5459
+"9","Buffer Overflow in Local Command-Line Utilities",,5459
+"10","Buffer Overflow via Environment Variables",,5459
+"14","Client-side Injection-induced Buffer Overflow",,5459
+"45","Buffer Overflow via Symbolic Links",,5459
+"24","Filter Failure through Buffer Overflow",,5459
+"46","Overflow Variables and Tags",,5459
+"106","Cross Site Scripting through Log Files",,5122
+"91","XSS in IMG Tags",,5122
+"32","Embedding Scripts in HTTP Query Strings",,5103
+"86","Embedding Script (XSS) in HTTP Headers",,5103
+"85","AJAX Fingerprinting",,5103
+"244","Cross-Site Scripting via Encoded URI Schemes ",,5103
+"18","Embedding Scripts in Non-Script Elements",,5103
+"199","Cross-Site Scripting Using Alternate Syntax",,5103
+"63","Simple Script Injection",,5103
+"79","Using Slashes in Alternate Encoding",,4076
+"22","Exploiting Trust in Client",,3884
+"13","Subverting Environment Variable Values",,3513
+"44","Overflow Binary Resource File",,3495
+"100","Overflow Buffers",,3495
+"19","Embedding Scripts within Scripts",,3358
+"209","Cross-Site Scripting Using MIME Type Mismatch",,3178
+"198","Cross-Site Scripting in Error Pages",,3158
+"232","",,3158
+"243","Cross-Site Scripting in Attributes",,3158
+"245","Cross-Site Scripting Using Doubled Characters, e.g. %3C%3Cscript",,3158
+"246","Cross-Site Scripting Using Flash",,3158
+"247","Cross-Site Scripting with Masking through Invalid Characters in Identifiers",,3158
+"108","Command Line Execution through SQL Injection",,2974
+"7","Blind SQL Injection",,2836
+"66","SQL Injection",,2836
+"109","Object Relational Mapping Injection",,2817
+"110","SQL Injection through SOAP Parameter Tampering",,2817
+"64","Using Slashes and URL Encoding Combined to Bypass Validation Logic",,2527
+"78","Using Escaped Slashes in Alternate Encoding",,2527
+"139","Relative Path Traversal",,2508
+"43","Exploiting Multiple Input Interpretation Layers",,2158
+"88","OS Command Injection",,2083
+"136","LDAP Injection",,2001
+"135","Format String Injection",,1994
+"67","String Format Overflow in syslog()",,1994
+"101","Server Side Include (SSI) Injection",,1964
+"80","Using UTF-8 Encoding to Bypass Validation Logic",,1964
+"83","XPath Injection",,1964
+"3","Using Leading 'Ghost' Character Sequences to Bypass Input Filters",,1964
+"72","URL Encoding",,1964
+"71","Using Unicode Encoding to Bypass Validation Logic",,1964
+"53","Postfix, Null Terminate, and Backslash",,1964
+"52","Embedding NULL Bytes",,1964
+"28","Fuzzing",,1964
+"250","XML Injection",,1964
+"267","Leverage Alternate Encoding",,1964
+"171","Variable Manipulation",,1945
+"182","Flash Injection",,1945
+"230","XML Nested Payloads",,1945
+"231","XML Oversized Payloads",,1945
+"264","Environment Variable Manipulation",,1945
+"265","Global variable manipulation",,1945
+"473","Signature Spoof",,1945
+"484","XML Client-Side Attack",,1945
+"99","XML Parser Attack",,1945
+"31","Accessing/Intercepting/Modifying HTTP Cookies",,1945
+"104","Cross Zone Scripting",,1945
+"73","User-Controlled Filename",,1945
+"81","Web Logs Tampering",,1945
+"59","Session Credential Falsification through Prediction",,1549
+"60","Reusing Session IDs (aka Session Replay)",,1549
+"169","Footprinting",,1549
+"472","Browser Fingerprinting",,1549
+"470","Expanding Control over the Operating System from the Database",,872
+"76","Manipulating Input to File System Calls",,757
+"35","Leverage Executable Code in Non-Executable Files",,643
+"23","File Content Injection",,619
+"213","Directory Traversal",,563
+"77","Manipulating User-Controlled Variables",,524
+"57","Utilizing REST's Trust in the System Resource to Register Man in the Middle",,390
+"94","Man in the Middle Attack",,390
+"114","Authentication Abuse",,390
+"29","Leveraging Time-of-Check and Time-of-Use (TOCTOU) Race Conditions",,229
+"26","Leveraging Race Conditions",,229
+"474","Signature Spoofing by Key Theft",,200
+"6","Argument Injection",,194
+"15","Command Delimiters",,194
+"132","Symlink Attack",,119
+"17","Accessing, Modifying or Executing Executable Files",,119
+"11","Cause Web Server Misclassification",,56
+"75","Manipulating Writeable Configuration Files",,56
+"385","Transaction or Event Tampering via Application API Manipulation",,20
+"386","Application API Navigation Remapping",,20
+"387","Navigation Remapping To Propagate Malicious Content",,20
+"388","Application API Button Hijacking",,20
+"389","Content Spoofing Via Application API Manipulation",,20
+"4","Using Alternative IP Address Encodings",,20
+"384","Application API Message Manipulation via Man-in-the-Middle",,20
+"218","Spoofing of UDDI/ebXML Messages",,20
+"142","DNS Cache Poisoning",,20
+"141","Cache Poisoning",,20
+"111","JSON Hijacking (aka JavaScript Hijacking)",,20
+"273","HTTP Response Smuggling",,19
+"34","HTTP Response Splitting",,19
+"40","Manipulating Writeable Terminal Devices",,19
+"51","Poison Web Service Registry",,19
+"84","XQuery Injection",,19

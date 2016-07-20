@@ -107,32 +107,10 @@ int main()
         }
     }
 
-    ofstream ofs;
-    ofs.open("statistics/tree_fiedCWE.r");
-    ofs << "id, name, children, frequency\n";
-    for (auto &f : treeiedfreq)
+    for (auto &v : treeiedfreq)
     {
-        ofs << f.first << ",\"" << cwes[f.first].name << "\",\"" ;
-        for (auto i : cwes[f.first].children) ofs << cwes[i].name << " | ";
-        ofs << "\"" << f.second << "\n";
+        // auto &id = 
     }
-    ofs.close();
-
-    ofs.open("statistics/graph/matrix_CWE_graph_structure.csv");
-    ofs << "library(igraph)\n"
-        << "library(Cairo)\n"
-        << "g = graph.formula(";
-    for (auto &c : treeiedfreq) {
-        auto parentID = cwes[c.first].id;
-        for (auto &child : cwes[c.first].children)
-            ofs << parentID << "-+" << child << "," ;
-    }
-    ofs << "\b)\n"
-        << R"(Cairo(2000, 2000, file="CWEStructure.png", type="png", bg="white"))"
-        << R"(plot.igraph(g, edge.color = "black"))" << '\n'
-        << R"(dev.off())"
-        ;
-    ofs.close();
 
 
     return 0;

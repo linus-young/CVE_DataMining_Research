@@ -171,20 +171,17 @@ int main()
     // frequency of bins
     std::sort(CAPECsTimeTable.begin(), CAPECsTimeTable.end(), comByTime);
 
-    int minYear = CAPECsTimeTable[0].year;
-    int maxYear = CAPECsTimeTable[CAPECsTimeTable.size() - 1].year;
-
     vector < vector < CAPECwithFrequency > > groupedFrequencies;
-    auto bins = divideBins(minYear, maxYear, 4);
+    int bins[] = {2001, 2006, 2011, 2016}; // upper bounds of time bins
+
+
     std::sort(CAPECsTimeTable.begin(), CAPECsTimeTable.end(), comByTime);
 
-    ofs.open("statistics/CAPECwithTime/4_Bin.csv");
-    ofs << "ID, frequency\n";
     auto it = CAPECsTimeTable.begin();
     for (auto hi : bins)
     {
+        ofs.open("statistics/CAPECwithTime/" + to_string(hi) + ".csv");
         auto lo = it;
-        ofs << "From " << lo->year << " to "  << hi << '\n';
         while (it != CAPECsTimeTable.end() && it->year <= hi) ++it;
 
         // count frequencies
@@ -193,10 +190,10 @@ int main()
         std::sort(thisBin.begin(), thisBin.end(), comByFreq);
         groupedFrequencies.push_back(thisBin);
 
-        for (int i = 0; i < 10; ++i)
-            ofs << "\"" << thisBin[i].capecID << "\"" << ",\"" << capecNameDictionary[thisBin[i].capecID] << "\"," << "," << thisBin[i].frequency << '\n';
+        for (auto &c : thisBin)
+            ofs << "\"" << c.capecID << "\"" << ",\"" << capecNameDictionary[c.capecID] << "\"," << "," << c.frequency << '\n';
+        ofs.close();
     }
-    ofs.close();
 
     // Persistant
     ofs.open("statistics/CAPECwithTime/overtimeconsistent.csv");

@@ -138,11 +138,9 @@ void printStatsinTable(vector< CPEwithTime > &cpesTimeTable, string directory)
     // frequency of bins
     std::sort(cpesTimeTable.begin(), cpesTimeTable.end(), comByTime);
 
-    int minYear = cpesTimeTable[0].year;
-    int maxYear = cpesTimeTable[cpesTimeTable.size() - 1].year;
-
     vector < vector < CPEwithFrequency > > groupedFrequencies;
-    auto bins = divideBins(minYear, maxYear, 4);
+    int bins[] = {2001, 2006, 2011, 2016}; // upper bounds of time bins
+
     std::sort(cpesTimeTable.begin(), cpesTimeTable.end(), comByTime);
 
     auto it = cpesTimeTable.begin();
@@ -167,7 +165,14 @@ void printStatsinTable(vector< CPEwithTime > &cpesTimeTable, string directory)
     ofs.open(directory + "overtimeconsistent.csv");
     ofs << "\"Until Year\",";
     for (auto h : bins) ofs << h << ",";
-    ofs << '\n'  ;
+    ofs << '\n';
+
+    for (auto &g : groupedFrequencies)
+    {
+        std::sort(g.begin(), g.end(), comByFreq);
+        if (g.size() > 50)
+            g.erase(g.begin() + 50, g.end());
+    }
 
     vector <string> overLappingIds;
     for (auto g : groupedFrequencies[0])
@@ -178,15 +183,15 @@ void printStatsinTable(vector< CPEwithTime > &cpesTimeTable, string directory)
         vector <string> vec;
         for (auto g : group)
             vec.push_back(g.cpe);
-        vector <string> o(1000);
+        vector <string> o(6000);
         std::sort(vec.begin(), vec.end());
         std::sort(overLappingIds.begin(), overLappingIds.end());
+        cerr << "-" << endl;
         auto qit = std::set_intersection(vec.begin(), vec.end(),
                                 overLappingIds.begin(), overLappingIds.end(), o.begin());
         o.resize(qit - o.begin());
         overLappingIds = o;
     }
-
     for (auto id : overLappingIds)
     {
         ofs << "\"" << id << "\"";

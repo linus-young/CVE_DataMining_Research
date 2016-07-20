@@ -1,0 +1,87 @@
+"45","Buffer Overflow via Symbolic Links",,476
+"47","Buffer Overflow via Parameter Expansion",,476
+"24","Filter Failure through Buffer Overflow",,476
+"46","Overflow Variables and Tags",,476
+"14","Client-side Injection-induced Buffer Overflow",,476
+"42","MIME Conversion",,476
+"10","Buffer Overflow via Environment Variables",,476
+"9","Buffer Overflow in Local Command-Line Utilities",,476
+"8","Buffer Overflow in an API Call",,476
+"91","XSS in IMG Tags",,361
+"18","Embedding Scripts in Non-Script Elements",,361
+"86","Embedding Script (XSS) in HTTP Headers",,361
+"85","AJAX Fingerprinting",,361
+"199","Cross-Site Scripting Using Alternate Syntax",,361
+"106","Cross Site Scripting through Log Files",,361
+"32","Embedding Scripts in HTTP Query Strings",,361
+"63","Simple Script Injection",,361
+"244","Cross-Site Scripting via Encoded URI Schemes ",,361
+"44","Overflow Binary Resource File",,335
+"100","Overflow Buffers",,335
+"108","Command Line Execution through SQL Injection",,315
+"66","SQL Injection",,310
+"110","SQL Injection through SOAP Parameter Tampering",,310
+"109","Object Relational Mapping Injection",,310
+"7","Blind SQL Injection",,310
+"79","Using Slashes in Alternate Encoding",,307
+"22","Exploiting Trust in Client",,268
+"35","Leverage Executable Code in Non-Executable Files",,247
+"77","Manipulating User-Controlled Variables",,234
+"13","Subverting Environment Variable Values",,233
+"247","Cross-Site Scripting with Masking through Invalid Characters in Identifiers",,220
+"246","Cross-Site Scripting Using Flash",,220
+"245","Cross-Site Scripting Using Doubled Characters, e.g. %3C%3Cscript",,220
+"243","Cross-Site Scripting in Attributes",,220
+"232","",,220
+"19","Embedding Scripts within Scripts",,220
+"198","Cross-Site Scripting in Error Pages",,220
+"209","Cross-Site Scripting Using MIME Type Mismatch",,220
+"78","Using Escaped Slashes in Alternate Encoding",,215
+"139","Relative Path Traversal",,215
+"64","Using Slashes and URL Encoding Combined to Bypass Validation Logic",,215
+"470","Expanding Control over the Operating System from the Database",,169
+"135","Format String Injection",,166
+"67","String Format Overflow in syslog()",,166
+"43","Exploiting Multiple Input Interpretation Layers",,146
+"88","OS Command Injection",,146
+"171","Variable Manipulation",,141
+"265","Global variable manipulation",,141
+"182","Flash Injection",,141
+"231","XML Oversized Payloads",,141
+"230","XML Nested Payloads",,141
+"136","LDAP Injection",,141
+"473","Signature Spoof",,141
+"267","Leverage Alternate Encoding",,141
+"264","Environment Variable Manipulation",,141
+"250","XML Injection",,141
+"484","XML Client-Side Attack",,141
+"80","Using UTF-8 Encoding to Bypass Validation Logic",,141
+"104","Cross Zone Scripting",,141
+"31","Accessing/Intercepting/Modifying HTTP Cookies",,141
+"52","Embedding NULL Bytes",,141
+"53","Postfix, Null Terminate, and Backslash",,141
+"28","Fuzzing",,141
+"71","Using Unicode Encoding to Bypass Validation Logic",,141
+"72","URL Encoding",,141
+"73","User-Controlled Filename",,141
+"3","Using Leading 'Ghost' Character Sequences to Bypass Input Filters",,141
+"81","Web Logs Tampering",,141
+"83","XPath Injection",,141
+"99","XML Parser Attack",,141
+"101","Server Side Include (SSI) Injection",,141
+"169","Footprinting",,92
+"60","Reusing Session IDs (aka Session Replay)",,92
+"59","Session Credential Falsification through Prediction",,92
+"472","Browser Fingerprinting",,92
+"76","Manipulating Input to File System Calls",,87
+"213","Directory Traversal",,74
+"23","File Content Injection",,74
+"114","Authentication Abuse",,35
+"57","Utilizing REST's Trust in the System Resource to Register Man in the Middle",,35
+"94","Man in the Middle Attack",,35
+"29","Leveraging Time-of-Check and Time-of-Use (TOCTOU) Race Conditions",,14
+"26","Leveraging Race Conditions",,14
+"17","Accessing, Modifying or Executing Executable Files",,13
+"132","Symlink Attack",,13
+"15","Command Delimiters",,5
+"6","Argument Injection",,5

@@ -1,10 +1,1 @@
-"Until Year",1995,2002,2009,2016,
-"bsd:bsd:4.3",1,1,1,1
-"cisco:ios:9.1",2,3,1,11
-"freebsd:freebsd:3.0",1,25,6,4
-"freebsd:freebsd:3.1",1,21,7,4
-"freebsd:freebsd:3.2",1,24,7,4
-"freebsd:freebsd:3.3",1,25,7,4
-"freebsd:freebsd:3.4",1,20,7,4
-"linux:linux_kernel:2.6.20.1",1,22,121,226
-"sun:solaris",1,6,5,1
+"Until Year",2001,2006,2011,2016,

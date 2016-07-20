@@ -1,0 +1,87 @@
+"108","Command Line Execution through SQL Injection",,4769
+"7","Blind SQL Injection",,4715
+"109","Object Relational Mapping Injection",,4715
+"110","SQL Injection through SOAP Parameter Tampering",,4715
+"66","SQL Injection",,4715
+"244","Cross-Site Scripting via Encoded URI Schemes ",,4622
+"106","Cross Site Scripting through Log Files",,4622
+"91","XSS in IMG Tags",,4622
+"86","Embedding Script (XSS) in HTTP Headers",,4622
+"85","AJAX Fingerprinting",,4622
+"199","Cross-Site Scripting Using Alternate Syntax",,4622
+"63","Simple Script Injection",,4622
+"32","Embedding Scripts in HTTP Query Strings",,4622
+"18","Embedding Scripts in Non-Script Elements",,4622
+"24","Filter Failure through Buffer Overflow",,4381
+"8","Buffer Overflow in an API Call",,4381
+"9","Buffer Overflow in Local Command-Line Utilities",,4381
+"10","Buffer Overflow via Environment Variables",,4381
+"14","Client-side Injection-induced Buffer Overflow",,4381
+"47","Buffer Overflow via Parameter Expansion",,4381
+"46","Overflow Variables and Tags",,4381
+"45","Buffer Overflow via Symbolic Links",,4381
+"42","MIME Conversion",,4381
+"79","Using Slashes in Alternate Encoding",,3730
+"470","Expanding Control over the Operating System from the Database",,3096
+"22","Exploiting Trust in Client",,3076
+"232","",,3003
+"209","Cross-Site Scripting Using MIME Type Mismatch",,3003
+"198","Cross-Site Scripting in Error Pages",,3003
+"247","Cross-Site Scripting with Masking through Invalid Characters in Identifiers",,3003
+"19","Embedding Scripts within Scripts",,3003
+"243","Cross-Site Scripting in Attributes",,3003
+"245","Cross-Site Scripting Using Doubled Characters, e.g. %3C%3Cscript",,3003
+"246","Cross-Site Scripting Using Flash",,3003
+"64","Using Slashes and URL Encoding Combined to Bypass Validation Logic",,2827
+"139","Relative Path Traversal",,2827
+"78","Using Escaped Slashes in Alternate Encoding",,2827
+"44","Overflow Binary Resource File",,2762
+"100","Overflow Buffers",,2762
+"13","Subverting Environment Variable Values",,2522
+"67","String Format Overflow in syslog()",,1726
+"135","Format String Injection",,1726
+"43","Exploiting Multiple Input Interpretation Layers",,1673
+"88","OS Command Injection",,1673
+"250","XML Injection",,1619
+"484","XML Client-Side Attack",,1619
+"267","Leverage Alternate Encoding",,1619
+"265","Global variable manipulation",,1619
+"264","Environment Variable Manipulation",,1619
+"230","XML Nested Payloads",,1619
+"473","Signature Spoof",,1619
+"136","LDAP Injection",,1619
+"80","Using UTF-8 Encoding to Bypass Validation Logic",,1619
+"171","Variable Manipulation",,1619
+"231","XML Oversized Payloads",,1619
+"182","Flash Injection",,1619
+"101","Server Side Include (SSI) Injection",,1619
+"28","Fuzzing",,1619
+"31","Accessing/Intercepting/Modifying HTTP Cookies",,1619
+"52","Embedding NULL Bytes",,1619
+"53","Postfix, Null Terminate, and Backslash",,1619
+"71","Using Unicode Encoding to Bypass Validation Logic",,1619
+"72","URL Encoding",,1619
+"73","User-Controlled Filename",,1619
+"3","Using Leading 'Ghost' Character Sequences to Bypass Input Filters",,1619
+"81","Web Logs Tampering",,1619
+"83","XPath Injection",,1619
+"104","Cross Zone Scripting",,1619
+"99","XML Parser Attack",,1619
+"35","Leverage Executable Code in Non-Executable Files",,1595
+"76","Manipulating Input to File System Calls",,1495
+"77","Manipulating User-Controlled Variables",,1308
+"213","Directory Traversal",,1208
+"23","File Content Injection",,1208
+"472","Browser Fingerprinting",,903
+"60","Reusing Session IDs (aka Session Replay)",,903
+"59","Session Credential Falsification through Prediction",,903
+"169","Footprinting",,903
+"114","Authentication Abuse",,554
+"57","Utilizing REST's Trust in the System Resource to Register Man in the Middle",,554
+"94","Man in the Middle Attack",,554
+"132","Symlink Attack",,287
+"17","Accessing, Modifying or Executing Executable Files",,287
+"29","Leveraging Time-of-Check and Time-of-Use (TOCTOU) Race Conditions",,123
+"26","Leveraging Race Conditions",,123
+"15","Command Delimiters",,54
+"6","Argument Injection",,54
