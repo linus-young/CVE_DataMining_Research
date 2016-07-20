@@ -3,13 +3,17 @@
 #include <cstdio>
 #include <fstream>
 #include <iostream>
+#include <map>
 #include <algorithm>
+#include "rapidxml/rapidxml.hpp"
+#include "rapidxml/rapidxml_utils.hpp"
 #include "rapidjson/document.h"
 #include "rapidjson/filereadstream.h"
 #include "progressBar.h"
 
 using namespace rapidjson;
 using namespace std;
+using namespace rapidxml;
 
 
 
@@ -38,7 +42,18 @@ struct CAPECwithFrequency
 
 map<int, string> getCAPECNames()
 {
-        
+    map<int, string> dictionary;
+    rapidxml::file<char> f("rawdata/capec_v2_8.xml");
+    rapidxml::xml_document<> doc;
+    doc.parse<0>(f.data());
+    xml_node<> *node = doc.first_node()->first_node()->next_sibling()->next_sibling();
+    for (auto capecNode = node->first_node(); capecNode; capecNode = capecNode->next_sibling())
+    {
+        auto attrName = capecNode->first_attribute()->next_attribute();
+        auto attrID = capecNode->first_attribute();
+        dictionary[atoi(attrID->value())] = attrName->value();
+    }
+    return dictionary;
 }
 
 vector<CAPECwithTime> getCAPEC(FILE* file)
@@ -125,6 +140,7 @@ int main()
     auto filenames = readfilenames();
     ofstream ofs;
     vector<CAPECwithTime> CAPECsTimeTable;
+    map<int, string> capecNameDictionary = getCAPECNames();
 
     // parse all files
     for (auto filename : filenames)
@@ -147,7 +163,7 @@ int main()
     ofs << "ID, frequency\n";
     for (auto f : frequencyTableOfAlltime) {
         ProgressBar::getInstance().displayProgress(progress, cout);
-        ofs << f.capecID << "," << f.frequency <<"\n";
+        ofs << f.capecID << ",\"" << capecNameDictionary[f.capecID] << "\","<< f.frequency <<"\n";
         progress += 1.0 / frequencyTableOfAlltime.size() * 0.2;
     }
     ofs.close();
@@ -178,20 +194,19 @@ int main()
         groupedFrequencies.push_back(thisBin);
 
         for (int i = 0; i < 10; ++i)
-            ofs << "\"" << thisBin[i].capecID << "\"" << "," << thisBin[i].frequency << '\n';
+            ofs << "\"" << thisBin[i].capecID << "\"" << ",\"" << capecNameDictionary[thisBin[i].capecID] << "\"," << "," << thisBin[i].frequency << '\n';
     }
     ofs.close();
 
     // Persistant
     ofs.open("statistics/CAPECwithTime/overtimeconsistent.csv");
-    ofs << "Until Year,";
+    ofs << "ID, \"Name\" ";
     for (auto h : bins) ofs << h << ",";
     ofs << '\n'  ;
 
     vector <int> overLappingIds;
     for (auto g : groupedFrequencies[0])
         overLappingIds.push_back(g.capecID);
-    groupedFrequencies.erase(groupedFrequencies.begin());
 
     for (auto group : groupedFrequencies)
     {
@@ -209,7 +224,7 @@ int main()
 
     for (auto id : overLappingIds)
     {
-        ofs << id;
+        ofs << id << ",\"" << capecNameDictionary[id] << "\",";
         for (auto v : groupedFrequencies)
             ofs << ',' << frequencyOf(id, v);
         ofs << '\n';

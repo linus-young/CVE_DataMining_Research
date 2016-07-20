@@ -1,0 +1,19 @@
+"119-Improper Restriction of Operations within the Bounds of a Memory Buffer",334
+"94-Improper Control of Generation of Code ('Code Injection')",232
+"79-Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')",220
+"89-Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection')",169
+"264-Permissions",151
+"20-Improper Input Validation",140
+"399-Resource Management Errors",121
+"200-Information Exposure",90
+"22-Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal')",74
+"189-Numeric Errors",57
+"287-Improper Authentication",35
+"255-Credentials Management",28
+"16-Configuration",28
+"134-Uncontrolled Format String",25
+"310-Cryptographic Issues",23
+"59-Improper Link Resolution Before File Access ('Link Following')",13
+"362-Concurrent Execution using Shared Resource with Improper Synchronization ('Race Condition')",13
+"78-Improper Neutralization of Special Elements used in an OS Command ('OS Command Injection')",5
+"352-Cross-Site Request Forgery (CSRF)",5

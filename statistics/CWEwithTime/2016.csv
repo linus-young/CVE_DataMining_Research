@@ -1,0 +1,30 @@
+"119-Improper Restriction of Operations within the Bounds of a Memory Buffer",3487
+"79-Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')",3156
+"264-Permissions",2581
+"20-Improper Input Validation",1941
+"310-Cryptographic Issues",1905
+"200-Information Exposure",1501
+"399-Resource Management Errors",1260
+"89-Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection')",872
+"352-Cross-Site Request Forgery (CSRF)",758
+"22-Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal')",563
+"189-Numeric Errors",540
+"94-Improper Control of Generation of Code ('Code Injection')",524
+"287-Improper Authentication",388
+"255-Credentials Management",322
+"362-Concurrent Execution using Shared Resource with Improper Synchronization ('Race Condition')",222
+"284-Improper Access Control",200
+"17-Code",156
+"254-Security Features",149
+"78-Improper Neutralization of Special Elements used in an OS Command ('OS Command Injection')",136
+"59-Improper Link Resolution Before File Access ('Link Following')",118
+"19-Data Handling",94
+"16-Configuration",69
+"77-Improper Neutralization of Special Elements used in a Command ('Command Injection')",56
+"134-Uncontrolled Format String",30
+"345-Insufficient Verification of Data Authenticity",20
+"74-Improper Neutralization of Special Elements in Output Used by a Downstream Component ('Injection')",19
+"18-Source Code",5
+"199-Information Management Errors",2
+"21-Pathname Traversal and Equivalence Errors",2
+"361-Time and State",1

@@ -1,107 +1,107 @@
 ID, frequency
-8,10342
-9,10342
-10,10342
-42,10342
-24,10342
-14,10342
-45,10342
-46,10342
-47,10342
-106,10117
-91,10117
-86,10098
-32,10098
-244,10098
-18,10098
-85,10098
-63,10098
-199,10098
-79,8134
-108,8069
-7,7872
-66,7872
-110,7853
-109,7853
-22,7250
-44,6607
-100,6607
-19,6582
-209,6402
-247,6382
-198,6382
-232,6382
-243,6382
-245,6382
-246,6382
-13,6286
-64,5583
-78,5583
-139,5564
-470,4137
-43,3988
-88,3913
-135,3897
-67,3897
-136,3772
-52,3735
-80,3735
-83,3735
-101,3735
-72,3735
-71,3735
-53,3735
-28,3735
-250,3735
-267,3735
-3,3735
-171,3716
-182,3716
-230,3716
-231,3716
-484,3716
-264,3716
-265,3716
-473,3716
-99,3716
-104,3716
-31,3716
-81,3716
-73,3716
-59,2551
-60,2551
-472,2551
-169,2551
-35,2496
-76,2346
-77,2073
-23,1904
-213,1848
-57,983
-94,983
-114,983
-17,423
-132,423
-29,368
-26,368
-6,253
-15,253
-474,200
-75,56
-11,56
-385,20
-386,20
-387,20
-388,20
-389,20
-4,20
-384,20
-218,20
-142,20
-141,20
-111,20
-273,19
-34,19
-40,19
-51,19
-84,19
+8,"Buffer Overflow in an API Call",10342
+9,"Buffer Overflow in Local Command-Line Utilities",10342
+10,"Buffer Overflow via Environment Variables",10342
+42,"MIME Conversion",10342
+24,"Filter Failure through Buffer Overflow",10342
+14,"Client-side Injection-induced Buffer Overflow",10342
+45,"Buffer Overflow via Symbolic Links",10342
+46,"Overflow Variables and Tags",10342
+47,"Buffer Overflow via Parameter Expansion",10342
+106,"Cross Site Scripting through Log Files",10117
+91,"XSS in IMG Tags",10117
+86,"Embedding Script (XSS) in HTTP Headers",10098
+32,"Embedding Scripts in HTTP Query Strings",10098
+244,"Cross-Site Scripting via Encoded URI Schemes ",10098
+18,"Embedding Scripts in Non-Script Elements",10098
+85,"AJAX Fingerprinting",10098
+63,"Simple Script Injection",10098
+199,"Cross-Site Scripting Using Alternate Syntax",10098
+79,"Using Slashes in Alternate Encoding",8134
+108,"Command Line Execution through SQL Injection",8069
+7,"Blind SQL Injection",7872
+66,"SQL Injection",7872
+110,"SQL Injection through SOAP Parameter Tampering",7853
+109,"Object Relational Mapping Injection",7853
+22,"Exploiting Trust in Client",7250
+44,"Overflow Binary Resource File",6607
+100,"Overflow Buffers",6607
+19,"Embedding Scripts within Scripts",6582
+209,"Cross-Site Scripting Using MIME Type Mismatch",6402
+247,"Cross-Site Scripting with Masking through Invalid Characters in Identifiers",6382
+198,"Cross-Site Scripting in Error Pages",6382
+232,"",6382
+243,"Cross-Site Scripting in Attributes",6382
+245,"Cross-Site Scripting Using Doubled Characters, e.g. %3C%3Cscript",6382
+246,"Cross-Site Scripting Using Flash",6382
+13,"Subverting Environment Variable Values",6286
+64,"Using Slashes and URL Encoding Combined to Bypass Validation Logic",5583
+78,"Using Escaped Slashes in Alternate Encoding",5583
+139,"Relative Path Traversal",5564
+470,"Expanding Control over the Operating System from the Database",4137
+43,"Exploiting Multiple Input Interpretation Layers",3988
+88,"OS Command Injection",3913
+135,"Format String Injection",3897
+67,"String Format Overflow in syslog()",3897
+136,"LDAP Injection",3772
+52,"Embedding NULL Bytes",3735
+80,"Using UTF-8 Encoding to Bypass Validation Logic",3735
+83,"XPath Injection",3735
+101,"Server Side Include (SSI) Injection",3735
+72,"URL Encoding",3735
+71,"Using Unicode Encoding to Bypass Validation Logic",3735
+53,"Postfix, Null Terminate, and Backslash",3735
+28,"Fuzzing",3735
+250,"XML Injection",3735
+267,"Leverage Alternate Encoding",3735
+3,"Using Leading 'Ghost' Character Sequences to Bypass Input Filters",3735
+171,"Variable Manipulation",3716
+182,"Flash Injection",3716
+230,"XML Nested Payloads",3716
+231,"XML Oversized Payloads",3716
+484,"XML Client-Side Attack",3716
+264,"Environment Variable Manipulation",3716
+265,"Global variable manipulation",3716
+473,"Signature Spoof",3716
+99,"XML Parser Attack",3716
+104,"Cross Zone Scripting",3716
+31,"Accessing/Intercepting/Modifying HTTP Cookies",3716
+81,"Web Logs Tampering",3716
+73,"User-Controlled Filename",3716
+59,"Session Credential Falsification through Prediction",2551
+60,"Reusing Session IDs (aka Session Replay)",2551
+472,"Browser Fingerprinting",2551
+169,"Footprinting",2551
+35,"Leverage Executable Code in Non-Executable Files",2496
+76,"Manipulating Input to File System Calls",2346
+77,"Manipulating User-Controlled Variables",2073
+23,"File Content Injection",1904
+213,"Directory Traversal",1848
+57,"Utilizing REST's Trust in the System Resource to Register Man in the Middle",983
+94,"Man in the Middle Attack",983
+114,"Authentication Abuse",983
+17,"Accessing, Modifying or Executing Executable Files",423
+132,"Symlink Attack",423
+29,"Leveraging Time-of-Check and Time-of-Use (TOCTOU) Race Conditions",368
+26,"Leveraging Race Conditions",368
+6,"Argument Injection",253
+15,"Command Delimiters",253
+474,"Signature Spoofing by Key Theft",200
+75,"Manipulating Writeable Configuration Files",56
+11,"Cause Web Server Misclassification",56
+385,"Transaction or Event Tampering via Application API Manipulation",20
+386,"Application API Navigation Remapping",20
+387,"Navigation Remapping To Propagate Malicious Content",20
+388,"Application API Button Hijacking",20
+389,"Content Spoofing Via Application API Manipulation",20
+4,"Using Alternative IP Address Encodings",20
+384,"Application API Message Manipulation via Man-in-the-Middle",20
+218,"Spoofing of UDDI/ebXML Messages",20
+142,"DNS Cache Poisoning",20
+141,"Cache Poisoning",20
+111,"JSON Hijacking (aka JavaScript Hijacking)",20
+273,"HTTP Response Smuggling",19
+34,"HTTP Response Splitting",19
+40,"Manipulating Writeable Terminal Devices",19
+51,"Poison Web Service Registry",19
+84,"XQuery Injection",19

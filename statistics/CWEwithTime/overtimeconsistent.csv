@@ -1,0 +1,15 @@
+ID,"2001","2006","2011","2016",
+"16-Configuration",8,28,172,69
+"20-Improper Input Validation",11,140,1573,1941
+"22-Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal')",3,74,1208,563
+"59-Improper Link Resolution Before File Access ('Link Following')",4,13,286,118
+"79-Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')",1,220,3000,3156
+"94-Improper Control of Generation of Code ('Code Injection')",7,232,1300,524
+"119-Improper Restriction of Operations within the Bounds of a Memory Buffer",15,334,2757,3487
+"200-Information Exposure",7,90,883,1501
+"255-Credentials Management",4,28,229,322
+"264-Permissions",10,151,1735,2581
+"287-Improper Authentication",4,35,549,388
+"310-Cryptographic Issues",5,23,300,1905
+"362-Concurrent Execution using Shared Resource with Improper Synchronization ('Race Condition')",2,13,116,222
+"399-Resource Management Errors",1,121,1266,1260

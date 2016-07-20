@@ -131,17 +131,12 @@ int main()
     auto alltime = countFrequencies(weaknesses.begin(), weaknesses.end());
     std::sort(alltime.begin(), alltime.end(), comByFreq);
 
-    ofs.open("statistics/allTimeWeaknesses.csv");
-    ofs << "ID, frequency\n";
+    ofs.open("statistics/CWEwithTime/allTime.csv");
     for (int i = 0; i < alltime.size(); ++i)
     {
-        ofs << alltime[i].cweID << '-' << dict[alltime[i].cweID] << "," << alltime[i].frequency << '\n';
+        ofs << "\"" << alltime[i].cweID << '-' << dict[alltime[i].cweID] << "\"" << "," << alltime[i].frequency << '\n';
     }
-    ofs << "Least 10\n";
-    for (auto itt = alltime.end() - 10; itt != alltime.end(); itt++)
-    {
-        ofs << itt->cweID << '-' << dict[itt->cweID] << "," << itt->frequency << '\n';
-    }
+
     ofs.close();
 
 
@@ -150,44 +145,37 @@ int main()
 
     int minYear = weaknesses[0].year;
     int maxYear = weaknesses[weaknesses.size() - 1].year;
-    
+
     vector < vector < WeaknessWithFrequency > > groupedFrequencies;
     auto bins = divideBins(minYear, maxYear, 4);
-    ofs.open("statistics/4_Bin_Weaknesses.csv");
-    ofs << "ID, frequency\n";
     std::sort(weaknesses.begin(), weaknesses.end(), comByTime);
     auto it = weaknesses.begin();
     for (auto hi : bins)
     {
+        ofs.open("statistics/CWEwithTime/" + to_string(hi) + ".csv");
         auto lo = it;
-        ofs << "From " << lo->year << " to "  << hi << '\n';
         while (it != weaknesses.end() && it->year <= hi) ++it;
         std::sort(lo, it, comByID);
         auto thisBin = countFrequencies(lo, it);
         std::sort(thisBin.begin(), thisBin.end(), comByFreq);
         groupedFrequencies.push_back(thisBin);
-        for (int i = 0; i < 10; ++i)
+        for (auto &w : thisBin)
         {
-            ofs << thisBin[i].cweID << '-' << dict[thisBin[i].cweID] << "," << thisBin[i].frequency << '\n';
+            ofs << "\"" << w.cweID << '-' << dict[w.cweID] << "\"" << "," << w.frequency << '\n';
         }
-        ofs << "Least 10\n";
-        for (auto itt = thisBin.end() - 10; itt != thisBin.end(); itt++)
-        {
-            ofs << itt->cweID << '-' << dict[itt->cweID] << "," << itt->frequency << '\n';
-        }
+
+        ofs.close();
     }
-    ofs.close();
 
     // find consistently present IDs
-    ofs.open("statistics/overtimeconsistent.csv");
-    ofs << "Until Year,";
-    for (auto h : bins) ofs << h << ",";
+    ofs.open("statistics/CWEwithTime/overtimeconsistent.csv");
+    ofs << "ID" << ",";
+    for (auto h : bins) ofs << "\"" << h << "\"" << ",";
     ofs << '\n'  ;
 
     vector <int> overLappingIds;
     for (auto g : groupedFrequencies[0])
         overLappingIds.push_back(g.cweID);
-    groupedFrequencies.erase(groupedFrequencies.begin());
 
     for (auto group : groupedFrequencies)
     {
@@ -195,7 +183,9 @@ int main()
         for (auto g : group)
             vec.push_back(g.cweID);
         vector <int> o(1000);
-        auto qit = std::set_intersection(vec.begin(), vec.end(), 
+        std::sort(vec.begin(), vec.end());
+        std::sort(overLappingIds.begin(), overLappingIds.end());
+        auto qit = std::set_intersection(vec.begin(), vec.end(),
                                 overLappingIds.begin(), overLappingIds.end(), o.begin());
         o.resize(qit - o.begin());
         overLappingIds = o;
@@ -203,7 +193,7 @@ int main()
 
     for (auto id : overLappingIds)
     {
-        ofs << id << '-' << dict[id];
+        ofs << "\"" << id << '-' << dict[id] << "\"";
         for (auto v : groupedFrequencies)
         {
             ofs << ',' << frequencyOf(id, v);
