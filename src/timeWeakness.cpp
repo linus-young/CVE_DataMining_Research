@@ -117,7 +117,7 @@ int main()
 
         int year  = parseYear(str.substr(commas[0] + 1, 4));
         int cweID = parseID  (str.substr(commas[3] + 1, commas[4] - commas[3] - 1));
-        if (year > 1900 && year <= 2016) 
+        if (year > 1900 && year <= 2016)
         {
             WeaknessWithTime element (year, cweID);
             weaknesses.push_back(element);
@@ -125,7 +125,6 @@ int main()
     }
     ifs.close();
 
-    // Print out the top 10 and least 10 CWE
     std::sort(weaknesses.begin(), weaknesses.end(), comByID);
 
     auto alltime = countFrequencies(weaknesses.begin(), weaknesses.end());
@@ -134,7 +133,8 @@ int main()
     ofs.open("statistics/CWEwithTime/allTime.csv");
     for (int i = 0; i < alltime.size(); ++i)
     {
-        ofs << "\"" << alltime[i].cweID << '-' << dict[alltime[i].cweID] << "\"" << "," << alltime[i].frequency << '\n';
+        ofs << alltime[i].cweID << "," << alltime[i].frequency << '\n';
+        // ofs << "\"" << alltime[i].cweID << '-' << dict[alltime[i].cweID] << "\"" << "," << alltime[i].frequency << '\n';
     }
 
     ofs.close();

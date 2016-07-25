@@ -18,6 +18,7 @@ class CWE
 public:
     int id;
     string name;
+    bool discovered = false;
     vector<int> children;
     vector<int> parents;
     int frequency = 0;
@@ -63,7 +64,7 @@ map<int, CWE> loadCWETree()
 
 map<int, int> loadFrequencies()
 {
-    ifstream ifs ("statistics/allTimeWeaknesses.csv");
+    ifstream ifs ("statistics/CWEwithTime/allTime.csv");
     map<int, int> frequencies;
     string line;
     getline(ifs, line);
@@ -77,17 +78,15 @@ map<int, int> loadFrequencies()
     return frequencies;
 }
 
-vector< int > allAffected(int id, map<int, CWE>& dict)
+int updateFrequency(int id, map<int, CWE> & cwes)
 {
-    vector < int > s;
-    s.push_back(id);
-    for (auto p : dict[id].parents)
+    if (cwes[id].discovered) return cwes[id].frequency;
+    for (auto &c : cwes[id].children)
     {
-        vector<int> sp = allAffected(p, dict);
-        for (auto i : sp) s.push_back(i);
+        cwes[id].frequency += updateFrequency(c, cwes);
     }
-    removeDuplicates(s);
-    return s;
+    cwes[id].discovered = true;
+    return cwes[id].frequency;
 }
 
 
@@ -95,23 +94,22 @@ int main()
 {
     auto cwes = loadCWETree();
     auto freq = loadFrequencies();
-    map<int, int> treeiedfreq;
 
-    for (auto &p : freq)
+    for (auto &f : freq) cwes[f.first].frequency = f.second;
+    updateFrequency(1, cwes);
+
+    ofstream ofs;
+    ofs.open("statistics/CWEwithTree.csv");
+    for (auto &v : cwes)
     {
-        auto s = allAffected(p.first, cwes);
-        for (auto i : s)
-        {
-            if (treeiedfreq.find(i) == treeiedfreq.end()) treeiedfreq[i] = 0;
-            treeiedfreq[i] += p.second;
-        }
+        auto &id = v.first;
+        auto &freq = v.second.frequency;
+        ofs << id << "," << freq << ",\"";
+        for (auto &c : v.second.children)
+            ofs << c << ",";
+        ofs << "\"" << endl;
     }
-
-    for (auto &v : treeiedfreq)
-    {
-        // auto &id = 
-    }
-
+    ofs.close();
 
     return 0;
 }

@@ -11,18 +11,24 @@
 #include "JsonHelper.h"
 #include "ProgressBar.h"
 
+
 class cveBackend
 {
+    using std::string;
 public:
     void regenerateTable();
     void regenerateCWETables();
     void regenerateCAPECTables();
     void regenerateCPETables();
+    void regenerateCWETree();
+    void printToFiles();
 
 private:
-    map<int, string> CWEName;
-    map<int, string> CAPECName;
-    vector<item> completeTable;
+    std::map<int, string> CWEName;
+    std::map<int, string> CAPECName;
+    std::vector<item> completeTable;
+
+    void loadJsonFiles();
 }
 
 #endif
