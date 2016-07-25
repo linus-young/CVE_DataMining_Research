@@ -2,6 +2,6 @@ CMakeCache*
 CMakeFiles/*
 Makefile
 cmake_install.cmake
-rawdata/*
+rawdata/*.json
 bin/*
 .vscode/.*
